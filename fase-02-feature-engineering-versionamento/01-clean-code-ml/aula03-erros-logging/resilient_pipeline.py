@@ -189,9 +189,13 @@ def demo_patterns() -> None:
 
     logger.info("\n=== Demo: Circuit Breaker ===")
     cb = CircuitBreaker(failure_threshold=2, recovery_timeout=1.0)
+
+    def always_fails() -> None:
+        raise RuntimeError("serviço indisponível")
+
     for i in range(4):
         try:
-            cb.call(lambda: (_ for _ in ()).throw(RuntimeError("serviço indisponível")))
+            cb.call(always_fails)
         except Exception as exc:
             logger.warning("Chamada %d: %s", i + 1, exc)
 
