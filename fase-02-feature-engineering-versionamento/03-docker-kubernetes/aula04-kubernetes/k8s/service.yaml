@@ -1,0 +1,16 @@
+# service.yaml — Kubernetes Service para expor a aplicação ML
+# Aplicar: kubectl apply -f service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ml-api-service
+  namespace: ml-production
+spec:
+  selector:
+    app: ml-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  type: LoadBalancer

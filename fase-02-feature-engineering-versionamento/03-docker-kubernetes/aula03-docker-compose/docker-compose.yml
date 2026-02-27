@@ -1,0 +1,56 @@
+# docker-compose.yml — Stack completa: API + Redis (cache) + PostgreSQL
+# Uso: docker-compose up -d
+# Parar: docker-compose down
+
+version: "3.9"
+
+services:
+  # Serviço de inferência ML
+  api:
+    build:
+      context: ../aula01-fundamentos-docker
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - DATABASE_URL=postgresql://mluser:mlpass@db:5432/mldb
+      - REDIS_URL=redis://cache:6379
+    depends_on:
+      db:
+        condition: service_healthy
+      cache:
+        condition: service_started
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Banco de dados para armazenar predições e features
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: mluser
+      POSTGRES_PASSWORD: mlpass
+      POSTGRES_DB: mldb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mluser -d mldb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # Cache Redis para predições frequentes
+  cache:
+    image: redis:7-alpine
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
