@@ -1,0 +1,48 @@
+# docker-compose.yml — Stack de monitoramento: FastAPI + Prometheus + Grafana
+# Uso: docker-compose up -d
+# Dashboards Grafana: http://localhost:3000 (admin/admin)
+# Prometheus: http://localhost:9090
+# API: http://localhost:8000
+
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.monitoring
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v2.51.0
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.console.libraries=/etc/prometheus/console_libraries"
+      - "--web.console.templates=/etc/prometheus/consoles"
+      - "--storage.tsdb.retention.time=200h"
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:10.3.0
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+volumes:
+  prometheus_data:
+  grafana_data:
