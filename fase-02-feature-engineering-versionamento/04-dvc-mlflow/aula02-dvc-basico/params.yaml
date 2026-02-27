@@ -1,0 +1,21 @@
+# params.yaml — Hiperparâmetros e configurações do pipeline DVC
+# Referenciar com: dvc params show
+
+prepare:
+  test_size: 0.2
+  random_state: 42
+  target_column: Survived
+
+train:
+  n_estimators: 100
+  max_depth: 5
+  min_samples_split: 2
+  random_state: 42
+  model_type: random_forest
+
+evaluate:
+  threshold: 0.5
+  metrics:
+    - accuracy
+    - auc_roc
+    - f1

@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.git/
+.gitignore
+.env
+data/
+models/
+*.pkl
+*.h5
+*.pt
+mlruns/
+.pytest_cache/
+htmlcov/
+.coverage
