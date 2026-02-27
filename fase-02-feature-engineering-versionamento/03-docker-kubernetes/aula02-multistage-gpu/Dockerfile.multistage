@@ -1,0 +1,38 @@
+# Dockerfile.multistage — build multi-estágio para reduzir tamanho da imagem
+# Build: docker build -f Dockerfile.multistage -t ml-app:multistage .
+#
+# Estágio 1 (builder): instala dependências e compila
+# Estágio 2 (runtime): apenas o necessário para execução
+
+# ===== Estágio 1: Builder =====
+FROM python:3.12-slim AS builder
+
+WORKDIR /app
+
+# Instala dependências de build
+RUN apt-get update && apt-get install -y gcc && rm -rf /var/lib/apt/lists/*
+
+# Copia e instala dependências (camada cacheável)
+COPY requirements.txt .
+RUN pip install --no-cache-dir --user -r requirements.txt
+
+# ===== Estágio 2: Runtime =====
+FROM python:3.12-slim AS runtime
+
+WORKDIR /app
+
+# Copia apenas as dependências instaladas do builder
+COPY --from=builder /root/.local /root/.local
+
+# Copia código da aplicação
+COPY app.py .
+
+# Configura PATH para incluir pacotes do usuário
+ENV PATH=/root/.local/bin:$PATH
+
+# Usuário não-root
+RUN adduser --disabled-password --gecos "" appuser
+USER appuser
+
+EXPOSE 8000
+CMD ["python", "app.py"]

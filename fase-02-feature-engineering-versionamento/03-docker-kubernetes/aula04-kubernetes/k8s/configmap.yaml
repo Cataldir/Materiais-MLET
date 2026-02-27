@@ -1,0 +1,13 @@
+# configmap.yaml — ConfigMap com configurações da aplicação ML
+# Aplicar: kubectl apply -f configmap.yaml
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ml-api-config
+  namespace: ml-production
+data:
+  log_level: "INFO"
+  model_version: "1.0.0"
+  max_batch_size: "100"
+  timeout_seconds: "30"

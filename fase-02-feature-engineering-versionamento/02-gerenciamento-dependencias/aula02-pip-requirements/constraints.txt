@@ -1,0 +1,7 @@
+# constraints.txt — limites superiores para compatibilidade
+# Impede upgrades acidentais que quebram compatibilidade
+# Uso: pip install -r requirements.txt -c constraints.txt
+
+scikit-learn<2.0
+pandas<3.0
+numpy<2.0
