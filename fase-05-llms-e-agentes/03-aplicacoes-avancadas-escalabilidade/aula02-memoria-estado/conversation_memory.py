@@ -18,6 +18,8 @@ from typing import Any
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 
+_SUMMARY_CONTENT_TRUNCATE = 100
+
 
 @dataclass
 class Message:
@@ -140,7 +142,7 @@ class SummaryMemory(ConversationMemory):
         Returns:
             Resumo textual do histórico.
         """
-        lines = [f"{m.role}: {m.content[:100]}" for m in messages]
+        lines = [f"{m.role}: {m.content[:_SUMMARY_CONTENT_TRUNCATE]}" for m in messages]
         return "Histórico anterior: " + " | ".join(lines)
 
     def add_message(self, role: str, content: str) -> None:

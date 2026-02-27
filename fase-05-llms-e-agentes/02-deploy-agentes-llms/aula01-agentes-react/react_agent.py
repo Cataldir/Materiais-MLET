@@ -9,9 +9,11 @@ Uso:
     python react_agent.py
 """
 
+import ast
 import logging
+import operator
 import re
-from typing import Any, Callable
+from typing import Callable
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -158,11 +160,30 @@ def create_demo_tools() -> list[Tool]:
     Returns:
         Lista de ferramentas: calculadora, busca e clima.
     """
+    _SAFE_OPS = {
+        ast.Add: operator.add,
+        ast.Sub: operator.sub,
+        ast.Mult: operator.mul,
+        ast.Div: operator.truediv,
+        ast.Pow: operator.pow,
+        ast.USub: operator.neg,
+    }
+
+    def _safe_eval(node: ast.AST) -> float:
+        """Recursively evaluate an AST node for safe math expressions."""
+        if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)):
+            return float(node.value)
+        if isinstance(node, ast.BinOp) and type(node.op) in _SAFE_OPS:
+            return _SAFE_OPS[type(node.op)](_safe_eval(node.left), _safe_eval(node.right))
+        if isinstance(node, ast.UnaryOp) and type(node.op) in _SAFE_OPS:
+            return _SAFE_OPS[type(node.op)](_safe_eval(node.operand))
+        raise ValueError(f"Operação não permitida: {ast.dump(node)}")
+
     def calculator(expression: str) -> str:
-        """Avalia expressão matemática simples."""
+        """Avalia expressão matemática simples usando AST seguro."""
         try:
-            allowed_names: dict[str, Any] = {"__builtins__": {}}
-            result = eval(expression, allowed_names)  # noqa: S307
+            tree = ast.parse(expression, mode="eval")
+            result = _safe_eval(tree.body)
             return f"{result}"
         except Exception as exc:
             return f"Erro: {exc}"
