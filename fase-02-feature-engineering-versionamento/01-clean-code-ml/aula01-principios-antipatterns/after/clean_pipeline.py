@@ -12,6 +12,7 @@ Uso:
     python clean_pipeline.py --data data/churn.csv
 """
 
+import argparse
 import logging
 from pathlib import Path
 
@@ -160,7 +161,6 @@ def run_pipeline(data_path: Path) -> dict[str, float]:
 
 
 if __name__ == "__main__":
-    import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--data", type=Path, default=Path("data/churn.csv"))
     args = parser.parse_args()

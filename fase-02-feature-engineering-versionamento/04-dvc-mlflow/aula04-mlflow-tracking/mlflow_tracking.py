@@ -13,10 +13,9 @@ from pathlib import Path
 
 import mlflow
 import mlflow.sklearn
-import numpy as np
 from sklearn.datasets import load_breast_cancer
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report, roc_auc_score
+from sklearn.metrics import f1_score, roc_auc_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
@@ -74,14 +73,7 @@ def run_experiment(
         metrics = {
             "accuracy": float((y_pred == y_test).mean()),
             "auc_roc": float(roc_auc_score(y_test, y_proba)),
-            "f1_macro": float(
-                np.mean([
-                    2 * p * r / (p + r + 1e-8)
-                    for p, r in zip(
-                        *[iter(classification_report(y_test, y_pred, output_dict=True)["macro avg"].values())] * 2
-                    )
-                ])
-            ),
+            "f1_macro": float(f1_score(y_test, y_pred, average="macro")),
         }
         mlflow.log_metrics(metrics)
         mlflow.sklearn.log_model(model, "model", registered_model_name="BreastCancerClassifier")
