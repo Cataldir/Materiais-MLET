@@ -1,0 +1,46 @@
+# dvc.yaml — Pipeline DVC para rastreamento de dados e modelos
+# Executar: dvc repro
+# Ver DAG: dvc dag
+
+stages:
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+      - src/prepare.py
+      - data/raw/titanic.csv
+    params:
+      - params.yaml:
+        - prepare.test_size
+        - prepare.random_state
+    outs:
+      - data/processed/train.csv
+      - data/processed/test.csv
+
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+      - data/processed/train.csv
+    params:
+      - params.yaml:
+        - train.n_estimators
+        - train.max_depth
+        - train.random_state
+    outs:
+      - models/model.pkl
+    metrics:
+      - metrics/train_metrics.json:
+          cache: false
+
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+      - src/evaluate.py
+      - models/model.pkl
+      - data/processed/test.csv
+    metrics:
+      - metrics/eval_metrics.json:
+          cache: false
+    plots:
+      - metrics/confusion_matrix.csv:
+          cache: false
