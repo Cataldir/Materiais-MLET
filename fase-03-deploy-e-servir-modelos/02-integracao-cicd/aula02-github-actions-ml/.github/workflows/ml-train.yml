@@ -1,0 +1,61 @@
+# ml-train.yml — Workflow para treino de modelos no CI
+# Trigger: push de mudanças em dados ou código de treino
+
+name: ML Train
+
+on:
+  push:
+    paths:
+      - "fase-*/src/**"
+      - "fase-*/params.yaml"
+      - "fase-*/dvc.yaml"
+  workflow_dispatch:
+    inputs:
+      experiment_name:
+        description: "Nome do experimento MLflow"
+        required: false
+        default: "ci-run"
+
+env:
+  MLFLOW_TRACKING_URI: "http://mlflow-server:5000"
+
+jobs:
+  train:
+    name: Treinar Modelo
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install uv
+          uv pip install --system scikit-learn pandas numpy mlflow dvc
+
+      - name: Configure DVC
+        run: |
+          dvc remote add -d myremote s3://my-ml-bucket/dvc-store
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Pull data with DVC
+        run: dvc pull --no-run-cache
+
+      - name: Run training pipeline
+        run: dvc repro train
+        env:
+          MLFLOW_EXPERIMENT_NAME: ${{ github.event.inputs.experiment_name || 'ci-train' }}
+
+      - name: Upload metrics
+        uses: actions/upload-artifact@v4
+        with:
+          name: training-metrics
+          path: metrics/
+
+      - name: Push updated models to DVC
+        run: dvc push
