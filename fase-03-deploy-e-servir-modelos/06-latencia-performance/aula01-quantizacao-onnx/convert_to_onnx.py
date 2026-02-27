@@ -67,7 +67,7 @@ def benchmark_inference(
         sklearn_model: Modelo sklearn original.
         onnx_path: Caminho para o modelo ONNX.
         X_test: Dados de teste para benchmark.
-        n_runs: Número de execuções para media.
+        n_runs: Número de execuções para média.
 
     Returns:
         Dicionário com latências médias em ms.
