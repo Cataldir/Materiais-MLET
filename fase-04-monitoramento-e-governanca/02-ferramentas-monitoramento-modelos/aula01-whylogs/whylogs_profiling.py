@@ -32,12 +32,14 @@ def generate_reference_data(rng: np.random.Generator) -> pd.DataFrame:
     Returns:
         DataFrame de referência.
     """
-    return pd.DataFrame({
-        "age": rng.normal(35, 10, 1000).clip(18, 80),
-        "income": rng.lognormal(10, 0.5, 1000),
-        "credit_score": rng.normal(650, 80, 1000).clip(300, 850),
-        "prediction": rng.choice([0, 1], 1000, p=[0.7, 0.3]),
-    })
+    return pd.DataFrame(
+        {
+            "age": rng.normal(35, 10, 1000).clip(18, 80),
+            "income": rng.lognormal(10, 0.5, 1000),
+            "credit_score": rng.normal(650, 80, 1000).clip(300, 850),
+            "prediction": rng.choice([0, 1], 1000, p=[0.7, 0.3]),
+        }
+    )
 
 
 def generate_production_batch(
@@ -53,18 +55,22 @@ def generate_production_batch(
         DataFrame de produção.
     """
     if with_drift:
-        return pd.DataFrame({
-            "age": rng.normal(50, 15, 200).clip(18, 80),
-            "income": rng.lognormal(11, 0.8, 200),
-            "credit_score": rng.normal(580, 120, 200).clip(300, 850),
-            "prediction": rng.choice([0, 1], 200, p=[0.45, 0.55]),
-        })
-    return pd.DataFrame({
-        "age": rng.normal(36, 10, 200).clip(18, 80),
-        "income": rng.lognormal(10.1, 0.5, 200),
-        "credit_score": rng.normal(648, 82, 200).clip(300, 850),
-        "prediction": rng.choice([0, 1], 200, p=[0.69, 0.31]),
-    })
+        return pd.DataFrame(
+            {
+                "age": rng.normal(50, 15, 200).clip(18, 80),
+                "income": rng.lognormal(11, 0.8, 200),
+                "credit_score": rng.normal(580, 120, 200).clip(300, 850),
+                "prediction": rng.choice([0, 1], 200, p=[0.45, 0.55]),
+            }
+        )
+    return pd.DataFrame(
+        {
+            "age": rng.normal(36, 10, 200).clip(18, 80),
+            "income": rng.lognormal(10.1, 0.5, 200),
+            "credit_score": rng.normal(648, 82, 200).clip(300, 850),
+            "prediction": rng.choice([0, 1], 200, p=[0.69, 0.31]),
+        }
+    )
 
 
 def profile_with_whylogs(df: pd.DataFrame, dataset_name: str) -> None:
@@ -122,8 +128,7 @@ def demo_whylogs_monitoring() -> None:
         prod_mean = prod_drift[col].mean()
         change_pct = abs(prod_mean - ref_mean) / ref_mean * 100
         logger.info(
-            "%s: ref=%.2f, prod=%.2f (Δ=%.1f%%)",
-            col, ref_mean, prod_mean, change_pct
+            "%s: ref=%.2f, prod=%.2f (Δ=%.1f%%)", col, ref_mean, prod_mean, change_pct
         )
 
 

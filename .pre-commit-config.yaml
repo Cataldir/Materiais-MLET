@@ -16,11 +16,18 @@ repos:
     hooks:
       - id: ruff
         args: ["--fix"]
+        files: "^(tests/|tools/)"
       - id: ruff-format
+        files: "^(tests/|tools/)"
+
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.17.2
+    hooks:
+      - id: markdownlint-cli2
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.10.0
     hooks:
       - id: mypy
         additional_dependencies: ["types-requests", "pydantic>=2.6"]
-        exclude: "^(notebooks/|.*\\.ipynb)"
+        files: "^(tests/|tools/)"

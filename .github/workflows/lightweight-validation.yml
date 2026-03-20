@@ -1,0 +1,41 @@
+name: lightweight-validation
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+        python-version:
+          - '3.11'
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install development dependencies
+        run: python -m pip install --upgrade pip && python -m pip install --constraint constraints/dev.txt -e .[dev]
+
+      - name: Run lightweight notebook checks
+        run: python tools/repo_tasks.py notebooks-check
+
+      - name: Run lightweight pytest suite
+        run: python -m pytest tests/test_readme_contract.py tests/test_executable_assets_smoke.py
+
+      - name: Run pre-commit validation
+        run: python tools/repo_tasks.py validate

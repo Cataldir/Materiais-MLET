@@ -46,12 +46,12 @@ def compute_bleu(reference: str, hypothesis: str, n: int = 4) -> float:
             break
         ref_ngrams: dict[tuple, int] = {}
         for i in range(len(ref_tokens) - k + 1):
-            ngram = tuple(ref_tokens[i:i + k])
+            ngram = tuple(ref_tokens[i : i + k])
             ref_ngrams[ngram] = ref_ngrams.get(ngram, 0) + 1
 
         matches = 0
         for i in range(len(hyp_tokens) - k + 1):
-            ngram = tuple(hyp_tokens[i:i + k])
+            ngram = tuple(hyp_tokens[i : i + k])
             if ref_ngrams.get(ngram, 0) > 0:
                 matches += 1
                 ref_ngrams[ngram] -= 1
@@ -101,7 +101,9 @@ def compute_rouge_l(reference: str, hypothesis: str) -> dict[str, float]:
     }
 
 
-def compute_bertscore(references: list[str], hypotheses: list[str]) -> dict[str, list[float]]:
+def compute_bertscore(
+    references: list[str], hypotheses: list[str]
+) -> dict[str, list[float]]:
     """Calcula BERTScore para similaridade semântica.
 
     Args:
@@ -113,6 +115,7 @@ def compute_bertscore(references: list[str], hypotheses: list[str]) -> dict[str,
     """
     try:
         from bert_score import score as bert_score
+
         P, R, F1 = bert_score(hypotheses, references, lang="pt", verbose=False)
         return {
             "bertscore_precision": P.tolist(),
@@ -145,7 +148,7 @@ def evaluate_rag_outputs(
         Lista de dicionários com métricas por exemplo.
     """
     results = []
-    for i, (ref, hyp) in enumerate(zip(references, generated)):
+    for i, (ref, hyp) in enumerate(zip(references, generated, strict=False)):
         question = questions[i] if questions else f"Q{i+1}"
         bleu = compute_bleu(ref, hyp)
         rouge = compute_rouge_l(ref, hyp)
@@ -159,7 +162,9 @@ def evaluate_rag_outputs(
 
         logger.info(
             "Q: '%s'\n  BLEU=%.4f | ROUGE-L F1=%.4f",
-            question, bleu, rouge["rouge_l_f1"]
+            question,
+            bleu,
+            rouge["rouge_l_f1"],
         )
 
     avg_bleu = float(np.mean([r["bleu"] for r in results]))

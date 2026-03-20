@@ -11,7 +11,6 @@ Exemplo:
 """
 
 import logging
-from typing import Any
 
 import numpy as np
 import pandas as pd
@@ -84,7 +83,5 @@ def check_feature_types(
         actual_dtype = df[col].dtype
         is_numeric = np.issubdtype(actual_dtype, np.number)
         if expected_type in (int, float) and not is_numeric:
-            issues.append(
-                f"Coluna '{col}' deveria ser numérica, mas é {actual_dtype}"
-            )
+            issues.append(f"Coluna '{col}' deveria ser numérica, mas é {actual_dtype}")
     return issues

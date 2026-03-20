@@ -7,9 +7,8 @@ Uso:
 """
 
 import pytest
-from fastapi.testclient import TestClient
-
 from api import app
+from fastapi.testclient import TestClient
 
 
 @pytest.fixture(scope="module")

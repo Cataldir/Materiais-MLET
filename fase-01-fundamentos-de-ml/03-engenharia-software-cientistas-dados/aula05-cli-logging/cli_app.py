@@ -71,7 +71,9 @@ def setup_logging(level: str = "INFO", json_format: bool = False) -> None:
     if json_format:
         handler.setFormatter(JSONFormatter())
     else:
-        handler.setFormatter(logging.Formatter("%(asctime)s | %(levelname)s | %(name)s | %(message)s"))
+        handler.setFormatter(
+            logging.Formatter("%(asctime)s | %(levelname)s | %(name)s | %(message)s")
+        )
 
     logging.basicConfig(level=getattr(logging, level.upper()), handlers=[handler])
 
@@ -89,9 +91,10 @@ def cmd_train(args: argparse.Namespace, settings: AppSettings) -> int:
     logger = logging.getLogger(__name__)
     logger.info("Iniciando treinamento", extra={"model_path": str(settings.model_path)})
 
+    import pickle
+
     from sklearn.datasets import load_iris
     from sklearn.ensemble import RandomForestClassifier
-    import pickle
 
     X, y = load_iris(return_X_y=True)
     model = RandomForestClassifier(

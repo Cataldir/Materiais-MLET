@@ -10,17 +10,15 @@ Uso:
 import logging
 
 import numpy as np
-import pandas as pd
 from sklearn.datasets import load_breast_cancer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import (
     average_precision_score,
     confusion_matrix,
     f1_score,
-    precision_recall_curve,
     roc_auc_score,
 )
-from sklearn.model_selection import StratifiedKFold, cross_val_predict, train_test_split
+from sklearn.model_selection import StratifiedKFold, cross_val_predict
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -73,7 +71,10 @@ def cost_benefit_analysis(
     logger.info("Valor líquido: %.2f", net_value)
 
     return {
-        "tp": int(tp), "fp": int(fp), "fn": int(fn), "tn": int(tn),
+        "tp": int(tp),
+        "fp": int(fp),
+        "fn": int(fn),
+        "tn": int(tn),
         "net_value": float(net_value),
     }
 
@@ -109,7 +110,11 @@ def bootstrap_metric(
 
     logger.info(
         "Bootstrap AUC: %.4f ± %.4f (IC %.0f%%: [%.4f, %.4f])",
-        np.mean(aucs), np.std(aucs), confidence * 100, lower, upper
+        np.mean(aucs),
+        np.std(aucs),
+        confidence * 100,
+        lower,
+        upper,
     )
     return {
         "mean": float(np.mean(aucs)),

@@ -18,8 +18,6 @@ Uso:
 
 import argparse
 import logging
-import os
-from typing import Any
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -46,8 +44,8 @@ def start_vllm_server(
         tensor_parallel_size: Número de GPUs para paralelismo de tensor.
     """
     try:
-        from vllm.entrypoints.openai.api_server import run_server
         from vllm.engine.arg_utils import AsyncEngineArgs
+        from vllm.entrypoints.openai.api_server import run_server
 
         engine_args = AsyncEngineArgs(
             model=model_name,
@@ -117,8 +115,7 @@ def main() -> None:
     args = parser.parse_args()
 
     start_vllm_server(
-        args.model, args.port, args.max_model_len,
-        args.gpu_memory, args.tensor_parallel
+        args.model, args.port, args.max_model_len, args.gpu_memory, args.tensor_parallel
     )
 
 

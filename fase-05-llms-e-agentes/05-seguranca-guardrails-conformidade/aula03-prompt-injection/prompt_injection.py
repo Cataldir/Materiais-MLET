@@ -11,7 +11,7 @@ Uso:
 
 import logging
 import re
-from typing import Callable
+from collections.abc import Callable
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -49,10 +49,7 @@ def detect_injection_attempt(user_input: str) -> tuple[bool, list[str]]:
 
     detected = len(matches) > 0
     if detected:
-        logger.warning(
-            "⚠️  Possível prompt injection detectado! Padrões: %s",
-            matches
-        )
+        logger.warning("⚠️  Possível prompt injection detectado! Padrões: %s", matches)
     return detected, matches
 
 
@@ -67,10 +64,16 @@ def sanitize_user_input(user_input: str, max_length: int = 2000) -> str:
         Input sanitizado.
     """
     sanitized = user_input[:max_length]
-    suspicious_prefixes = ["system:", "[system]", "<system>", "instruction:", "[override]"]
+    suspicious_prefixes = [
+        "system:",
+        "[system]",
+        "<system>",
+        "instruction:",
+        "[override]",
+    ]
     for prefix in suspicious_prefixes:
         if sanitized.lower().startswith(prefix):
-            sanitized = sanitized[len(prefix):].strip()
+            sanitized = sanitized[len(prefix) :].strip()
             logger.warning("Prefixo suspeito removido: '%s'", prefix)
     return sanitized
 

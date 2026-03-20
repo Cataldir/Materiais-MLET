@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: ml-local
+    orgId: 1
+    folder: ML Local
+    type: file
+    disableDeletion: true
+    updateIntervalSeconds: 15
+    options:
+      path: /var/lib/grafana/dashboards

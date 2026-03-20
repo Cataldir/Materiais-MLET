@@ -36,6 +36,7 @@ def load_model() -> Any:
 
     try:
         import boto3
+
         s3 = boto3.client("s3")
         with tempfile.NamedTemporaryFile(suffix=".pkl") as tmp:
             s3.download_file(MODEL_BUCKET, MODEL_KEY, tmp.name)
@@ -78,6 +79,7 @@ def handler(event: dict[str, Any], context: Any) -> dict[str, Any]:
             }
 
         import numpy as np
+
         X = np.array(features).reshape(1, -1)
         prediction = float(model.predict(X)[0])
         probability = None
@@ -87,10 +89,12 @@ def handler(event: dict[str, Any], context: Any) -> dict[str, Any]:
         return {
             "statusCode": 200,
             "headers": {"Content-Type": "application/json"},
-            "body": json.dumps({
-                "prediction": prediction,
-                "probability": probability,
-            }),
+            "body": json.dumps(
+                {
+                    "prediction": prediction,
+                    "probability": probability,
+                }
+            ),
         }
 
     except Exception as exc:

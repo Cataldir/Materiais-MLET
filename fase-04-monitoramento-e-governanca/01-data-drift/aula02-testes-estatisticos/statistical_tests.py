@@ -40,7 +40,10 @@ def ks_test(
     has_drift = bool(p_value < ALPHA)
     logger.info(
         "KS [%s]: stat=%.4f, p=%.4f → drift=%s",
-        feature_name, statistic, p_value, "SIM" if has_drift else "NÃO"
+        feature_name,
+        statistic,
+        p_value,
+        "SIM" if has_drift else "NÃO",
     )
     return {
         "test": "ks",
@@ -84,7 +87,9 @@ def psi_test(
     prod_pct = np.where(prod_pct == 0, 1e-6, prod_pct)
 
     psi_value = float(np.sum((prod_pct - ref_pct) * np.log(prod_pct / ref_pct)))
-    level = "ESTÁVEL" if psi_value < 0.1 else "MODERADO" if psi_value < 0.2 else "CRÍTICO"
+    level = (
+        "ESTÁVEL" if psi_value < 0.1 else "MODERADO" if psi_value < 0.2 else "CRÍTICO"
+    )
     has_drift = psi_value >= 0.1
 
     logger.info("PSI [%s]: %.4f → %s", feature_name, psi_value, level)
@@ -119,7 +124,10 @@ def chi2_test(
     has_drift = bool(p_value < ALPHA)
     logger.info(
         "Chi2 [%s]: stat=%.4f, p=%.4f → drift=%s",
-        feature_name, statistic, p_value, "SIM" if has_drift else "NÃO"
+        feature_name,
+        statistic,
+        p_value,
+        "SIM" if has_drift else "NÃO",
     )
     return {
         "test": "chi2",
@@ -161,7 +169,9 @@ def js_divergence(
     jsd = float(jensenshannon(ref_hist, prod_hist))
     has_drift = jsd > 0.1
 
-    logger.info("JSD [%s]: %.4f → drift=%s", feature_name, jsd, "SIM" if has_drift else "NÃO")
+    logger.info(
+        "JSD [%s]: %.4f → drift=%s", feature_name, jsd, "SIM" if has_drift else "NÃO"
+    )
     return {
         "test": "jsd",
         "feature": feature_name,
@@ -184,13 +194,21 @@ def run_comprehensive_drift_analysis() -> pd.DataFrame:
     logger.info("=== Dados COM drift ===")
     results = []
     results.append(ks_test(reference, production_drift, "feature_drifted"))
-    results.append(psi_test(reference, production_drift, feature_name="feature_drifted"))
-    results.append(js_divergence(reference, production_drift, feature_name="feature_drifted"))
+    results.append(
+        psi_test(reference, production_drift, feature_name="feature_drifted")
+    )
+    results.append(
+        js_divergence(reference, production_drift, feature_name="feature_drifted")
+    )
 
     logger.info("\n=== Dados SEM drift ===")
     results.append(ks_test(reference, production_stable, "feature_stable"))
-    results.append(psi_test(reference, production_stable, feature_name="feature_stable"))
-    results.append(js_divergence(reference, production_stable, feature_name="feature_stable"))
+    results.append(
+        psi_test(reference, production_stable, feature_name="feature_stable")
+    )
+    results.append(
+        js_divergence(reference, production_stable, feature_name="feature_stable")
+    )
 
     logger.info("\n=== Drift Categórico (Chi2) ===")
     ref_counts = np.array([300, 400, 300])

@@ -9,9 +9,10 @@ Uso:
 
 import logging
 import time
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Any, Callable
+from typing import Any
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -85,7 +86,9 @@ class CostTracker:
             Registro criado.
         """
         pricing = PRICING.get(model, {"input": 0.001, "output": 0.002})
-        cost = (input_tokens * pricing["input"] + output_tokens * pricing["output"]) / 1000
+        cost = (
+            input_tokens * pricing["input"] + output_tokens * pricing["output"]
+        ) / 1000
 
         record = LLMCallRecord(
             timestamp=datetime.now(),
@@ -104,7 +107,8 @@ class CostTracker:
             if total_cost > self.budget_limit_usd:
                 logger.warning(
                     "⚠️  Limite de orçamento atingido: $%.4f / $%.4f",
-                    total_cost, self.budget_limit_usd
+                    total_cost,
+                    self.budget_limit_usd,
                 )
 
         return record
@@ -154,13 +158,18 @@ class CostTracker:
         logger.info("=== Cost Tracker Summary ===")
         logger.info("Total de chamadas: %d", summary_data["total_calls"])
         logger.info("Custo total: $%.6f", summary_data["total_cost_usd"])
-        logger.info("Tokens totais: input=%d, output=%d", **summary_data["total_tokens"])
+        logger.info(
+            "Tokens totais: input=%d, output=%d", **summary_data["total_tokens"]
+        )
         logger.info("Latência média: %.1fms", summary_data["avg_latency_ms"])
 
         for model, stats in by_model.items():
             logger.info(
                 "  %s: %d calls, $%.6f, %d tokens",
-                model, stats["calls"], stats["cost"], stats["tokens"]
+                model,
+                stats["calls"],
+                stats["cost"],
+                stats["tokens"],
             )
 
         return summary_data
