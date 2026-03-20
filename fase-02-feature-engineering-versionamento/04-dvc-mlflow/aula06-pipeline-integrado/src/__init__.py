@@ -1,0 +1,1 @@
+"""Pacote do pipeline integrado local."""

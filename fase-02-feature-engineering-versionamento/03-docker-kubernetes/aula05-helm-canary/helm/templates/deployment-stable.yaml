@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: retention-api-stable
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: retention-api
+      track: stable
+  template:
+    metadata:
+      labels:
+        app: retention-api
+        track: stable
+    spec:
+      containers:
+        - name: api
+          image: ghcr.io/mlet/retention-api:1.0.0
+          ports:
+            - containerPort: 8000

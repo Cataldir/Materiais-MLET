@@ -43,18 +43,24 @@ def simulate_ab_experiment(
         rng = np.random.default_rng(RANDOM_STATE)
 
     treatment_rate = control_conversion_rate + treatment_effect
-    control = pd.DataFrame({
-        "group": "control",
-        "converted": rng.binomial(1, control_conversion_rate, n_control),
-    })
-    treatment = pd.DataFrame({
-        "group": "treatment",
-        "converted": rng.binomial(1, treatment_rate, n_treatment),
-    })
+    control = pd.DataFrame(
+        {
+            "group": "control",
+            "converted": rng.binomial(1, control_conversion_rate, n_control),
+        }
+    )
+    treatment = pd.DataFrame(
+        {
+            "group": "treatment",
+            "converted": rng.binomial(1, treatment_rate, n_treatment),
+        }
+    )
     return pd.concat([control, treatment], ignore_index=True)
 
 
-def analyze_ab_test(df: pd.DataFrame, metric_col: str = "converted") -> dict[str, float]:
+def analyze_ab_test(
+    df: pd.DataFrame, metric_col: str = "converted"
+) -> dict[str, float]:
     """Analisa os resultados de um experimento A/B.
 
     Realiza teste t de Student (ou teste z para proporções) e calcula
@@ -77,17 +83,18 @@ def analyze_ab_test(df: pd.DataFrame, metric_col: str = "converted") -> dict[str
     statistic, p_value = stats.ttest_ind(control, treatment)
 
     cohen_h = float(
-        2 * np.arcsin(np.sqrt(treatment_rate)) -
-        2 * np.arcsin(np.sqrt(control_rate))
+        2 * np.arcsin(np.sqrt(treatment_rate)) - 2 * np.arcsin(np.sqrt(control_rate))
     )
 
     ci_control = stats.norm.interval(
-        1 - ALPHA, loc=control_rate,
-        scale=np.sqrt(control_rate * (1 - control_rate) / len(control))
+        1 - ALPHA,
+        loc=control_rate,
+        scale=np.sqrt(control_rate * (1 - control_rate) / len(control)),
     )
     ci_treatment = stats.norm.interval(
-        1 - ALPHA, loc=treatment_rate,
-        scale=np.sqrt(treatment_rate * (1 - treatment_rate) / len(treatment))
+        1 - ALPHA,
+        loc=treatment_rate,
+        scale=np.sqrt(treatment_rate * (1 - treatment_rate) / len(treatment)),
     )
 
     result = {
@@ -102,14 +109,33 @@ def analyze_ab_test(df: pd.DataFrame, metric_col: str = "converted") -> dict[str
     }
 
     logger.info("=== Resultados do Experimento A/B ===")
-    logger.info("Controle: n=%d, taxa=%.3f (IC: [%.3f, %.3f])",
-                len(control), control_rate, *ci_control)
-    logger.info("Tratamento: n=%d, taxa=%.3f (IC: [%.3f, %.3f])",
-                len(treatment), treatment_rate, *ci_treatment)
-    logger.info("Lift: %+.1f%% | p-value: %.4f | Significante: %s",
-                lift * 100, p_value, "✓ SIM" if result["significant"] else "✗ NÃO")
-    logger.info("Cohen's h: %.4f (efeito %s)",
-                cohen_h, "pequeno" if abs(cohen_h) < 0.2 else "médio" if abs(cohen_h) < 0.5 else "grande")
+    logger.info(
+        "Controle: n=%d, taxa=%.3f (IC: [%.3f, %.3f])",
+        len(control),
+        control_rate,
+        *ci_control,
+    )
+    logger.info(
+        "Tratamento: n=%d, taxa=%.3f (IC: [%.3f, %.3f])",
+        len(treatment),
+        treatment_rate,
+        *ci_treatment,
+    )
+    logger.info(
+        "Lift: %+.1f%% | p-value: %.4f | Significante: %s",
+        lift * 100,
+        p_value,
+        "✓ SIM" if result["significant"] else "✗ NÃO",
+    )
+    logger.info(
+        "Cohen's h: %.4f (efeito %s)",
+        cohen_h,
+        "pequeno"
+        if abs(cohen_h) < 0.2
+        else "médio"
+        if abs(cohen_h) < 0.5
+        else "grande",
+    )
     return result
 
 
@@ -138,7 +164,10 @@ def power_analysis(
 
     logger.info(
         "Power Analysis: efeito=%.1f%%, baseline=%.1f%%, power=%.0f%% → n=%d por grupo",
-        effect_size * 100, baseline_rate * 100, power * 100, n
+        effect_size * 100,
+        baseline_rate * 100,
+        power * 100,
+        n,
     )
     return n
 
@@ -149,5 +178,7 @@ if __name__ == "__main__":
 
     logger.info("\n=== Simulação de Experimento ===")
     rng = np.random.default_rng(RANDOM_STATE)
-    df_experiment = simulate_ab_experiment(n_control=required_n, n_treatment=required_n, rng=rng)
+    df_experiment = simulate_ab_experiment(
+        n_control=required_n, n_treatment=required_n, rng=rng
+    )
     analyze_ab_test(df_experiment)

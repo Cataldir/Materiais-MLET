@@ -155,10 +155,10 @@ class SummaryMemory(ConversationMemory):
         self.recent_messages.append(Message(role=role, content=content))
 
         if len(self.recent_messages) > self.max_recent_messages:
-            messages_to_compress = self.recent_messages[:-self.max_recent_messages]
+            messages_to_compress = self.recent_messages[: -self.max_recent_messages]
             new_summary = self.summarize_fn(messages_to_compress)
             self.summary = (self.summary + "\n" + new_summary).strip()
-            self.recent_messages = self.recent_messages[-self.max_recent_messages:]
+            self.recent_messages = self.recent_messages[-self.max_recent_messages :]
             logger.info("Histórico comprimido. Resumo: '%s'", self.summary[:100])
 
     def get_context(self) -> list[dict[str, str]]:
@@ -169,8 +169,12 @@ class SummaryMemory(ConversationMemory):
         """
         context = []
         if self.summary:
-            context.append({"role": "system", "content": f"Contexto anterior: {self.summary}"})
-        context.extend([{"role": m.role, "content": m.content} for m in self.recent_messages])
+            context.append(
+                {"role": "system", "content": f"Contexto anterior: {self.summary}"}
+            )
+        context.extend(
+            [{"role": m.role, "content": m.content} for m in self.recent_messages]
+        )
         return context
 
     def clear(self) -> None:
@@ -190,7 +194,10 @@ def demo_conversation_memory() -> None:
         ("user", "Explique Random Forest."),
         ("assistant", "Random Forest é um ensemble de árvores de decisão."),
         ("user", "E XGBoost?"),
-        ("assistant", "XGBoost usa gradient boosting para treinar árvores sequencialmente."),
+        (
+            "assistant",
+            "XGBoost usa gradient boosting para treinar árvores sequencialmente.",
+        ),
         ("user", "Qual é mais rápido?"),
     ]
 

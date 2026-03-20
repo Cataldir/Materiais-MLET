@@ -12,7 +12,6 @@ Uso:
 
 import argparse
 import logging
-import pickle
 from pathlib import Path
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -32,7 +31,6 @@ def package_model(model_path: Path, output_dir: Path) -> Path:
     Returns:
         Caminho para o arquivo model.tar.gz.
     """
-    import io
     import tarfile
 
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -58,13 +56,16 @@ def upload_to_s3(local_path: Path, bucket: str, key: str) -> str:
     """
     try:
         import boto3
+
         s3 = boto3.client("s3", region_name=REGION)
         s3.upload_file(str(local_path), bucket, key)
         s3_uri = f"s3://{bucket}/{key}"
         logger.info("Upload concluído: %s", s3_uri)
         return s3_uri
     except ImportError:
-        logger.warning("boto3 não instalado. Simulando upload para: s3://%s/%s", bucket, key)
+        logger.warning(
+            "boto3 não instalado. Simulando upload para: s3://%s/%s", bucket, key
+        )
         return f"s3://{bucket}/{key}"
 
 
@@ -87,6 +88,7 @@ def create_sagemaker_endpoint(
     """
     try:
         import boto3
+
         sm = boto3.client("sagemaker", region_name=REGION)
 
         model_name = f"{endpoint_name}-model"
@@ -103,12 +105,14 @@ def create_sagemaker_endpoint(
         config_name = f"{endpoint_name}-config"
         sm.create_endpoint_config(
             EndpointConfigName=config_name,
-            ProductionVariants=[{
-                "VariantName": "AllTraffic",
-                "ModelName": model_name,
-                "InitialInstanceCount": 1,
-                "InstanceType": instance_type,
-            }],
+            ProductionVariants=[
+                {
+                    "VariantName": "AllTraffic",
+                    "ModelName": model_name,
+                    "InitialInstanceCount": 1,
+                    "InstanceType": instance_type,
+                }
+            ],
         )
 
         sm.create_endpoint(
@@ -117,7 +121,9 @@ def create_sagemaker_endpoint(
         )
         logger.info("Endpoint criado: %s", endpoint_name)
     except ImportError:
-        logger.warning("boto3 não disponível. Simulando criação de endpoint: %s", endpoint_name)
+        logger.warning(
+            "boto3 não disponível. Simulando criação de endpoint: %s", endpoint_name
+        )
 
     return endpoint_name
 
@@ -128,7 +134,9 @@ def main() -> None:
     parser.add_argument("--model-path", type=Path, default=Path("models/model.pkl"))
     parser.add_argument("--endpoint-name", type=str, default="ml-model-endpoint")
     parser.add_argument("--bucket", type=str, default="my-ml-bucket")
-    parser.add_argument("--role-arn", type=str, default="arn:aws:iam::123456789:role/SageMakerRole")
+    parser.add_argument(
+        "--role-arn", type=str, default="arn:aws:iam::123456789:role/SageMakerRole"
+    )
     args = parser.parse_args()
 
     if not args.model_path.exists():
@@ -136,7 +144,9 @@ def main() -> None:
         return
 
     tar_path = package_model(args.model_path, Path("dist"))
-    s3_uri = upload_to_s3(tar_path, args.bucket, f"models/{args.endpoint_name}/model.tar.gz")
+    s3_uri = upload_to_s3(
+        tar_path, args.bucket, f"models/{args.endpoint_name}/model.tar.gz"
+    )
     create_sagemaker_endpoint(s3_uri, args.endpoint_name, args.role_arn)
 
 

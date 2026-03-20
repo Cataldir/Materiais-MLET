@@ -97,8 +97,12 @@ def run_batch_inference(
         logger.info("Processadas %d linhas...", total_rows)
 
     elapsed = time.perf_counter() - start_time
-    logger.info("Concluído: %d linhas em %.2fs (%.0f linhas/s)",
-                total_rows, elapsed, total_rows / elapsed)
+    logger.info(
+        "Concluído: %d linhas em %.2fs (%.0f linhas/s)",
+        total_rows,
+        elapsed,
+        total_rows / elapsed,
+    )
     logger.info("Predições salvas em: %s", output_path)
 
 

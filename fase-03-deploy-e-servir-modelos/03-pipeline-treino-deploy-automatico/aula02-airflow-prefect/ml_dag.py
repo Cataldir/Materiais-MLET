@@ -39,14 +39,16 @@ def task_prepare_data(**context: dict) -> None:
     logger.info("Preparando dados para: %s", context.get("ds"))
     from sklearn.datasets import load_breast_cancer
     from sklearn.model_selection import train_test_split
-    import numpy as np
 
     X, y = load_breast_cancer(return_X_y=True)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42
+    )
 
     data_dir = Path("data/processed")
     data_dir.mkdir(parents=True, exist_ok=True)
     import pandas as pd
+
     pd.DataFrame(X_train).to_csv(data_dir / "X_train.csv", index=False)
     pd.DataFrame(X_test).to_csv(data_dir / "X_test.csv", index=False)
     pd.Series(y_train).to_csv(data_dir / "y_train.csv", index=False)
@@ -60,9 +62,10 @@ def task_train_model(**context: dict) -> None:
     Args:
         **context: Contexto Airflow.
     """
+    import pickle
+
     import pandas as pd
     from sklearn.ensemble import RandomForestClassifier
-    import pickle
 
     data_dir = Path("data/processed")
     X_train = pd.read_csv(data_dir / "X_train.csv").values
@@ -89,8 +92,9 @@ def task_evaluate_model(**context: dict) -> None:
         ValueError: Se AUC-ROC estiver abaixo do threshold mínimo.
     """
     import json
-    import pandas as pd
     import pickle
+
+    import pandas as pd
     from sklearn.metrics import roc_auc_score
 
     data_dir = Path("data/processed")
@@ -133,7 +137,9 @@ with DAG(
 ) as dag:
     prepare = PythonOperator(task_id="prepare_data", python_callable=task_prepare_data)
     train = PythonOperator(task_id="train_model", python_callable=task_train_model)
-    evaluate = PythonOperator(task_id="evaluate_model", python_callable=task_evaluate_model)
+    evaluate = PythonOperator(
+        task_id="evaluate_model", python_callable=task_evaluate_model
+    )
     deploy = PythonOperator(task_id="deploy_model", python_callable=task_deploy_model)
 
     prepare >> train >> evaluate >> deploy

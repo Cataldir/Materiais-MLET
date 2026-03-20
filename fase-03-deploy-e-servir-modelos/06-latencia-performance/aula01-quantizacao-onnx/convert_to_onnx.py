@@ -22,7 +22,9 @@ logger = logging.getLogger(__name__)
 N_BENCHMARK_RUNS = 100
 
 
-def convert_sklearn_to_onnx(model_path: Path, output_path: Path, n_features: int = 4) -> Path:
+def convert_sklearn_to_onnx(
+    model_path: Path, output_path: Path, n_features: int = 4
+) -> Path:
     """Converte modelo sklearn para ONNX.
 
     Args:
@@ -35,6 +37,7 @@ def convert_sklearn_to_onnx(model_path: Path, output_path: Path, n_features: int
     """
     try:
         import pickle
+
         from skl2onnx import convert_sklearn
         from skl2onnx.common.data_types import FloatTensorType
 
@@ -81,6 +84,7 @@ def benchmark_inference(
     onnx_times = []
     try:
         import onnxruntime as ort
+
         session = ort.InferenceSession(str(onnx_path))
         input_name = session.get_inputs()[0].name
         X_float = X_test[:1].astype(np.float32)
@@ -104,7 +108,9 @@ def benchmark_inference(
         result["speedup"] = result["sklearn_mean_ms"] / result["onnx_mean_ms"]
         logger.info(
             "sklearn: %.3fms | ONNX: %.3fms | Speedup: %.2fx",
-            result["sklearn_mean_ms"], result["onnx_mean_ms"], result["speedup"]
+            result["sklearn_mean_ms"],
+            result["onnx_mean_ms"],
+            result["speedup"],
         )
     return result
 
@@ -113,6 +119,7 @@ def main() -> None:
     """Executa conversão e benchmark de um modelo demo."""
     import argparse
     import pickle
+
     from sklearn.datasets import load_iris
     from sklearn.ensemble import RandomForestClassifier
 

@@ -12,8 +12,9 @@ Uso:
 
 import logging
 import time
+from collections.abc import Callable
 from functools import wraps
-from typing import Any, Callable, TypeVar
+from typing import Any, TypeVar
 
 import numpy as np
 
@@ -27,7 +28,9 @@ RANDOM_STATE = 42
 F = TypeVar("F", bound=Callable[..., Any])
 
 
-def retry_with_backoff(max_retries: int = MAX_RETRIES, backoff_base: float = BACKOFF_BASE) -> Callable[[F], F]:
+def retry_with_backoff(
+    max_retries: int = MAX_RETRIES, backoff_base: float = BACKOFF_BASE
+) -> Callable[[F], F]:
     """Decorator para retry com backoff exponencial.
 
     Args:
@@ -37,6 +40,7 @@ def retry_with_backoff(max_retries: int = MAX_RETRIES, backoff_base: float = BAC
     Returns:
         Decorator configurado.
     """
+
     def decorator(func: F) -> F:
         @wraps(func)
         def wrapper(*args: Any, **kwargs: Any) -> Any:
@@ -48,16 +52,23 @@ def retry_with_backoff(max_retries: int = MAX_RETRIES, backoff_base: float = BAC
                     if attempt == max_retries:
                         logger.error(
                             "Falha após %d tentativas em %s: %s",
-                            max_retries, func.__name__, exc
+                            max_retries,
+                            func.__name__,
+                            exc,
                         )
                         raise
                     logger.warning(
                         "Tentativa %d/%d falhou em %s. Aguardando %.1fs...",
-                        attempt, max_retries, func.__name__, wait_time
+                        attempt,
+                        max_retries,
+                        func.__name__,
+                        wait_time,
                     )
                     time.sleep(wait_time)
             return None
+
         return wrapper  # type: ignore[return-value]
+
     return decorator
 
 
@@ -70,6 +81,7 @@ def with_fallback(fallback_value: Any) -> Callable[[F], F]:
     Returns:
         Decorator configurado.
     """
+
     def decorator(func: F) -> F:
         @wraps(func)
         def wrapper(*args: Any, **kwargs: Any) -> Any:
@@ -78,10 +90,14 @@ def with_fallback(fallback_value: Any) -> Callable[[F], F]:
             except Exception as exc:
                 logger.warning(
                     "Fallback ativado em %s: %s → retornando %s",
-                    func.__name__, exc, fallback_value
+                    func.__name__,
+                    exc,
+                    fallback_value,
                 )
                 return fallback_value
+
         return wrapper  # type: ignore[return-value]
+
     return decorator
 
 
@@ -96,7 +112,9 @@ class CircuitBreaker:
         is_open: Estado do circuito.
     """
 
-    def __init__(self, failure_threshold: int = 3, recovery_timeout: float = 30.0) -> None:
+    def __init__(
+        self, failure_threshold: int = 3, recovery_timeout: float = 30.0
+    ) -> None:
         """Inicializa o circuit breaker.
 
         Args:
@@ -141,8 +159,7 @@ class CircuitBreaker:
             if self.failure_count >= self.failure_threshold:
                 self.is_open = True
                 logger.error(
-                    "Circuit breaker ABERTO após %d falhas: %s",
-                    self.failure_count, exc
+                    "Circuit breaker ABERTO após %d falhas: %s", self.failure_count, exc
                 )
             raise
 
@@ -158,6 +175,7 @@ def load_features_with_fallback(path: str) -> np.ndarray:
         Array de features ou array vazio em caso de erro.
     """
     import json
+
     with open(path) as f:
         data = json.load(f)
     return np.array(data["features"])

@@ -16,12 +16,11 @@ import logging
 import pickle
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, roc_auc_score
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.preprocessing import LabelEncoder
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -78,11 +77,19 @@ def impute_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     for col, strategy in FILL_STRATEGIES.items():
         if col not in df.columns:
             continue
-        fill_value = getattr(df[col], strategy)() if isinstance(strategy, str) else strategy
+        fill_value = (
+            getattr(df[col], strategy)() if isinstance(strategy, str) else strategy
+        )
         n_missing = df[col].isna().sum()
         df[col] = df[col].fillna(fill_value)
         if n_missing > 0:
-            logger.info("Imputados %d valores em '%s' com %s=%s", n_missing, col, strategy, fill_value)
+            logger.info(
+                "Imputados %d valores em '%s' com %s=%s",
+                n_missing,
+                col,
+                strategy,
+                fill_value,
+            )
     return df
 
 
@@ -113,7 +120,9 @@ def prepare_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
     Returns:
         Tupla (X, y) com features e target.
     """
-    feature_cols = [c for c in NUMERICAL_FEATURES + CATEGORICAL_FEATURES if c in df.columns]
+    feature_cols = [
+        c for c in NUMERICAL_FEATURES + CATEGORICAL_FEATURES if c in df.columns
+    ]
     X = df[feature_cols]
     y = df[TARGET_COL]
     return X, y
@@ -185,7 +194,9 @@ def save_model(model: RandomForestClassifier, output_dir: Path) -> Path:
     return model_path
 
 
-def run_pipeline(data_path: Path, output_dir: Path = Path("models")) -> dict[str, float]:
+def run_pipeline(
+    data_path: Path, output_dir: Path = Path("models")
+) -> dict[str, float]:
     """Executa o pipeline completo de treino e avaliação.
 
     Args:
@@ -212,7 +223,10 @@ def run_pipeline(data_path: Path, output_dir: Path = Path("models")) -> dict[str
 
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser(description="Pipeline de classificação Titanic (refatorado)")
+
+    parser = argparse.ArgumentParser(
+        description="Pipeline de classificação Titanic (refatorado)"
+    )
     parser.add_argument("--data", type=Path, default=Path("data/titanic.csv"))
     parser.add_argument("--output", type=Path, default=Path("models"))
     args = parser.parse_args()

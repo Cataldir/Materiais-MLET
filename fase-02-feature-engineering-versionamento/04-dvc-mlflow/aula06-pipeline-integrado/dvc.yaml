@@ -1,0 +1,36 @@
+stages:
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+      - src/prepare.py
+      - src/pipeline_core.py
+      - data/raw/churn.csv
+    params:
+      - params.yaml:
+          - prepare.train_rows
+    outs:
+      - data/processed/train.csv
+      - data/processed/test.csv
+
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+      - src/pipeline_core.py
+      - data/processed/train.csv
+    params:
+      - params.yaml:
+          - train.threshold_margin
+    outs:
+      - models/model.json
+
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+      - src/evaluate.py
+      - src/pipeline_core.py
+      - data/processed/test.csv
+      - models/model.json
+    metrics:
+      - metrics/eval_metrics.json:
+          cache: false

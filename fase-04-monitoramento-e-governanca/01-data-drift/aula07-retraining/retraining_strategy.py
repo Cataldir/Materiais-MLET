@@ -14,7 +14,6 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
-from sklearn.base import BaseEstimator
 from sklearn.datasets import load_breast_cancer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import roc_auc_score
@@ -72,7 +71,9 @@ class PeriodicRetrainingStrategy(RetrainingStrategy):
         self.days_interval = days_interval
         self.last_training_date: datetime = datetime.min
 
-    def should_retrain(self, current_date: datetime | None = None, **kwargs: Any) -> bool:
+    def should_retrain(
+        self, current_date: datetime | None = None, **kwargs: Any
+    ) -> bool:
         """Verifica se o intervalo de tempo foi atingido.
 
         Args:
@@ -87,7 +88,9 @@ class PeriodicRetrainingStrategy(RetrainingStrategy):
         should = days_elapsed >= self.days_interval
         logger.info(
             "Periódico: %d dias desde último treino (intervalo: %d) → %s",
-            days_elapsed, self.days_interval, "RETREINAR" if should else "aguardar"
+            days_elapsed,
+            self.days_interval,
+            "RETREINAR" if should else "aguardar",
         )
         return should
 
@@ -124,7 +127,9 @@ class DriftTriggeredRetrainingStrategy(RetrainingStrategy):
         should = psi_score >= self.drift_threshold
         logger.info(
             "Drift trigger: PSI=%.4f (threshold=%.2f) → %s",
-            psi_score, self.drift_threshold, "RETREINAR" if should else "OK"
+            psi_score,
+            self.drift_threshold,
+            "RETREINAR" if should else "OK",
         )
         return should
 
@@ -140,7 +145,9 @@ class PerformanceBasedRetrainingStrategy(RetrainingStrategy):
         performance_threshold: AUC-ROC mínimo aceitável.
     """
 
-    def __init__(self, performance_threshold: float = MIN_PERFORMANCE_THRESHOLD) -> None:
+    def __init__(
+        self, performance_threshold: float = MIN_PERFORMANCE_THRESHOLD
+    ) -> None:
         """Inicializa estratégia baseada em performance.
 
         Args:
@@ -161,7 +168,9 @@ class PerformanceBasedRetrainingStrategy(RetrainingStrategy):
         should = current_auc < self.performance_threshold
         logger.info(
             "Performance: AUC=%.4f (threshold=%.2f) → %s",
-            current_auc, self.performance_threshold, "RETREINAR" if should else "OK"
+            current_auc,
+            self.performance_threshold,
+            "RETREINAR" if should else "OK",
         )
         return should
 
@@ -199,11 +208,17 @@ def retrain_model(
     if auc >= MIN_PERFORMANCE_THRESHOLD:
         MODELS_DIR.mkdir(parents=True, exist_ok=True)
         import pickle
+
         with open(MODELS_DIR / f"model_v{version}.pkl", "wb") as f:
             pickle.dump(model, f)
         logger.info("Modelo v%s salvo. AUC=%.4f ✓", version, auc)
     else:
-        logger.warning("Modelo v%s rejeitado. AUC=%.4f < %.2f", version, auc, MIN_PERFORMANCE_THRESHOLD)
+        logger.warning(
+            "Modelo v%s rejeitado. AUC=%.4f < %.2f",
+            version,
+            auc,
+            MIN_PERFORMANCE_THRESHOLD,
+        )
 
     return model, metrics
 

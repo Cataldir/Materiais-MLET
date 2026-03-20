@@ -20,6 +20,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 try:
     import lightgbm as lgb
+
     HAS_LIGHTGBM = True
 except ImportError:
     HAS_LIGHTGBM = False
@@ -27,6 +28,7 @@ except ImportError:
 
 try:
     import xgboost as xgb
+
     HAS_XGBOOST = True
 except ImportError:
     HAS_XGBOOST = False
@@ -66,8 +68,11 @@ def run_comparison() -> pd.DataFrame:
     """
     cancer = load_breast_cancer()
     X_train, X_test, y_train, y_test = train_test_split(
-        cancer.data, cancer.target,
-        test_size=TEST_SIZE, random_state=RANDOM_STATE, stratify=cancer.target
+        cancer.data,
+        cancer.target,
+        test_size=TEST_SIZE,
+        random_state=RANDOM_STATE,
+        stratify=cancer.target,
     )
     scaler = StandardScaler()
     X_train_s = scaler.fit_transform(X_train)
@@ -75,12 +80,16 @@ def run_comparison() -> pd.DataFrame:
 
     models: dict[str, object] = {
         "DecisionTree": DecisionTreeClassifier(max_depth=5, random_state=RANDOM_STATE),
-        "RandomForest": RandomForestClassifier(n_estimators=100, random_state=RANDOM_STATE),
+        "RandomForest": RandomForestClassifier(
+            n_estimators=100, random_state=RANDOM_STATE
+        ),
     }
     if HAS_XGBOOST:
         models["XGBoost"] = xgb.XGBClassifier(
-            n_estimators=100, random_state=RANDOM_STATE,
-            eval_metric="logloss", verbosity=0
+            n_estimators=100,
+            random_state=RANDOM_STATE,
+            eval_metric="logloss",
+            verbosity=0,
         )
     if HAS_LIGHTGBM:
         models["LightGBM"] = lgb.LGBMClassifier(
@@ -100,12 +109,14 @@ def run_comparison() -> pd.DataFrame:
         logger.info(classification_report(y_test, y_pred))
         logger.info("AUC-ROC: %.4f | Latência: %.3fms", auc, latency_ms)
 
-        results.append({
-            "model": name,
-            "accuracy": acc,
-            "auc_roc": auc,
-            "latency_ms": latency_ms,
-        })
+        results.append(
+            {
+                "model": name,
+                "accuracy": acc,
+                "auc_roc": auc,
+                "latency_ms": latency_ms,
+            }
+        )
 
     df = pd.DataFrame(results).sort_values("auc_roc", ascending=False)
     logger.info("\n=== Ranking ===\n%s", df.to_string(index=False))

@@ -1,0 +1,1 @@
+"""Pacote legado para comparacao didatica."""
