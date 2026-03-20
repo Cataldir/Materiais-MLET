@@ -7,27 +7,27 @@ NÃO use em produção. Veja after/clean_pipeline.py para a versão correta.
 """
 
 import pandas as pd
-import numpy as np
-from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.preprocessing import StandardScaler
+
 
 def run(f):
     # loads data and does everything - god function
     d = pd.read_csv(f)
 
     # no validation
-    d['age'] = d['age'].fillna(d['age'].mean())
-    d['income'] = d['income'].fillna(0)
+    d["age"] = d["age"].fillna(d["age"].mean())
+    d["income"] = d["income"].fillna(0)
 
     # magic numbers without explanation
-    d = d[d['age'] > 18]
-    d = d[d['income'] < 999999]
+    d = d[d["age"] > 18]
+    d = d[d["income"] < 999999]
 
     # inline encoding
-    d['gender'] = (d['gender'] == 'M').astype(int)
+    d["gender"] = (d["gender"] == "M").astype(int)
 
-    X = d[['age', 'income', 'gender']]
-    y = d['churn']
+    X = d[["age", "income", "gender"]]
+    y = d["churn"]
 
     # no train/test split, no cross-validation
     scaler = StandardScaler()

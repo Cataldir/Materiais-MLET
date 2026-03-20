@@ -8,15 +8,14 @@ Uso:
 """
 
 import csv
-import json
 import logging
 import time
 from pathlib import Path
 
 import numpy as np
+from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_score
-from sklearn.datasets import load_iris
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -99,7 +98,9 @@ def run_hyperparameter_search() -> None:
 
     for C in C_values:
         for solver in solvers:
-            model = LogisticRegression(C=C, solver=solver, max_iter=1000, random_state=RANDOM_STATE)
+            model = LogisticRegression(
+                C=C, solver=solver, max_iter=1000, random_state=RANDOM_STATE
+            )
             scores = cross_val_score(model, X, y, cv=5, scoring="accuracy")
             tracker.log_run(
                 params={"C": C, "solver": solver},

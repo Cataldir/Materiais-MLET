@@ -53,7 +53,9 @@ def generalize_age(age: float, bin_size: int = 10) -> str:
     return f"{lower}-{lower + bin_size - 1}"
 
 
-def add_laplace_noise(value: float, sensitivity: float, epsilon: float = DP_EPSILON) -> float:
+def add_laplace_noise(
+    value: float, sensitivity: float, epsilon: float = DP_EPSILON
+) -> float:
     """Adiciona ruído Laplaciano para privacidade diferencial.
 
     Mecanismo de Laplace: noise ~ Laplace(0, sensitivity/epsilon)
@@ -118,13 +120,18 @@ def anonymize_dataframe(
 def demo_anonymization() -> None:
     """Demonstra as técnicas de anonimização."""
     rng = np.random.default_rng(RANDOM_STATE)
-    df = pd.DataFrame({
-        "cpf": [f"{rng.integers(100, 999)}.{rng.integers(100, 999)}.{rng.integers(100, 999)}-{rng.integers(10, 99)}" for _ in range(10)],
-        "email": [f"user{i}@example.com" for i in range(10)],
-        "age": rng.integers(18, 70, 10).astype(float),
-        "income": rng.lognormal(10, 0.5, 10),
-        "churn": rng.integers(0, 2, 10),
-    })
+    df = pd.DataFrame(
+        {
+            "cpf": [
+                f"{rng.integers(100, 999)}.{rng.integers(100, 999)}.{rng.integers(100, 999)}-{rng.integers(10, 99)}"
+                for _ in range(10)
+            ],
+            "email": [f"user{i}@example.com" for i in range(10)],
+            "age": rng.integers(18, 70, 10).astype(float),
+            "income": rng.lognormal(10, 0.5, 10),
+            "churn": rng.integers(0, 2, 10),
+        }
+    )
 
     logger.info("=== Dados Originais ===")
     logger.info(df.to_string(index=False))

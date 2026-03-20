@@ -1,0 +1,20 @@
+{
+  "baseline_name": "fase03-latencia-reference",
+  "scenarios": [
+    {
+      "name": "cpu_baseline",
+      "max_latency_ms": 48.0,
+      "min_throughput_rps": 180.0
+    },
+    {
+      "name": "batched_runtime",
+      "max_latency_ms": 28.0,
+      "min_throughput_rps": 300.0
+    },
+    {
+      "name": "optimized_preprocessing",
+      "max_latency_ms": 22.0,
+      "min_throughput_rps": 340.0
+    }
+  ]
+}

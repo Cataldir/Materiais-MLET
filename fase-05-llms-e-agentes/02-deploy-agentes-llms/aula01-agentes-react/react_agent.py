@@ -13,7 +13,7 @@ import ast
 import logging
 import operator
 import re
-from typing import Callable
+from collections.abc import Callable
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -53,7 +53,12 @@ class Tool:
         """
         try:
             result = self.func(input_text)
-            logger.info("[Tool: %s] Input: '%s' → Output: '%s'", self.name, input_text, result[:100])
+            logger.info(
+                "[Tool: %s] Input: '%s' → Output: '%s'",
+                self.name,
+                input_text,
+                result[:100],
+            )
             return result
         except Exception as exc:
             error_msg = f"Erro ao executar {self.name}: {exc}"
@@ -88,10 +93,9 @@ class ReActAgent:
         Returns:
             String formatada com nomes e descrições das ferramentas.
         """
-        tools_text = "\n".join([
-            f"- {name}: {tool.description}"
-            for name, tool in self.tools.items()
-        ])
+        tools_text = "\n".join(
+            [f"- {name}: {tool.description}" for name, tool in self.tools.items()]
+        )
         return f"Ferramentas disponíveis:\n{tools_text}"
 
     def _parse_action(self, llm_output: str) -> tuple[str | None, str | None]:
@@ -104,7 +108,9 @@ class ReActAgent:
             Tupla (nome_da_ação, input_da_ação) ou (None, None) se final.
         """
         action_match = re.search(r"Action:\s*(\w+)", llm_output, re.IGNORECASE)
-        input_match = re.search(r"Action Input:\s*(.+?)(?:\n|$)", llm_output, re.IGNORECASE)
+        input_match = re.search(
+            r"Action Input:\s*(.+?)(?:\n|$)", llm_output, re.IGNORECASE
+        )
 
         if action_match and input_match:
             return action_match.group(1).strip(), input_match.group(1).strip()
@@ -129,10 +135,7 @@ class ReActAgent:
         for iteration in range(1, self.max_iterations + 1):
             context = "\n".join(history)
             prompt = (
-                f"{tools_desc}\n\n"
-                f"Pergunta: {question}\n"
-                f"{context}\n"
-                f"Thought:"
+                f"{tools_desc}\n\n" f"Pergunta: {question}\n" f"{context}\n" f"Thought:"
             )
 
             llm_output = llm_fn(prompt)
@@ -142,14 +145,18 @@ class ReActAgent:
             action_name, action_input = self._parse_action(llm_output)
 
             if action_name == "FINAL":
-                final_match = re.search(r"Final Answer:\s*(.+?)$", llm_output, re.DOTALL)
+                final_match = re.search(
+                    r"Final Answer:\s*(.+?)$", llm_output, re.DOTALL
+                )
                 return final_match.group(1).strip() if final_match else llm_output
 
             if action_name and action_name in self.tools and action_input:
                 observation = self.tools[action_name].run(action_input)
                 history.append(f"Observation: {observation}")
             elif action_name:
-                history.append(f"Observation: Ferramenta '{action_name}' não encontrada")
+                history.append(
+                    f"Observation: Ferramenta '{action_name}' não encontrada"
+                )
 
         return "Limite de iterações atingido sem resposta final."
 
@@ -174,7 +181,9 @@ def create_demo_tools() -> list[Tool]:
         if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)):
             return float(node.value)
         if isinstance(node, ast.BinOp) and type(node.op) in _SAFE_OPS:
-            return _SAFE_OPS[type(node.op)](_safe_eval(node.left), _safe_eval(node.right))
+            return _SAFE_OPS[type(node.op)](
+                _safe_eval(node.left), _safe_eval(node.right)
+            )
         if isinstance(node, ast.UnaryOp) and type(node.op) in _SAFE_OPS:
             return _SAFE_OPS[type(node.op)](_safe_eval(node.operand))
         raise ValueError(f"Operação não permitida: {ast.dump(node)}")
@@ -206,9 +215,21 @@ def create_demo_tools() -> list[Tool]:
         return f"Temperatura simulada em {city}: 25°C, Parcialmente nublado"
 
     return [
-        Tool("Calculator", "Calcula expressões matemáticas. Input: expressão como '2+3*4'", calculator),
-        Tool("Search", "Busca informações na internet. Input: consulta em português", search),
-        Tool("Weather", "Obtém temperatura atual de uma cidade. Input: nome da cidade", get_weather),
+        Tool(
+            "Calculator",
+            "Calcula expressões matemáticas. Input: expressão como '2+3*4'",
+            calculator,
+        ),
+        Tool(
+            "Search",
+            "Busca informações na internet. Input: consulta em português",
+            search,
+        ),
+        Tool(
+            "Weather",
+            "Obtém temperatura atual de uma cidade. Input: nome da cidade",
+            get_weather,
+        ),
     ]
 
 

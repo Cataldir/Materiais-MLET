@@ -13,8 +13,8 @@ Uso (Docker):
 import logging
 import os
 
-from fastapi import FastAPI
 import uvicorn
+from fastapi import FastAPI
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)

@@ -1,0 +1,5 @@
+prepare:
+  train_rows: 6
+
+train:
+  threshold_margin: 0.0

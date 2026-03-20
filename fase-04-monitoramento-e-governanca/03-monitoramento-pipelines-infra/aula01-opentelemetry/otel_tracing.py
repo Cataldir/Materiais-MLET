@@ -1,133 +1,80 @@
-"""OpenTelemetry Tracing — rastreamento distribuído para pipelines ML.
-
-Demonstra como instrumentar pipelines de ML com OpenTelemetry para
-observabilidade completa: traces, métricas e logs correlacionados.
-
-Requisitos:
-    pip install opentelemetry-api opentelemetry-sdk opentelemetry-exporter-otlp
+"""Tracing local inspirado em OpenTelemetry para pipelines de ML.
 
 Uso:
     python otel_tracing.py
 """
 
-import logging
-import time
-from typing import Any
+from __future__ import annotations
 
-logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
-logger = logging.getLogger(__name__)
-
-RANDOM_STATE = 42
+from dataclasses import asdict, dataclass
 
 
-def setup_tracer(service_name: str = "ml-pipeline") -> Any:
-    """Configura o tracer OpenTelemetry.
-
-    Args:
-        service_name: Nome do serviço para identificação nos traces.
-
-    Returns:
-        Tracer configurado, ou None se OTel não estiver disponível.
-    """
-    try:
-        from opentelemetry import trace
-        from opentelemetry.sdk.trace import TracerProvider
-        from opentelemetry.sdk.trace.export import ConsoleSpanExporter, SimpleSpanProcessor
-        from opentelemetry.sdk.resources import Resource
-
-        resource = Resource.create({"service.name": service_name})
-        provider = TracerProvider(resource=resource)
-        provider.add_span_processor(SimpleSpanProcessor(ConsoleSpanExporter()))
-        trace.set_tracer_provider(provider)
-        tracer = trace.get_tracer(__name__)
-        logger.info("OpenTelemetry configurado para serviço: %s", service_name)
-        return tracer
-    except ImportError:
-        logger.warning("opentelemetry não instalado. pip install opentelemetry-api opentelemetry-sdk")
-        return None
+@dataclass(frozen=True)
+class TraceSpan:
+    span_id: str
+    name: str
+    parent_id: str | None
+    duration_ms: float
+    status: str
+    attributes: dict[str, str]
 
 
-def traced_step(tracer: Any, step_name: str, attributes: dict[str, Any] | None = None):
-    """Context manager para rastrear uma etapa do pipeline.
-
-    Args:
-        tracer: Tracer OpenTelemetry (ou None).
-        step_name: Nome da etapa para o span.
-        attributes: Atributos adicionais para o span.
-
-    Yields:
-        Span ativo (ou None se OTel não disponível).
-    """
-    if tracer is None:
-        class DummySpan:
-            def set_attribute(self, key: str, value: Any) -> None:
-                pass
-        yield DummySpan()
-        return
-
-    from opentelemetry import trace
-    with tracer.start_as_current_span(step_name) as span:
-        if attributes:
-            for key, value in attributes.items():
-                span.set_attribute(key, str(value))
-        yield span
+def create_span(
+    name: str,
+    duration_ms: float,
+    parent_id: str | None = None,
+    attributes: dict[str, str] | None = None,
+) -> TraceSpan:
+    """Cria um span local com atributos estaveis para walkthroughs didaticos."""
+    return TraceSpan(
+        span_id=f"span-{name}",
+        name=name,
+        parent_id=parent_id,
+        duration_ms=duration_ms,
+        status="ok",
+        attributes=attributes or {},
+    )
 
 
-class InstrumentedMLPipeline:
-    """Pipeline de ML instrumentado com OpenTelemetry.
+def build_demo_trace() -> list[TraceSpan]:
+    # Decorator-like concern: tracing descreve o pipeline sem alterar a logica de negocio.
+    root_id = "trace-demo"
+    return [
+        create_span("ingest", 12.0, parent_id=root_id, attributes={"rows": "240"}),
+        create_span("transform", 18.0, parent_id=root_id, attributes={"features": "8"}),
+        create_span(
+            "train", 42.0, parent_id=root_id, attributes={"model": "random_forest"}
+        ),
+    ]
 
-    Attributes:
-        tracer: Instância do tracer OTel.
-        pipeline_name: Nome identificador do pipeline.
-    """
 
-    def __init__(self, pipeline_name: str = "ml-training-pipeline") -> None:
-        """Inicializa o pipeline instrumentado.
+def summarize_trace(spans: list[TraceSpan]) -> dict[str, object]:
+    return {
+        "span_count": len(spans),
+        "span_names": [span.name for span in spans],
+        "total_duration_ms": round(sum(span.duration_ms for span in spans), 1),
+        "root_parent": spans[0].parent_id if spans else None,
+    }
 
-        Args:
-            pipeline_name: Nome do pipeline.
-        """
-        self.pipeline_name = pipeline_name
-        self.tracer = setup_tracer(pipeline_name)
 
-    def run(self) -> dict[str, float]:
-        """Executa o pipeline completo com rastreamento.
+def run_demo_pipeline() -> dict[str, object]:
+    spans = build_demo_trace()
+    return {
+        "spans": [asdict(span) for span in spans],
+        "summary": summarize_trace(spans),
+    }
 
-        Returns:
-            Métricas do pipeline.
-        """
-        logger.info("Iniciando pipeline: %s", self.pipeline_name)
-        metrics: dict[str, float] = {}
 
-        with traced_step(self.tracer, "data_preparation", {"dataset": "breast_cancer"}):
-            start = time.perf_counter()
-            from sklearn.datasets import load_breast_cancer
-            from sklearn.model_selection import train_test_split
-            X, y = load_breast_cancer(return_X_y=True)
-            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=RANDOM_STATE)
-            metrics["data_prep_seconds"] = time.perf_counter() - start
-            logger.info("Dados preparados: %d treino, %d teste", len(X_train), len(X_test))
-
-        with traced_step(self.tracer, "model_training", {"n_estimators": 100}):
-            start = time.perf_counter()
-            from sklearn.ensemble import RandomForestClassifier
-            model = RandomForestClassifier(n_estimators=100, random_state=RANDOM_STATE)
-            model.fit(X_train, y_train)
-            metrics["training_seconds"] = time.perf_counter() - start
-            logger.info("Treino concluído em %.2fs", metrics["training_seconds"])
-
-        with traced_step(self.tracer, "model_evaluation") as span:
-            from sklearn.metrics import roc_auc_score
-            y_proba = model.predict_proba(X_test)[:, 1]
-            auc = float(roc_auc_score(y_test, y_proba))
-            metrics["auc_roc"] = auc
-            span.set_attribute("auc_roc", str(auc))
-            logger.info("AUC-ROC: %.4f", auc)
-
-        logger.info("Pipeline concluído: %s", metrics)
-        return metrics
+def main() -> None:
+    results = run_demo_pipeline()
+    print("Tracing local para pipeline de ML\n")
+    for span in results["spans"]:
+        print(
+            f"- {span['name']}: {span['duration_ms']:.1f}ms | attrs={span['attributes']}"
+        )
+    print("\nResumo")
+    print(results["summary"])
 
 
 if __name__ == "__main__":
-    pipeline = InstrumentedMLPipeline()
-    pipeline.run()
+    main()

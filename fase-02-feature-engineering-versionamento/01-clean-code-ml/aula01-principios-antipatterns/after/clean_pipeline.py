@@ -16,7 +16,6 @@ import argparse
 import logging
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import roc_auc_score
@@ -45,7 +44,9 @@ def validate_input(df: pd.DataFrame) -> None:
     missing = [c for c in REQUIRED_COLUMNS if c not in df.columns]
     if missing:
         raise ValueError(f"Colunas obrigatórias ausentes: {missing}")
-    logger.info("Validação de input: OK (%d colunas, %d linhas)", len(df.columns), len(df))
+    logger.info(
+        "Validação de input: OK (%d colunas, %d linhas)", len(df.columns), len(df)
+    )
 
 
 def impute_missing_values(df: pd.DataFrame) -> pd.DataFrame:

@@ -1,0 +1,12 @@
+numpy==1.26.4
+scikit-learn==1.5.2
+fastapi==0.115.6
+uvicorn==0.32.1
+apache-airflow==2.10.4
+prefect==2.20.16
+feast==0.40.1
+prometheus-client==0.21.1
+boto3==1.35.84
+google-cloud-aiplatform==1.76.0
+onnx==1.17.0
+onnxruntime==1.20.1

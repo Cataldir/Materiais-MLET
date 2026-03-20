@@ -80,10 +80,7 @@ def detect_and_mask_pii(text: str, mask: bool = True) -> PIIDetectionResult:
 
     has_pii = len(detected_types) > 0
     if has_pii:
-        logger.warning(
-            "PII detectado: %s",
-            {k: v for k, v in detected_types.items()}
-        )
+        logger.warning("PII detectado: %s", {k: v for k, v in detected_types.items()})
 
     return PIIDetectionResult(
         original_text=text,
@@ -115,7 +112,9 @@ def audit_log_pii(text: str, user_id: str, action: str) -> dict:
         "pii_types": list(result.detected_types.keys()),
         "masked_content": result.masked_text[:200],
     }
-    logger.info("AUDIT: user=%s, action=%s, pii=%s", user_id, action, result.detected_types)
+    logger.info(
+        "AUDIT: user=%s, action=%s, pii=%s", user_id, action, result.detected_types
+    )
     return audit_record
 
 

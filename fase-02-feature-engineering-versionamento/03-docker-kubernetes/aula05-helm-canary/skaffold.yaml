@@ -1,0 +1,11 @@
+apiVersion: skaffold/v4beta11
+kind: Config
+metadata:
+  name: retention-api-local
+manifests:
+  rawYaml:
+    - helm/templates/deployment-stable.yaml
+    - helm/templates/deployment-canary.yaml
+    - helm/templates/service.yaml
+deploy:
+  kubectl: {}

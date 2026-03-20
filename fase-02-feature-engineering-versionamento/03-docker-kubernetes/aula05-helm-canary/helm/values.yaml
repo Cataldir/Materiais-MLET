@@ -1,0 +1,15 @@
+image: ghcr.io/mlet/retention-api:1.0.0
+servicePort: 8000
+stableReplicas: 3
+canaryReplicas: 1
+
+trafficPlan:
+  - label: baseline
+    stableWeight: 100
+    canaryWeight: 0
+  - label: warmup
+    stableWeight: 90
+    canaryWeight: 10
+  - label: confidence
+    stableWeight: 75
+    canaryWeight: 25

@@ -1,0 +1,26 @@
+name: dvc-mlflow-ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-and-track:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate lesson contracts
+        run: python fase-02-feature-engineering-versionamento/04-dvc-mlflow/aula07-cicd-dvc-mlflow/ci_pipeline.py
+      - name: Upload tracking artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dvc-mlflow-evidence
+          path: |
+            fase-02-feature-engineering-versionamento/04-dvc-mlflow/aula06-pipeline-integrado/metrics
+            fase-02-feature-engineering-versionamento/04-dvc-mlflow/aula06-pipeline-integrado/tracking

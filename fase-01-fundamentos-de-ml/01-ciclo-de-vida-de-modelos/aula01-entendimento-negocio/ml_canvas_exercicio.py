@@ -61,13 +61,15 @@ class MLCanvas:
         Returns:
             True se o projeto está minimamente definido, False caso contrário.
         """
-        return all([
-            self.project_name,
-            self.business_problem,
-            self.ml_task,
-            self.target,
-            self.success_metrics,
-        ])
+        return all(
+            [
+                self.project_name,
+                self.business_problem,
+                self.ml_task,
+                self.target,
+                self.success_metrics,
+            ]
+        )
 
     def display(self) -> None:
         """Exibe o canvas formatado no log."""

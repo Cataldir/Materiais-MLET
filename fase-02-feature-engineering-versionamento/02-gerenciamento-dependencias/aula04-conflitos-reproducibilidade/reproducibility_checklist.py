@@ -54,7 +54,9 @@ def get_python_environment() -> tuple[str, str]:
     Returns:
         Tupla (versão Python, informações da plataforma).
     """
-    python_version = f"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}"
+    python_version = (
+        f"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}"
+    )
     platform_info = f"{platform.system()} {platform.release()} ({platform.machine()})"
     return python_version, platform_info
 
@@ -74,6 +76,7 @@ def get_installed_packages() -> dict[str, str]:
             timeout=30,
         )
         import json
+
         packages = json.loads(result.stdout)
         return {pkg["name"]: pkg["version"] for pkg in packages}
     except Exception as exc:
@@ -106,7 +109,12 @@ def check_seeds_in_code(code_dir: Path) -> bool:
     Returns:
         True se seeds foram encontradas, False caso contrário.
     """
-    seed_patterns = ["random_state=", "np.random.seed(", "torch.manual_seed(", "RANDOM_STATE"]
+    seed_patterns = [
+        "random_state=",
+        "np.random.seed(",
+        "torch.manual_seed(",
+        "RANDOM_STATE",
+    ]
     for py_file in code_dir.glob("*.py"):
         content = py_file.read_text()
         if any(pattern in content for pattern in seed_patterns):
@@ -130,7 +138,9 @@ def generate_report(project_dir: Path = Path(".")) -> ReproducibilityReport:
     pyproject = project_dir / "pyproject.toml"
     requirements = project_dir / "requirements.txt"
     if not pyproject.exists() and not requirements.exists():
-        report.issues.append("Nenhum arquivo de dependências encontrado (pyproject.toml ou requirements.txt)")
+        report.issues.append(
+            "Nenhum arquivo de dependências encontrado (pyproject.toml ou requirements.txt)"
+        )
 
     report.seed_set = check_seeds_in_code(project_dir)
     if not report.seed_set:
@@ -144,7 +154,9 @@ def generate_report(project_dir: Path = Path(".")) -> ReproducibilityReport:
         report.issues.append("Diretório 'data/' não encontrado")
 
     logger.info("=== Relatório de Reprodutibilidade ===")
-    logger.info("Python: %s | Platform: %s", report.python_version, report.platform_info)
+    logger.info(
+        "Python: %s | Platform: %s", report.python_version, report.platform_info
+    )
     logger.info("Pacotes instalados: %d", len(report.installed_packages))
     logger.info("Seeds configuradas: %s", "✓" if report.seed_set else "✗")
     logger.info("Hashes de dados: %d arquivos", len(report.data_hashes))

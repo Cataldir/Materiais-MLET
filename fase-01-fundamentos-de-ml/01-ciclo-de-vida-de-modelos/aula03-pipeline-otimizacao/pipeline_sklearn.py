@@ -10,7 +10,6 @@ Uso:
 import logging
 
 import numpy as np
-import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.datasets import fetch_california_housing
 from sklearn.ensemble import RandomForestRegressor
@@ -38,7 +37,9 @@ class OutlierClipper(BaseEstimator, TransformerMixin):
         upper_bounds_: Limites superiores por feature (após fit).
     """
 
-    def __init__(self, lower_percentile: float = 1.0, upper_percentile: float = 99.0) -> None:
+    def __init__(
+        self, lower_percentile: float = 1.0, upper_percentile: float = 99.0
+    ) -> None:
         """Inicializa o clipper de outliers.
 
         Args:
@@ -85,14 +86,18 @@ def build_pipeline() -> Pipeline:
     Returns:
         Pipeline sklearn configurado.
     """
-    return Pipeline([
-        ("clipper", OutlierClipper()),
-        ("scaler", StandardScaler()),
-        ("model", RandomForestRegressor(random_state=RANDOM_STATE)),
-    ])
+    return Pipeline(
+        [
+            ("clipper", OutlierClipper()),
+            ("scaler", StandardScaler()),
+            ("model", RandomForestRegressor(random_state=RANDOM_STATE)),
+        ]
+    )
 
 
-def run_random_search(pipeline: Pipeline, X_train: np.ndarray, y_train: np.ndarray) -> Pipeline:
+def run_random_search(
+    pipeline: Pipeline, X_train: np.ndarray, y_train: np.ndarray
+) -> Pipeline:
     """Executa RandomizedSearchCV para otimização de hiperparâmetros.
 
     Args:
@@ -127,7 +132,9 @@ def run_random_search(pipeline: Pipeline, X_train: np.ndarray, y_train: np.ndarr
     return search.best_estimator_
 
 
-def evaluate(pipeline: Pipeline, X_test: np.ndarray, y_test: np.ndarray) -> dict[str, float]:
+def evaluate(
+    pipeline: Pipeline, X_test: np.ndarray, y_test: np.ndarray
+) -> dict[str, float]:
     """Avalia o pipeline no conjunto de teste.
 
     Args:
@@ -154,11 +161,17 @@ def main() -> None:
     """Executa pipeline completo de treino e avaliação."""
     housing = fetch_california_housing()
     X_train, X_test, y_train, y_test = train_test_split(
-        housing.data, housing.target,
-        test_size=TEST_SIZE, random_state=RANDOM_STATE,
+        housing.data,
+        housing.target,
+        test_size=TEST_SIZE,
+        random_state=RANDOM_STATE,
     )
-    logger.info("Dataset: %d features | Treino: %d | Teste: %d",
-                X_train.shape[1], len(X_train), len(X_test))
+    logger.info(
+        "Dataset: %d features | Treino: %d | Teste: %d",
+        X_train.shape[1],
+        len(X_train),
+        len(X_test),
+    )
 
     pipeline = build_pipeline()
     best_pipeline = run_random_search(pipeline, X_train, y_train)

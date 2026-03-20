@@ -48,18 +48,24 @@ def load_adult_sample() -> tuple[pd.DataFrame, pd.Series, pd.Series]:
         return df, y, sensitive
 
     except Exception as exc:
-        logger.warning("Não foi possível carregar Adult dataset: %s. Usando dados sintéticos.", exc)
+        logger.warning(
+            "Não foi possível carregar Adult dataset: %s. Usando dados sintéticos.", exc
+        )
         rng = np.random.default_rng(RANDOM_STATE)
         n = 500
-        df = pd.DataFrame({
-            "age": rng.integers(18, 70, n),
-            "hours_per_week": rng.integers(20, 80, n),
-            "education_num": rng.integers(1, 16, n),
-            "sex": rng.integers(0, 2, n),
-        })
+        df = pd.DataFrame(
+            {
+                "age": rng.integers(18, 70, n),
+                "hours_per_week": rng.integers(20, 80, n),
+                "education_num": rng.integers(1, 16, n),
+                "sex": rng.integers(0, 2, n),
+            }
+        )
         sensitive = pd.Series(rng.choice(["Male", "Female"], n), name="sex")
         y = pd.Series(
-            (df["age"] * 0.5 + df["education_num"] * 2 + rng.normal(0, 10, n) > 40).astype(int)
+            (
+                df["age"] * 0.5 + df["education_num"] * 2 + rng.normal(0, 10, n) > 40
+            ).astype(int)
         )
         return df, y, sensitive
 
@@ -87,24 +93,25 @@ def compute_fairness_metrics(
         group_pred = y_pred[mask]
         accuracy = float((group_pred == group_true).mean())
         positive_rate = float(group_pred.mean())
-        results.append({
-            "group": group,
-            "n": int(mask.sum()),
-            "accuracy": accuracy,
-            "positive_rate": positive_rate,
-        })
+        results.append(
+            {
+                "group": group,
+                "n": int(mask.sum()),
+                "accuracy": accuracy,
+                "positive_rate": positive_rate,
+            }
+        )
 
     df = pd.DataFrame(results)
     if len(df) >= 2:
         max_rate = df["positive_rate"].max()
         min_rate = df["positive_rate"].min()
         disparate_impact = min_rate / (max_rate + 1e-8)
-        logger.info(
-            "Disparate Impact Ratio: %.3f (ideal >= 0.8)",
-            disparate_impact
-        )
+        logger.info("Disparate Impact Ratio: %.3f (ideal >= 0.8)", disparate_impact)
         if disparate_impact < 0.8:
-            logger.warning("⚠️  Possível viés detectado: disparate impact = %.3f", disparate_impact)
+            logger.warning(
+                "⚠️  Possível viés detectado: disparate impact = %.3f", disparate_impact
+            )
 
     return df
 
@@ -115,14 +122,20 @@ def run_fairness_audit() -> None:
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=RANDOM_STATE, stratify=y
     )
-    sensitive_test = sensitive.iloc[X_test.index] if hasattr(X_test, "index") else sensitive[len(X_train):]
+    sensitive_test = (
+        sensitive.iloc[X_test.index]
+        if hasattr(X_test, "index")
+        else sensitive[len(X_train) :]
+    )
 
     model = GradientBoostingClassifier(n_estimators=50, random_state=RANDOM_STATE)
     model.fit(X_train.values, y_train.values)
     y_pred = model.predict(X_test.values)
 
     logger.info("=== Métricas por Grupo ===")
-    metrics_df = compute_fairness_metrics(y_test.values, y_pred, sensitive_test.reset_index(drop=True))
+    metrics_df = compute_fairness_metrics(
+        y_test.values, y_pred, sensitive_test.reset_index(drop=True)
+    )
     logger.info("\n%s", metrics_df.to_string(index=False))
 
     try:

@@ -1,0 +1,1 @@
+"""Pacote refatorado para comparacao didatica."""
