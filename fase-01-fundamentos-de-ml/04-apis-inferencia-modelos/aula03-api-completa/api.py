@@ -12,9 +12,9 @@ Uso:
 
 import logging
 import time
+from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
-from pathlib import Path
-from typing import Any, AsyncGenerator
+from typing import Any
 
 import numpy as np
 from fastapi import FastAPI, HTTPException
@@ -75,9 +75,13 @@ class IrisPredictRequest(BaseModel):
         petal_width: Largura da pétala (cm).
     """
 
-    sepal_length: float = Field(..., gt=0, le=20, description="Comprimento da sépala (cm)")
+    sepal_length: float = Field(
+        ..., gt=0, le=20, description="Comprimento da sépala (cm)"
+    )
     sepal_width: float = Field(..., gt=0, le=20, description="Largura da sépala (cm)")
-    petal_length: float = Field(..., gt=0, le=20, description="Comprimento da pétala (cm)")
+    petal_length: float = Field(
+        ..., gt=0, le=20, description="Comprimento da pétala (cm)"
+    )
     petal_width: float = Field(..., gt=0, le=20, description="Largura da pétala (cm)")
 
 
@@ -139,10 +143,16 @@ def predict(request: IrisPredictRequest) -> IrisPredictResponse:
         raise HTTPException(status_code=503, detail="Modelo não disponível")
 
     model: RandomForestClassifier = MODEL_STATE["model"]
-    features = np.array([[
-        request.sepal_length, request.sepal_width,
-        request.petal_length, request.petal_width,
-    ]])
+    features = np.array(
+        [
+            [
+                request.sepal_length,
+                request.sepal_width,
+                request.petal_length,
+                request.petal_width,
+            ]
+        ]
+    )
 
     start = time.perf_counter()
     predicted_class = int(model.predict(features)[0])
@@ -150,8 +160,7 @@ def predict(request: IrisPredictRequest) -> IrisPredictResponse:
     latency_ms = (time.perf_counter() - start) * 1000
 
     probabilities = {
-        name: float(prob)
-        for name, prob in zip(IRIS_TARGET_NAMES, probas)
+        name: float(prob) for name, prob in zip(IRIS_TARGET_NAMES, probas, strict=False)
     }
     label = IRIS_TARGET_NAMES[predicted_class]
     logger.info("Predição: %s (%.2fms)", label, latency_ms)

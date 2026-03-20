@@ -9,7 +9,6 @@ Uso:
 """
 
 import logging
-from pathlib import Path
 
 import mlflow
 import mlflow.sklearn
@@ -44,21 +43,26 @@ def run_experiment(
     """
     cancer = load_breast_cancer()
     X_train, X_test, y_train, y_test = train_test_split(
-        cancer.data, cancer.target,
-        test_size=TEST_SIZE, random_state=RANDOM_STATE, stratify=cancer.target
+        cancer.data,
+        cancer.target,
+        test_size=TEST_SIZE,
+        random_state=RANDOM_STATE,
+        stratify=cancer.target,
     )
     scaler = StandardScaler()
     X_train_s = scaler.fit_transform(X_train)
     X_test_s = scaler.transform(X_test)
 
     with mlflow.start_run():
-        mlflow.log_params({
-            "n_estimators": n_estimators,
-            "max_depth": max_depth,
-            "min_samples_split": min_samples_split,
-            "random_state": RANDOM_STATE,
-            "test_size": TEST_SIZE,
-        })
+        mlflow.log_params(
+            {
+                "n_estimators": n_estimators,
+                "max_depth": max_depth,
+                "min_samples_split": min_samples_split,
+                "random_state": RANDOM_STATE,
+                "test_size": TEST_SIZE,
+            }
+        )
 
         model = RandomForestClassifier(
             n_estimators=n_estimators,
@@ -76,7 +80,9 @@ def run_experiment(
             "f1_macro": float(f1_score(y_test, y_pred, average="macro")),
         }
         mlflow.log_metrics(metrics)
-        mlflow.sklearn.log_model(model, "model", registered_model_name="BreastCancerClassifier")
+        mlflow.sklearn.log_model(
+            model, "model", registered_model_name="BreastCancerClassifier"
+        )
 
         logger.info("Run registrado: AUC=%.4f", metrics["auc_roc"])
     return metrics
@@ -99,7 +105,11 @@ def main() -> None:
         results.append({"params": params, "metrics": metrics})
 
     best = max(results, key=lambda r: r["metrics"]["auc_roc"])
-    logger.info("\nMelhor experimento: %s → AUC=%.4f", best["params"], best["metrics"]["auc_roc"])
+    logger.info(
+        "\nMelhor experimento: %s → AUC=%.4f",
+        best["params"],
+        best["metrics"]["auc_roc"],
+    )
     logger.info("Visualizar resultados: mlflow ui")
 
 

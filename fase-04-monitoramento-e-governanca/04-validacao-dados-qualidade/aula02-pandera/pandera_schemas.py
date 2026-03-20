@@ -21,46 +21,79 @@ logger = logging.getLogger(__name__)
 RANDOM_STATE = 42
 
 
+def load_pandera_module():
+    """Carrega Pandera de forma compativel com versoes novas e antigas."""
+    try:
+        import pandera.pandas as pa
+
+        return pa
+    except ImportError:
+        try:
+            import pandera as pa
+
+            return pa
+        except ImportError:
+            logger.warning("pandera nao instalado. Use: pip install 'pandera[pandas]'")
+            return None
+
+
 def create_titanic_schema():
     """Cria schema Pandera para o dataset Titanic.
 
     Returns:
         DataFrameSchema para validação do Titanic.
     """
-    try:
-        import pandera as pa
-        from pandera import Column, DataFrameSchema, Check
-
-        return DataFrameSchema(
-            columns={
-                "Survived": Column(int, checks=[
-                    Check.isin([0, 1]),
-                ], nullable=False),
-                "Pclass": Column(int, checks=[
-                    Check.isin([1, 2, 3]),
-                ], nullable=False),
-                "Age": Column(float, checks=[
-                    Check.greater_than_or_equal_to(0),
-                    Check.less_than_or_equal_to(120),
-                ], nullable=True),
-                "Fare": Column(float, checks=[
-                    Check.greater_than_or_equal_to(0),
-                ], nullable=False),
-                "Sex": Column(str, checks=[
-                    Check.isin(["male", "female"]),
-                ], nullable=False),
-            },
-            checks=[
-                Check(
-                    lambda df: df["Age"].isna().mean() < 0.3,
-                    error="Mais de 30% de valores faltantes em Age"
-                ),
-            ],
-            coerce=True,
-        )
-    except ImportError:
-        logger.warning("pandera não instalado. pip install pandera")
+    pa = load_pandera_module()
+    if pa is None:
         return None
+
+    return pa.DataFrameSchema(
+        columns={
+            "Survived": pa.Column(
+                int,
+                checks=[
+                    pa.Check.isin([0, 1]),
+                ],
+                nullable=False,
+            ),
+            "Pclass": pa.Column(
+                int,
+                checks=[
+                    pa.Check.isin([1, 2, 3]),
+                ],
+                nullable=False,
+            ),
+            "Age": pa.Column(
+                float,
+                checks=[
+                    pa.Check.greater_than_or_equal_to(0),
+                    pa.Check.less_than_or_equal_to(120),
+                ],
+                nullable=True,
+            ),
+            "Fare": pa.Column(
+                float,
+                checks=[
+                    pa.Check.greater_than_or_equal_to(0),
+                ],
+                nullable=False,
+            ),
+            "Sex": pa.Column(
+                str,
+                checks=[
+                    pa.Check.isin(["male", "female"]),
+                ],
+                nullable=False,
+            ),
+        },
+        checks=[
+            pa.Check(
+                lambda df: df["Age"].isna().mean() < 0.3,
+                error="Mais de 30% de valores faltantes em Age",
+            ),
+        ],
+        coerce=True,
+    )
 
 
 def create_predictions_schema():
@@ -69,24 +102,66 @@ def create_predictions_schema():
     Returns:
         DataFrameSchema para predições.
     """
-    try:
-        import pandera as pa
-        from pandera import Column, DataFrameSchema, Check
-
-        return DataFrameSchema(
-            columns={
-                "prediction": Column(int, checks=[
-                    Check.isin([0, 1]),
-                ]),
-                "probability": Column(float, checks=[
-                    Check.greater_than_or_equal_to(0.0),
-                    Check.less_than_or_equal_to(1.0),
-                ]),
-                "model_version": Column(str, nullable=False),
-            }
-        )
-    except ImportError:
+    pa = load_pandera_module()
+    if pa is None:
         return None
+
+    return pa.DataFrameSchema(
+        columns={
+            "prediction": pa.Column(
+                int,
+                checks=[
+                    pa.Check.isin([0, 1]),
+                ],
+            ),
+            "probability": pa.Column(
+                float,
+                checks=[
+                    pa.Check.greater_than_or_equal_to(0.0),
+                    pa.Check.less_than_or_equal_to(1.0),
+                ],
+            ),
+            "model_version": pa.Column(str, nullable=False),
+        }
+    )
+
+
+def build_titanic_examples(
+    random_state: int = RANDOM_STATE,
+    rows: int = 100,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Gera DataFrames validos e invalidos para a aula."""
+    rng = np.random.default_rng(random_state)
+    valid_df = pd.DataFrame(
+        {
+            "Survived": rng.integers(0, 2, rows),
+            "Pclass": rng.integers(1, 4, rows),
+            "Age": np.where(
+                rng.random(rows) > 0.2, rng.normal(35, 15, rows).clip(1, 80), np.nan
+            ),
+            "Fare": rng.exponential(30, rows),
+            "Sex": rng.choice(["male", "female"], rows),
+        }
+    )
+    invalid_df = valid_df.copy()
+    invalid_df.loc[0, "Survived"] = 5
+    invalid_df.loc[1, "Age"] = -5
+    invalid_df.loc[2, "Fare"] = -100
+    return valid_df, invalid_df
+
+
+def build_prediction_examples() -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Gera exemplos validos e invalidos de saida de modelo."""
+    valid_df = pd.DataFrame(
+        {
+            "prediction": [0, 1, 1],
+            "probability": [0.12, 0.78, 0.91],
+            "model_version": ["v1.0.0", "v1.0.0", "v1.0.0"],
+        }
+    )
+    invalid_df = valid_df.copy()
+    invalid_df.loc[1, "probability"] = 1.8
+    return valid_df, invalid_df
 
 
 def validate_dataframe_with_pandera(df: pd.DataFrame, schema_name: str) -> bool:
@@ -118,26 +193,36 @@ def validate_dataframe_with_pandera(df: pd.DataFrame, schema_name: str) -> bool:
         return False
 
 
-def demo_pandera_validation() -> None:
-    """Demonstra validação com Pandera em dados válidos e inválidos."""
-    rng = np.random.default_rng(RANDOM_STATE)
+def run_validation_demo(random_state: int = RANDOM_STATE) -> dict[str, bool]:
+    """Executa um fluxo enxuto de validacao com fallback amigavel."""
+    valid_df, invalid_df = build_titanic_examples(random_state=random_state)
+    valid_predictions, invalid_predictions = build_prediction_examples()
+    pandera_available = load_pandera_module() is not None
 
+    results = {
+        "pandera_available": pandera_available,
+        "titanic_valid": validate_dataframe_with_pandera(valid_df, "titanic"),
+        "titanic_invalid": validate_dataframe_with_pandera(invalid_df, "titanic"),
+        "predictions_valid": validate_dataframe_with_pandera(
+            valid_predictions, "predictions"
+        ),
+        "predictions_invalid": validate_dataframe_with_pandera(
+            invalid_predictions, "predictions"
+        ),
+    }
+    return results
+
+
+def demo_pandera_validation() -> dict[str, bool]:
+    """Demonstra validacao com Pandera em dados validos e invalidos."""
     logger.info("=== Dados Válidos ===")
-    valid_df = pd.DataFrame({
-        "Survived": rng.integers(0, 2, 100),
-        "Pclass": rng.integers(1, 4, 100),
-        "Age": np.where(rng.random(100) > 0.2, rng.normal(35, 15, 100).clip(1, 80), np.nan),
-        "Fare": rng.exponential(30, 100),
-        "Sex": rng.choice(["male", "female"], 100),
-    })
-    validate_dataframe_with_pandera(valid_df, "titanic")
-
+    results = run_validation_demo()
+    logger.info("Titanic valido: %s", results["titanic_valid"])
     logger.info("\n=== Dados Inválidos ===")
-    invalid_df = valid_df.copy()
-    invalid_df.loc[0, "Survived"] = 5
-    invalid_df.loc[1, "Age"] = -5
-    invalid_df.loc[2, "Fare"] = -100
-    validate_dataframe_with_pandera(invalid_df, "titanic")
+    logger.info("Titanic invalido: %s", results["titanic_invalid"])
+    logger.info("Predictions valido: %s", results["predictions_valid"])
+    logger.info("Predictions invalido: %s", results["predictions_invalid"])
+    return results
 
 
 if __name__ == "__main__":

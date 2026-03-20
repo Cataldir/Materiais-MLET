@@ -11,8 +11,7 @@ import logging
 
 import numpy as np
 from sklearn.datasets import fetch_california_housing, load_breast_cancer
-from sklearn.linear_model import Lasso, LogisticRegression, Ridge
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import Lasso, LinearRegression, LogisticRegression, Ridge
 from sklearn.metrics import mean_squared_error, roc_auc_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -54,7 +53,11 @@ def compare_regression_regularization() -> None:
 
         logger.info(
             "alpha=%.3f → Ridge RMSE=%.4f | Lasso RMSE=%.4f (coefs zerados: %d/%d)",
-            alpha, rmse_r, rmse_l, n_zero, len(lasso.coef_)
+            alpha,
+            rmse_r,
+            rmse_l,
+            n_zero,
+            len(lasso.coef_),
         )
 
 
@@ -62,8 +65,11 @@ def compare_logistic_regularization() -> None:
     """Compara LogisticRegression com diferentes valores de C (inverso da regularização)."""
     cancer = load_breast_cancer()
     X_train, X_test, y_train, y_test = train_test_split(
-        cancer.data, cancer.target, test_size=TEST_SIZE,
-        random_state=RANDOM_STATE, stratify=cancer.target
+        cancer.data,
+        cancer.target,
+        test_size=TEST_SIZE,
+        random_state=RANDOM_STATE,
+        stratify=cancer.target,
     )
     scaler = StandardScaler()
     X_train_s = scaler.fit_transform(X_train)
@@ -76,14 +82,21 @@ def compare_logistic_regularization() -> None:
         for penalty in ["l1", "l2"]:
             solver = "liblinear" if penalty == "l1" else "lbfgs"
             model = LogisticRegression(
-                C=C, penalty=penalty, solver=solver, max_iter=1000, random_state=RANDOM_STATE
+                C=C,
+                penalty=penalty,
+                solver=solver,
+                max_iter=1000,
+                random_state=RANDOM_STATE,
             )
             model.fit(X_train_s, y_train)
             auc = float(roc_auc_score(y_test, model.predict_proba(X_test_s)[:, 1]))
             n_zero = int(np.sum(model.coef_ == 0))
             logger.info(
                 "C=%.3f, penalty=%s → AUC=%.4f (coefs zerados: %d)",
-                C, penalty, auc, n_zero
+                C,
+                penalty,
+                auc,
+                n_zero,
             )
 
 

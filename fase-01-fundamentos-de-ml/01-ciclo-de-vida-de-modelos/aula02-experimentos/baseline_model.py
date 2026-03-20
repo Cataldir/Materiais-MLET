@@ -43,13 +43,15 @@ def load_titanic_data() -> tuple[pd.DataFrame, pd.Series]:
     except Exception:
         logger.warning("Falha ao baixar dados. Usando dados sintéticos.")
         rng = np.random.default_rng(RANDOM_STATE)
-        df = pd.DataFrame({
-            "Pclass": rng.integers(1, 4, 200),
-            "Sex": rng.choice(["male", "female"], 200),
-            "Age": rng.normal(30, 15, 200).clip(1, 80),
-            "Fare": rng.exponential(30, 200),
-            "Survived": rng.integers(0, 2, 200),
-        })
+        df = pd.DataFrame(
+            {
+                "Pclass": rng.integers(1, 4, 200),
+                "Sex": rng.choice(["male", "female"], 200),
+                "Age": rng.normal(30, 15, 200).clip(1, 80),
+                "Fare": rng.exponential(30, 200),
+                "Survived": rng.integers(0, 2, 200),
+            }
+        )
 
     feature_cols = ["Pclass", "Age", "Fare"]
     df = df.dropna(subset=["Survived"])
@@ -110,17 +112,24 @@ def main() -> None:
     )
     logger.info("Treino: %d | Teste: %d", len(X_train), len(X_test))
 
-    dummy_pipeline = Pipeline([
-        ("clf", DummyClassifier(strategy="most_frequent", random_state=RANDOM_STATE)),
-    ])
+    dummy_pipeline = Pipeline(
+        [
+            (
+                "clf",
+                DummyClassifier(strategy="most_frequent", random_state=RANDOM_STATE),
+            ),
+        ]
+    )
     dummy_metrics = train_and_evaluate(
         dummy_pipeline, X_train, X_test, y_train, y_test, "DummyClassifier (baseline)"
     )
 
-    lr_pipeline = Pipeline([
-        ("scaler", StandardScaler()),
-        ("clf", LogisticRegression(max_iter=1000, random_state=RANDOM_STATE)),
-    ])
+    lr_pipeline = Pipeline(
+        [
+            ("scaler", StandardScaler()),
+            ("clf", LogisticRegression(max_iter=1000, random_state=RANDOM_STATE)),
+        ]
+    )
     lr_metrics = train_and_evaluate(
         lr_pipeline, X_train, X_test, y_train, y_test, "LogisticRegression"
     )

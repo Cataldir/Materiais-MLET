@@ -72,6 +72,8 @@ Thumbs.db
 .coverage
 htmlcov/
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # Logs
 *.log
@@ -80,3 +82,6 @@ logs/
 # uv
 .uv/
 uv.lock
+
+# Training artifacts from migrated materials
+*.ckpt

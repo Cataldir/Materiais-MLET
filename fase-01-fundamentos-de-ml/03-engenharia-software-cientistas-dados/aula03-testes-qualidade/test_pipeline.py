@@ -13,7 +13,6 @@ from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
-
 RANDOM_STATE = 42
 
 
@@ -80,7 +79,9 @@ class TestModel:
         """Verifica que acurácia mínima é atingida (smoke test de performance)."""
         _, X_test, _, y_test = iris_data
         accuracy = trained_model.score(X_test, y_test)
-        assert accuracy >= 0.90, f"Acurácia {accuracy:.2f} abaixo do mínimo esperado (0.90)"
+        assert (
+            accuracy >= 0.90
+        ), f"Acurácia {accuracy:.2f} abaixo do mínimo esperado (0.90)"
 
     def test_prediction_probabilities_sum_to_one(
         self, trained_model: RandomForestClassifier, iris_data: tuple

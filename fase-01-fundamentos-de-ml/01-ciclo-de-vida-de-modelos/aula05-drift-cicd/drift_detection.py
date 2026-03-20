@@ -36,9 +36,16 @@ def kolmogorov_smirnov_test(
     has_drift = p_value < ALPHA
     logger.info(
         "KS Test [%s]: stat=%.4f, p=%.4f → drift=%s",
-        feature_name, statistic, p_value, "⚠️  SIM" if has_drift else "✓ NÃO",
+        feature_name,
+        statistic,
+        p_value,
+        "⚠️  SIM" if has_drift else "✓ NÃO",
     )
-    return {"statistic": float(statistic), "p_value": float(p_value), "drift": has_drift}
+    return {
+        "statistic": float(statistic),
+        "p_value": float(p_value),
+        "drift": has_drift,
+    }
 
 
 def population_stability_index(
@@ -77,7 +84,9 @@ def population_stability_index(
     return float(psi)
 
 
-def simulate_drift_scenario(scenario: str, rng: np.random.Generator) -> tuple[np.ndarray, np.ndarray]:
+def simulate_drift_scenario(
+    scenario: str, rng: np.random.Generator
+) -> tuple[np.ndarray, np.ndarray]:
     """Simula diferentes cenários de drift para demonstração.
 
     Args:

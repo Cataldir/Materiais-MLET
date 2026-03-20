@@ -14,7 +14,6 @@ Uso:
 """
 
 import logging
-from pathlib import Path
 from typing import Any
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -25,7 +24,9 @@ CHUNK_OVERLAP = 50
 TOP_K_RESULTS = 3
 
 
-def chunk_text(text: str, chunk_size: int = CHUNK_SIZE, overlap: int = CHUNK_OVERLAP) -> list[str]:
+def chunk_text(
+    text: str, chunk_size: int = CHUNK_SIZE, overlap: int = CHUNK_OVERLAP
+) -> list[str]:
     """Divide texto em chunks com overlap para manter contexto.
 
     Args:
@@ -78,14 +79,15 @@ class SimpleRAGPipeline:
             self.documents.append(doc)
             doc_chunks = chunk_text(doc["content"])
             for i, chunk in enumerate(doc_chunks):
-                self.chunks.append({
-                    "source": doc["title"],
-                    "chunk_id": i,
-                    "content": chunk,
-                })
+                self.chunks.append(
+                    {
+                        "source": doc["title"],
+                        "chunk_id": i,
+                        "content": chunk,
+                    }
+                )
         logger.info(
-            "Adicionados %d documentos → %d chunks",
-            len(docs), len(self.chunks)
+            "Adicionados %d documentos → %d chunks", len(docs), len(self.chunks)
         )
 
     def build_index(self) -> None:
@@ -95,6 +97,7 @@ class SimpleRAGPipeline:
         """
         try:
             from sklearn.feature_extraction.text import TfidfVectorizer
+
             texts = [chunk["content"] for chunk in self.chunks]
             self.vectorizer = TfidfVectorizer(max_features=5000)
             self.tfidf_matrix = self.vectorizer.fit_transform(texts)
@@ -117,6 +120,7 @@ class SimpleRAGPipeline:
             return self.chunks[:top_k]
 
         import numpy as np
+
         query_vec = self.vectorizer.transform([query])
         scores = (self.tfidf_matrix @ query_vec.T).toarray().flatten()
         top_indices = np.argsort(scores)[-top_k:][::-1]
@@ -139,10 +143,9 @@ class SimpleRAGPipeline:
             Resposta gerada pelo LLM com contexto ou contexto puro.
         """
         contexts = self.retrieve(query)
-        context_text = "\n\n".join([
-            f"[{r['source']}]: {r['content']}"
-            for r in contexts
-        ])
+        context_text = "\n\n".join(
+            [f"[{r['source']}]: {r['content']}" for r in contexts]
+        )
 
         prompt = (
             f"Com base nos seguintes documentos:\n\n{context_text}\n\n"

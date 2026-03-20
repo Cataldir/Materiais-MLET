@@ -72,7 +72,9 @@ class OutlierClipper(BaseEstimator, TransformerMixin):
         upper_bounds_: Limites superiores por feature (após fit).
     """
 
-    def __init__(self, lower_percentile: float = 1.0, upper_percentile: float = 99.0) -> None:
+    def __init__(
+        self, lower_percentile: float = 1.0, upper_percentile: float = 99.0
+    ) -> None:
         """Inicializa o clipper.
 
         Args:
