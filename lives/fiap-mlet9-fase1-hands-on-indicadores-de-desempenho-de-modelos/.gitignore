@@ -1,0 +1,10 @@
+venv/
+.env
+__pycache__/
+*.pyc
+!data/
+data/*
+!data/knowledge_base/
+data/knowledge_base/*
+!data/knowledge_base/ghg-protocol-revised.pdf
+api_client/RAG Evaluation API/*
