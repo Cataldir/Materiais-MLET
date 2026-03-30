@@ -6,4 +6,4 @@ Este diretório reúne os registros de lives de hands-on e conteúdos de grupo d
 
 | Data | Turma | Tema | Descrição | Professor | Link |
 |------|-------|------|-----------|-----------|------|
-| 2026-03-17 | 9MLET | Indicadores de Desempenho de Modelos | Apresenta indicadores de avaliação para sistemas de RAG | Pedro Almeida | [Repositório](https://github.com/Cataldir/Materiais-MLET/tree/main/lives/fiap-mlet9-fase1-hands-on-indicadores-de-desempenho-de-modelos) |
+| 2026-03-17 | 9MLET | Indicadores de Desempenho de Modelos | Apresenta indicadores de avaliação para sistemas de RAG | Pedro Almeida | https://github.com/Cataldir/Materiais-MLET/tree/main/lives/fiap-mlet9-fase1-hands-on-indicadores-de-desempenho-de-modelos |
