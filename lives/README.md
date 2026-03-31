@@ -1,6 +1,6 @@
 # 🎥 Lives de Hands-on e Grupos de Estudo
 
-Este diretório reúne os registros de lives de hands-on e conteúdos de grupo de estudos da Pós Tech de Engenharia de Machine Learning da FIAP. Aqui ficam materiais práticos, trilhas de apoio e referências rápidas para acompanhar as turmas ao longo da jornada de formação. 🚀📚
+Este diretório reúne conteúdos de lives de hands-on e de grupo de estudos da Pós Tech de Engenharia de Machine Learning da FIAP.
 
 ## 🗂️ Links dos Repositórios
 
