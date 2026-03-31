@@ -53,7 +53,7 @@ Este repositório não replica a governança integral para evitar drift document
 
 ## Lives e grupos de estudo
 
-O diretório [`lives/`](lives/) reúne registros de lives de hands-on e conteúdos de grupos de estudo da Pós-Tech. Cada subdiretório corresponde a uma sessão e contém os materiais práticos apresentados ao vivo — notebooks, scripts e referências rápidas. O índice completo das sessões, com data, turma, tema, descrição e professor responsável, está em [`lives/LIVES.md`](lives/LIVES.md).
+O diretório [`lives/`](lives/) reúne registros de lives de hands-on e conteúdos de grupos de estudo da Pós-Tech. Cada subdiretório corresponde a uma sessão e contém os materiais práticos apresentados ao vivo — notebooks, scripts e referências rápidas. O índice completo das sessões, com data, turma, tema, descrição e professor responsável, está em [`lives/README.md`](lives/README.md).
 
 ## Curadoria editorial desta clone
 
