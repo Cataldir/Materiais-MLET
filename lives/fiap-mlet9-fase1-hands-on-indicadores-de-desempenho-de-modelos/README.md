@@ -11,15 +11,13 @@
 
 Este repositório tem como foco apresentar indicadores de avaliação para
 sistemas de RAG. A proposta é demonstrar, de forma simples, como uma
-base documental pode ser indexada em um banco vetorial local, utilizada
-por uma aplicação para responder perguntas e, em seguida, avaliada com
-métricas específicas para verificar a qualidade da resposta e da etapa
-de recuperação de contexto.
+base de conhecimento pode ser indexada em um banco vetorial local, ser utilizada
+por uma aplicação que usa LLM para responder perguntas e, em seguida, avaliada com
+métricas específicas de RAG com LLM-as-a-Judge para verificar a qualidade da resposta e da etapa de recuperação de contexto.
 
-O projeto foi organizado em dois fluxos principais. O primeiro prepara
-o índice vetorial a partir do PDF da base de conhecimento. O segundo
-expõe uma API Flask que recebe a pergunta do usuário, consulta o Chroma
-DB, gera a resposta com LLM e persiste os indicadores de evaluation em
+O projeto foi organizado em dois fluxos principais:
+- O primeiro prepara o índice vetorial a partir do PDF da base de conhecimento;
+- O segundo expõe uma API Flask que recebe a pergunta do usuário, faz recuperação semântica no Chroma DB, gera a resposta com LLM e persiste os indicadores de evaluation em
 arquivo JSON.
 
 ---
