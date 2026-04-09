@@ -1,0 +1,133 @@
+services:
+  # ---------------------------------------------------------------------------
+  # MLflow Tracking Server
+  # ---------------------------------------------------------------------------
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.19.0
+    container_name: mlflow-server
+    ports:
+      - "5000:5000"
+    volumes:
+      - mlflow-data:/mlflow
+    environment:
+      - MLFLOW_TRACKING_URI=sqlite:///mlflow/mlflow.db
+    command: >
+      mlflow server
+        --backend-store-uri sqlite:///mlflow/mlflow.db
+        --default-artifact-root /mlflow/artifacts
+        --host 0.0.0.0
+        --port 5000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - ml-monitoring
+
+  # ---------------------------------------------------------------------------
+  # Prometheus
+  # ---------------------------------------------------------------------------
+  prometheus:
+    image: prom/prometheus:v3.2.1
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ../prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ../prometheus/alert_rules.yml:/etc/prometheus/alert_rules.yml:ro
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=30d'
+      - '--web.enable-lifecycle'
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:9090/-/healthy"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - ml-monitoring
+
+  # ---------------------------------------------------------------------------
+  # Grafana
+  # ---------------------------------------------------------------------------
+  grafana:
+    image: grafana/grafana:11.5.2
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../grafana/provisioning:/etc/grafana/provisioning:ro
+      - ../grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana-data:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/var/lib/grafana/dashboards/ml-pipeline.json
+    depends_on:
+      prometheus:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - ml-monitoring
+
+  # ---------------------------------------------------------------------------
+  # Training Pipeline
+  # ---------------------------------------------------------------------------
+  training:
+    build:
+      context: ../../
+      dockerfile: infra/docker/Dockerfile.training
+    container_name: ml-training
+    ports:
+      - "8001:8001"
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - PROMETHEUS_PORT=8001
+      - REFERENCE_DATA_PATH=/app/data/reference.npz
+    volumes:
+      - training-data:/app/data
+    depends_on:
+      mlflow:
+        condition: service_healthy
+    networks:
+      - ml-monitoring
+
+  # ---------------------------------------------------------------------------
+  # Inference API
+  # ---------------------------------------------------------------------------
+  inference:
+    build:
+      context: ../../
+      dockerfile: infra/docker/Dockerfile.inference
+    container_name: ml-inference
+    ports:
+      - "8000:8000"
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - INFERENCE_HOST=0.0.0.0
+      - INFERENCE_PORT=8000
+      - REFERENCE_DATA_PATH=/app/data/reference.npz
+    volumes:
+      - training-data:/app/data:ro
+    depends_on:
+      mlflow:
+        condition: service_healthy
+    networks:
+      - ml-monitoring
+
+volumes:
+  mlflow-data:
+  prometheus-data:
+  grafana-data:
+  training-data:
+
+networks:
+  ml-monitoring:
+    driver: bridge

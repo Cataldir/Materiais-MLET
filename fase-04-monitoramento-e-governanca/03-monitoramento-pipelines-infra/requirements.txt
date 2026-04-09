@@ -1,0 +1,10 @@
+scikit-learn>=1.6.0
+mlflow>=2.19.0
+fastapi>=0.115.0
+uvicorn>=0.34.0
+prometheus-client>=0.21.0
+scipy>=1.14.0
+numpy>=2.1.0
+pydantic>=2.10.0
+httpx>=0.28.0
+pyyaml>=6.0

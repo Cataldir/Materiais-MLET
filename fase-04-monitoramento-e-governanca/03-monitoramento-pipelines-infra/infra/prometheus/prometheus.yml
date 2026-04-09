@@ -1,0 +1,31 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - "alert_rules.yml"
+
+scrape_configs:
+  # Prometheus self-monitoring
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # MLflow Tracking Server
+  - job_name: "mlflow"
+    static_configs:
+      - targets: ["mlflow:5000"]
+    metrics_path: /metrics
+
+  # Training Pipeline
+  - job_name: "ml-training"
+    static_configs:
+      - targets: ["training:8001"]
+    scrape_interval: 5s  # mais frequente durante treino
+
+  # Inference API
+  - job_name: "ml-inference"
+    static_configs:
+      - targets: ["inference:8000"]
+    metrics_path: /metrics
+    scrape_interval: 10s
