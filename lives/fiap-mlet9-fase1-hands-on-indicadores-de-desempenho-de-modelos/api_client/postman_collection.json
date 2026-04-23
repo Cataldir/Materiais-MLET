@@ -1,0 +1,46 @@
+{
+  "info": {
+    "_postman_id": "8f2f4a56-7f69-4ea3-95d5-5be4c1d6d001",
+    "name": "RAG Evaluation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Ask",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"O que o documento fala sobre escopo 2?\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/ask",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "ask"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
