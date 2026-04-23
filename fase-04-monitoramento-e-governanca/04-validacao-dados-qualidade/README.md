@@ -1,46 +1,93 @@
-# 04 — Validação de Dados e Bibliotecas de Qualidade
+# 04 — Validacao de Dados e Bibliotecas de Qualidade
 
-> 4h de vídeo · 4 aulas
+> 4h de video · 4 aulas + solucao end-to-end
 
 ## Por que esta disciplina importa
 
-Muitos incidentes de ML não surgem no modelo, mas na entrada errada que o sistema aceita sem contestar. Esta disciplina mostra como validar dados, contratos e qualidade operacional antes que o problema se propague para treino, serving ou monitoramento tardio.
+Muitos incidentes de ML nao surgem no modelo, mas na entrada errada que o
+sistema aceita sem contestar. Esta disciplina mostra como validar dados, contratos e
+qualidade operacional antes que o problema se propague para treino, serving ou
+monitoramento tardio.
 
-## O que você deve aprender
+## O que voce deve aprender
 
-- usar Great Expectations para suites e checkpoints de qualidade;
-- definir schemas tipados com Pandera;
-- validar payloads e estruturas em runtime com Pydantic e Cerberus;
-- incorporar gates de qualidade em pipelines executáveis.
+- Usar Great Expectations para suites e checkpoints de qualidade.
+- Definir schemas tipados com Pandera.
+- Validar payloads e estruturas em runtime com Pydantic.
+- Incorporar gates de qualidade em pipelines executaveis.
+- Integrar todos os pilares em uma pipeline end-to-end.
+
+## Conceitos fundamentais
+
+### Validacao declarativa vs. imperativa
+
+| Abordagem | Exemplo | Quando usar |
+|-----------|---------|-------------|
+| **Imperativa** | `assert df['age'].min() >= 0` | Scripts rapidos, POCs |
+| **Declarativa** | `ExpectationSpec("age_min", "age", MIN, 0)` | Pipelines de producao |
+
+A abordagem declarativa separa **o que validar** de **como executar**, permitindo
+reutilizar regras em ambientes diferentes e documentar contratos automaticamente.
+
+### Camadas de validacao em ML
+
+```
+┌─────────────────────────────────────────────────────┐
+│                  Quality Gate (Aula 04)              │
+│         Decisao final: pass / warn / fail            │
+├─────────────────────────────────────────────────────┤
+│              Runtime Validation (Aula 03)            │
+│     Pydantic + Chain of Responsibility               │
+│     Protege fronteiras: APIs, workers, serving       │
+├─────────────────────────────────────────────────────┤
+│              Schema Validation (Aula 02)             │
+│     Pandera — contratos tipados para DataFrames      │
+│     Valida entrada e saida do modelo                 │
+├─────────────────────────────────────────────────────┤
+│           Expectation Suite (Aula 01)                │
+│     Great Expectations — regras declarativas         │
+│     Completude, faixa, cardinalidade, unicidade      │
+└─────────────────────────────────────────────────────┘
+```
 
 ## Como usar este material
 
-1. Comece pelas ferramentas de validação mais declarativas.
-2. Compare validação tabular, tipada e runtime para entender complementaridade.
-3. Use a aula de gates como síntese operacional da disciplina.
-4. Reaplique esses padrões em pipelines, APIs e projetos de Tech Challenge.
-
-## Como referenciar esta disciplina no repositório
-
-- A trilha está em `fase-04-monitoramento-e-governanca/04-validacao-dados-qualidade/`.
-- Ao citar uma biblioteca, referencie a aula correspondente e o artefato principal.
-- O README orienta leitura e uso; scripts, notebooks e pipelines mostram a implementação concreta.
-- Regras institucionais e critérios formais permanecem na governança canônica.
-
-## Referenciais teóricos da disciplina
-
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
-
-## Relevância para a prática executiva e acadêmica
-
-Em operações reais, validação de dados reduz custo de incidente e eleva confiança em pipelines. Academicamente, a disciplina ajuda a formalizar qualidade de entrada e consistência de artefatos, aproximando engenharia de ML de práticas mais robustas de especificação e verificação.
+1. Comece pela **Aula 01** para entender expectativas declarativas.
+2. Avance para **Aula 02** para schemas tipados em DataFrames.
+3. Na **Aula 03**, aprenda validacao de registros individuais (payloads).
+4. Na **Aula 04**, combine tudo em gates de qualidade com decisao.
+5. Execute a **solucao end-to-end** para ver a integracao completa.
 
 ## Aulas
 
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-great-expectations/) | Great Expectations: suites + checkpoints | `ge_validation.py` |
-| [02](aula02-pandera/) | Pandera: DataFrameSchema tipada | `pandera_schemas.py`, notebook |
-| [03](aula03-pydantic-runtime/) | Pydantic + Cerberus para runtime validation | `pydantic_validation.py` |
-| [04](aula04-pipeline-gates/) | Pipeline com gates de qualidade | `README.md`, `quality_gates.py`, notebook |
+| Aula | Tema | Artefatos |
+|------|------|-----------|
+| 01 | Great Expectations: suites + checkpoints | `ge_validation.py`, notebook |
+| 02 | Pandera: DataFrameSchema tipada | `pandera_schemas.py`, notebook |
+| 03 | Pydantic + Chain of Responsibility | `pydantic_validation.py`, notebook |
+| 04 | Pipeline com gates de qualidade | `quality_gates.py`, notebook |
+| E2E | Integracao end-to-end | `e2e_validation_pipeline.py`, notebook |
+
+## Execucao rapida
+
+```bash
+# Aula individual
+cd fase-04-monitoramento-e-governanca/04-validacao-dados-qualidade/aula01-great-expectations
+python ge_validation.py
+
+# Solucao end-to-end
+cd fase-04-monitoramento-e-governanca/04-validacao-dados-qualidade
+python e2e_validation_pipeline.py
+```
+
+## Referenciais teoricos da disciplina
+
+Consulte o indice local em [referencias/README.md](referencias/README.md) para
+leituras e documentacao de apoio.
+
+## Relevancia para a pratica executiva e academica
+
+Em operacoes reais, validacao de dados reduz custo de incidente e eleva
+confianca em pipelines. Academicamente, a disciplina ajuda a formalizar qualidade de
+entrada e consistencia de artefatos, aproximando engenharia de ML de praticas mais
+robustas de especificacao e verificacao.
