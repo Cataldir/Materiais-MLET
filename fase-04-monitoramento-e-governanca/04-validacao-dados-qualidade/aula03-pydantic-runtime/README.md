@@ -1,24 +1,52 @@
-# Aula 03 - Pydantic para validacao em runtime
+# Aula 03 — Pydantic: Validacao em Runtime
 
-Pacote canonico leve para validar payloads de inferencia em runtime com uma cadeia de validadores locais e um Strategy opcional usando Pydantic quando disponivel. O foco da aula e mostrar como proteger fronteiras de sistema sem acoplar a logica de negocio ao mecanismo de validacao.
+Pacote canonico para validar payloads de inferencia em runtime com uma
+cadeia de validadores locais e um Strategy opcional usando Pydantic.
+
+## Conceitos abordados
+
+### Strategy Pattern
+
+O **Strategy Pattern** permite trocar o backend de validacao sem alterar
+o contrato da interface. Quando Pydantic esta disponivel, usamos; caso
+contrario, um validador local deterministico entra em acao.
+
+```
+┌────────────┐     ┌──────────────────┐
+│ Consumidor │────>│ SchemaStrategy   │ (Protocol)
+└────────────┘     └──────────────────┘
+                          ▲
+                   ┌──────┴──────┐
+                   │             │
+            ┌──────────┐  ┌───────────┐
+            │  Local   │  │ Pydantic  │
+            └──────────┘  └───────────┘
+```
+
+### Chain of Responsibility
+
+Validadores de **regras de negocio** sao compostos em cadeia. Cada handler
+executa seu check e delega para o proximo:
+
+1. **RequiredBusinessFields**: customer_id nao pode ser vazio
+2. **NumericRange**: faixas operacionais do modelo (age 18-100)
+3. **AllowedSegment**: segmentos aceitos pela politica de scoring
+4. **Consistency**: regras cross-field (gasto zero + horizonte longo)
+
+### Diferenca entre validacao de DataFrame e payload
+
+| Aspecto | Pandera (Aula 02) | Pydantic (Aula 03) |
+|---------|-------------------|---------------------|
+| Granularidade | DataFrame inteiro | Registro individual |
+| Caso de uso | Batch processing | APIs, serving |
+| Tipo de dado | Tabular (colunas) | JSON/dict (campos) |
 
 ## Objetivo didatico
 
-- validar campos obrigatorios, faixas e tipos antes de processar a inferencia;
-- separar schema validation de regras de negocio adicionais;
-- demonstrar Chain of Responsibility para compor validadores pequenos.
-
-## O que foi preservado
-
-- `pydantic` como caminho opcional para schema validation;
-- cadeia de validadores locais para checks de negocio e integridade;
-- exemplos validos e invalidos para smoke tests e walkthrough local.
-
-## O que foi simplificado
-
-- sem API web ou middleware de framework;
-- sem dependencia obrigatoria de Pydantic;
-- foco em payload tabular pequeno e regras deterministicas.
+- Validar campos obrigatorios, faixas e tipos antes de processar inferencia.
+- Separar schema validation de regras de negocio.
+- Demonstrar Chain of Responsibility para compor validadores.
+- Mostrar como proteger fronteiras de sistema.
 
 ## Execucao
 
@@ -29,10 +57,13 @@ python pydantic_validation.py
 
 ## Arquivos
 
-- `pydantic_validation.py`: strategy opcional com Pydantic e cadeia de validadores locais.
+- `pydantic_validation.py`: strategy opcional com Pydantic, cadeia de validadores
+  de negocio e payloads de exemplo.
+- `03_pydantic_runtime_local.ipynb`: notebook didatico com walkthrough interativo.
 
 ## Observacoes didaticas
 
-- a cadeia facilita adicionar novos checks sem inflar uma unica funcao;
-- Pydantic cobre schema e coercao, mas regras de negocio continuam explicitas na pipeline;
-- o mesmo padrao serve para APIs, jobs de scoring e workers assincros.
+- A cadeia facilita adicionar novos checks sem inflar uma unica funcao.
+- Pydantic cobre schema e coercao, mas regras de negocio continuam explicitas.
+- O mesmo padrao serve para APIs, jobs de scoring e workers assincronos.
+- O ConsistencyHandler demonstra validacao cross-field, comum em producao.

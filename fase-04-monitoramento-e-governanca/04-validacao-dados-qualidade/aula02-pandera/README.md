@@ -1,24 +1,53 @@
-# Aula 02 - Pandera para contratos tipados de DataFrame
+# Aula 02 — Pandera: Contratos Tipados de DataFrame
 
-Pacote canonico leve para apresentar validacao de dados com Pandera em um pipeline local de ML. O material continua funcional mesmo quando a biblioteca nao esta instalada, permitindo explorar o fluxo e os testes sem bloquear a aula.
+Pacote canonico para validacao de dados com Pandera em um pipeline local de ML.
+O material continua funcional mesmo quando a biblioteca nao esta instalada.
+
+## Conceitos abordados
+
+### DataFrameSchema
+
+Um schema Pandera define o **contrato tipado** de um DataFrame: quais colunas
+existem, seus tipos, restricoes de faixa e regras cross-column.
+
+```python
+pa.DataFrameSchema(
+    columns={
+        "tenure": pa.Column(int, checks=[pa.Check.greater_than_or_equal_to(0)]),
+        "churn": pa.Column(str, checks=[pa.Check.isin(["yes", "no"])]),
+    }
+)
+```
+
+### Schema de entrada vs. schema de saida
+
+Em ML, validamos **tanto a entrada quanto a saida** do modelo:
+
+| Schema | O que valida | Quando aplicar |
+|--------|-------------|----------------|
+| **Entrada** | Dados brutos antes de transformacao | Ingestao, feature engineering |
+| **Saida** | Predicoes do modelo | Pos-inferencia, serving |
+
+### Validacao lazy
+
+Pandera pode acumular **todos os erros** antes de levantar excecao,
+em vez de parar no primeiro. Isso facilita diagnostico:
+
+```python
+schema.validate(df, lazy=True)  # Acumula erros
+```
+
+### Coercao de tipos
+
+Pandera pode converter tipos automaticamente (`coerce=True`), o que e
+util quando dados chegam como strings de um CSV ou API.
 
 ## Objetivo didatico
 
-- definir schemas tipados para dados de entrada e para predições;
-- comparar exemplos validos e invalidos com a mesma estrutura de DataFrame;
-- demonstrar fallback amigavel quando `pandera` nao estiver disponivel no ambiente.
-
-## O que foi preservado
-
-- schemas por coluna com checks simples e legiveis;
-- validacao lazy para agregar erros quando Pandera esta instalado;
-- versoes em script e notebook para execucao local.
-
-## O que foi simplificado
-
-- sem datasets externos ou integracao com pipeline remoto;
-- sem dependencia obrigatoria de `pandera` para abrir o material;
-- foco em poucos exemplos para facilitar depuracao e smoke tests.
+- Definir schemas tipados para dados de entrada e predicoes.
+- Comparar exemplos validos e invalidos com a mesma estrutura.
+- Demonstrar fallback amigavel quando `pandera` nao esta disponivel.
+- Mostrar a diferenca entre validar entrada e saida do modelo.
 
 ## Execucao
 
@@ -29,11 +58,13 @@ python pandera_schemas.py
 
 ## Arquivos
 
-- `pandera_schemas.py`: cria schemas, gera exemplos validos/invalidos e executa validacao com fallback.
-- `02_pandera_local.ipynb`: notebook didatico com os mesmos exemplos do script.
+- `pandera_schemas.py`: schemas de entrada (churn, titanic) e saida (predicoes),
+  datasets sinteticos e motor de validacao.
+- `02_pandera_local.ipynb`: notebook didatico com os mesmos exemplos.
 
 ## Observacoes didaticas
 
-- `pandera[pandas]` e a instalacao recomendada para o backend `pandas`;
-- quando a dependencia nao existe, o script registra aviso e retorna resultados falsos em vez de quebrar;
-- esse padrao e util para gates locais de qualidade e smoke tests em ambientes enxutos.
+- `pandera[pandas]` e a instalacao recomendada para o backend `pandas`.
+- Quando a dependencia nao existe, o script registra aviso e retorna resultados
+  indicando que o backend nao esta disponivel.
+- Schemas de saida sao tao importantes quanto schemas de entrada em producao.
