@@ -51,6 +51,10 @@ Este repositório não replica a governança integral para evitar drift document
 | [04](fase-04-monitoramento-e-governanca/README.md) | 6 | drift, qualidade de dados, observabilidade, compliance e inferência causal |
 | [05](fase-05-llms-e-agentes/README.md) | 5 | serving de LLMs, agentes, escalabilidade, avaliação e segurança |
 
+## Lives e grupos de estudo
+
+O diretório [`lives/`](lives/) reúne registros de lives de hands-on e conteúdos de grupos de estudo da Pós-Tech. Cada subdiretório corresponde a uma sessão e contém os materiais práticos apresentados ao vivo — notebooks, scripts e referências rápidas. O índice completo das sessões, com data, turma, tema, descrição e professor responsável, está em [`lives/README.md`](lives/README.md).
+
 ## Curadoria editorial desta clone
 
 - `canonica` é a linha editorial de base para materiais executáveis consolidados.
