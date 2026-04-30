@@ -1,47 +1,40 @@
-# 02 — Deploy de Agentes com LLMs
+# 02 — Deploy de Agentes
 
-> 5h de vídeo · 5 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-Agentes são a forma mais direta de transformar LLMs em sistemas capazes de agir, consultar contexto e integrar ferramentas. Esta disciplina trata do desenho operacional desses agentes, cobrindo orquestração, RAG, APIs e a passagem de protótipo conversacional para serviço reutilizável.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: Introdução a Agentes Autônomos e Workflow Orchestration; Arquiteturas de Agentes LLM e Engenharia de Prompt; Implementação Prática de Agents: Chains e Loops de Decisão; Integração com APIs, Bancos de Dados Vetoriais e Ferramentas Externas.
 
-- implementar padrões de agente como ReAct e tool use;
-- usar frameworks de orquestração como LangChain e LangGraph com senso crítico;
-- integrar RAG e ferramentas customizadas ao fluxo do agente;
-- expor agentes como APIs e organizar um projeto end-to-end.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Comece por agentes ReAct para fixar o padrão de raciocínio e ação.
-2. Use LangChain e LangGraph como comparação de abstração e orquestração.
-3. Avance para RAG e tools quando a base de controle já estiver clara.
-4. Feche com o deploy como API e o projeto integrador para consolidar a trilha.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | Introdução a Agentes Autônomos e Workflow Orchestration | Definição de agentes autônomos, arquitetura básica, papel dos LLMs, orquestração... |
+| 02 | Arquiteturas de Agentes LLM e Engenharia de Prompt | Funcionamento de LLMs, engenharia de prompt, padrões de raciocínio como Chain-of... |
+| 03 | Implementação Prática de Agents: Chains e Loops de Decisão | Construção de agentes com LangChain, diferença entre chains e loops de decisão |
+| 04 | Integração com APIs, Bancos de Dados Vetoriais e Ferramentas Externas | Uso de ferramentas externas, integração com APIs e bancos vetoriais, RAG |
+| 05 | Monitoramento, Segurança e Boas Práticas de Produção | MLOps para agentes, monitoramento de desempenho, segurança e práticas de produçã... |
+| 06 | Governança de Dados e Monitoramento de Dados em ML | Governança de dados, versionamento, qualidade e monitoramento de dados em produç... |
+| 07 | Ética e Viés na Validação de Dados e Modelos de ML | IA responsável, fairness, detecção e mitigação de viés, validação ética de outpu... |
+| 08 | Tópicos Avançados e Tendências Futuras em Deploy de Agentes | Multi-agentes, AutoGPT, escalabilidade, multimodalidade, alinhamento e futuro da... |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- A referência principal está em `fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms/`.
-- Para exemplos concretos, cite a aula correspondente ao padrão de agente ou integração desejada.
-- O README é a camada de navegação conceitual; scripts e Dockerfile mostram a implementação prática.
-- Questões de governança acadêmica e institucional continuam separadas no repositório principal.
+AWS, Azure, Chroma, DVC, Docker, Evidently, FAISS, GitHub Actions, Great Expectations, LangChain, Python
 
-## Referenciais teóricos da disciplina
+## Referências Principais
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
+- Barua, S. (2024)
+- Huyen, C. (2022)
+- Jing, Z. et al. (2025)
+- Pelluru, K. (2025)
+- Prasad, A. N. (2024)
 
-## Relevância para a prática executiva e acadêmica
+## Como Usar
 
-Executivamente, essa disciplina ajuda a avaliar quando um agente agrega valor e quando apenas adiciona complexidade. Academicamente, ela oferece base para estudar raciocínio orientado a ferramenta, recuperação de contexto e coordenação de passos em sistemas generativos.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-agentes-react/) | Agentes ReAct e tool use | `react_agent.py` |
-| [02](aula02-langchain-langgraph/) | LangChain + LangGraph | `langchain_agent.py`, `langgraph_workflow.py` |
-| [03](aula03-rag-tools/) | RAG + custom tools | `rag_pipeline.py`, `custom_tools.py` |
-| [04](aula04-deploy-agente-api/) | Deploy agente como API FastAPI | `agent_api.py`, `Dockerfile` |
-| [05](aula05-projeto-completo/) | Projeto end-to-end | notebook integrador |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.

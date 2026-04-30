@@ -1,46 +1,40 @@
-# 02 — Gerenciamento de Dependências em ML
+# 02 — Gerenciamento de Dependências
 
-> 4h de vídeo · 4 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-Poucas coisas corroem tanto a confiabilidade de um projeto de ML quanto ambientes inconsistentes. Esta disciplina trata da base operacional que garante reprodutibilidade: isolamento, pinagem, resolução de conflito e escolha consciente de ferramentas para dependências e build.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: Reprodutibilidade em Ciência de Dados; Poetry: Gerenciamento Integrado; Uv: Velocidade e Automação; Controle de Versões (Código e APIs).
 
-- isolar ambientes de desenvolvimento e execução de forma previsível;
-- controlar dependências com `requirements`, `constraints` e ferramentas de empacotamento modernas;
-- comparar abordagens com Poetry e uv sem cair em adoção acrítica de ferramenta;
-- resolver conflitos e documentar um checklist realista de reprodutibilidade.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Siga a ordem das aulas, porque a disciplina evolui de fundamentos para casos de conflito.
-2. Reproduza os cenários localmente para sentir a diferença entre gestão ad hoc e gestão controlada.
-3. Use os exemplos desta trilha como referência quando um projeto do curso exigir ambiente mais formalizado.
-4. Trate os checklists como instrumentos de operação, não apenas de estudo.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | Reprodutibilidade em Ciência de Dados | Conceito de reprodutibilidade; diferenças entre reprodutibilidade e replicabilid... |
+| 02 | Poetry: Gerenciamento Integrado | Introdução ao Poetry; estrutura do pyproject.toml; lockfile; comandos básicos (i... |
+| 03 | Uv: Velocidade e Automação | Conceito do Uv; diferenciais (performance, .python-version); comandos (uv init, ... |
+| 04 | Controle de Versões (Código e APIs) | Git aplicado à reprodutibilidade; versionamento de arquivos de dependência; boas... |
+| 05 | Versionamento de Dados e Modelos | Introdução ao DVC e MLflow; rastreamento de datasets; registro de modelos e métr... |
+| 06 | Padronização com pyproject.toml | Estrutura detalhada do arquivo; vantagens da padronização; integração com ferram... |
+| 07 | Documentação e Governança | Como documentar ambientes (README, instruções); políticas de atualização; govern... |
+| 08 | CI/CD e Automação | Conceitos de CI/CD; configuração de pipeline (instalação, testes, cache); integr... |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- O índice da disciplina está em `fase-02-containers-e-ambientes-reprodutiveis/02-gerenciamento-dependencias/`.
-- Ao citar uma solução específica, aponte para a aula e para os arquivos de configuração relevantes.
-- O README organiza a navegação; os exemplos concretos vivem nas subpastas e nos arquivos de lock/configuração.
-- Regras de prontidão e padrão de material continuam centralizadas fora deste clone.
+DVC, Docker, Git, MLflow, Poetry
 
-## Referenciais teóricos da disciplina
+## Referências Principais
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
+- Aula expositiva + demonstração prática de falha por diferença de ambiente; debat
+- Demonstração comparativa (pip vs Uv); prática guiada; simulação de pipeline CI c
+- Demonstração de pipeline real; atividade de desenho de fluxograma CI/CD; desafio
+- Exercício prático com Git + pyproject; estudo de caso sobre quebra por atualizaç
+- Exploração guiada do arquivo; edição prática; quiz sobre campos obrigatórios
 
-## Relevância para a prática executiva e acadêmica
+## Como Usar
 
-Em operações reais, dependências mal geridas geram incidentes, atrasam deploy e comprometem auditoria. Em termos acadêmicos, a disciplina reforça noções de reprodutibilidade computacional e evidencia que resultados válidos precisam ser reproduzíveis por outros avaliadores e colaboradores.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-isolamento-venv/) | Isolamento com venv/virtualenv | notebook, script |
-| [02](aula02-pip-requirements/) | pip avançado, requirements.txt, constraints | `requirements.txt`, `constraints.txt` |
-| [03](aula03-poetry-vs-uv/) | Poetry vs uv | dois projetos idênticos |
-| [04](aula04-conflitos-reproducibilidade/) | Resolução de conflitos, checklist reprodutibilidade | cenários + soluções |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.

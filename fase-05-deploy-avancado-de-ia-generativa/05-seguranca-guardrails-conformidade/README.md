@@ -1,47 +1,40 @@
-# 05 — Segurança, Guardrails e Conformidade
+# 05 — Segurança Guardrails e Conformidade
 
-> 5h de vídeo · 5 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-Sistemas generativos ampliam superfície de ataque, risco de vazamento, comportamento inesperado e impacto regulatório. Esta disciplina fecha a trilha mostrando que segurança e conformidade não são acessórios de IA generativa, mas parte do desenho mínimo de uma solução confiável.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: Ameaças e Vulnerabilidades em LLMs; Guardrails e Políticas para LLMs; Proteção de Dados e Isolamento de Ferramentas; Testes de Segurança e Auditoria em LLMs.
 
-- reconhecer riscos específicos de LLMs e agentes, incluindo prompt injection;
-- aplicar guardrails e mecanismos de contenção de comportamento;
-- instrumentar logging de auditoria e detecção de PII;
-- estruturar um projeto que trate segurança e conformidade como requisito de produto.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Comece pelo mapeamento de riscos para entender a superfície do problema.
-2. Avance para guardrails e defesas específicas contra ataques e uso indevido.
-3. Use a aula de compliance para conectar segurança técnica a obrigação institucional e regulatória.
-4. Feche com o projeto integrador para consolidar uma postura de segurança por desenho.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | Ameaças e Vulnerabilidades em LLMs | Ataques contra LLMs: prompt injection, jailbreaks, exfiltração de dados sensívei... |
+| 02 | Guardrails e Políticas para LLMs | Mitigação de abusos via políticas: guardrails declarativos, filtros de conteúdo,... |
+| 03 | Proteção de Dados e Isolamento de Ferramentas | Segurança de dados sensíveis: detecção e remoção de PII/PHI, DLP, isolamento de ... |
+| 04 | Testes de Segurança e Auditoria em LLMs | Garantia de robustez: Red Teaming, testes adversariais, auditoria de decisões, t... |
+| 05 | Conformidade e Proteção de Dados (LGPD/GDPR) | Regulação e IA: aplicação de LGPD/GDPR em LLMs, retenção e anonimização de logs,... |
+| 06 | Governança de Dados e Monitoramento de LLMs | Gestão e qualidade de dados em AI: governança, monitoramento contínuo, MLOps, da... |
+| 07 | Ética, Viés e Validação em LLMs | IA Responsável: identificação e mitigação de vieses, fairness, transparência, ac... |
+| 08 | Governança de IA e Implantação Segura em Produção | Frameworks e boas práticas: NIST AI RMF, políticas organizacionais, CI/CD seguro... |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- O caminho canônico é `fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade/`.
-- Ao mencionar um risco ou mecanismo específico, cite a aula correspondente.
-- O README resume o racional da trilha; scripts e notebooks mostram a implementação e a simulação dos controles.
-- A governança formal do programa e suas políticas continuam sendo a fonte oficial para precedência documental.
+AWS, Azure, Docker, Evidently, Great Expectations, Kubernetes, LangChain, MLflow, NVIDIA, Python
 
-## Referenciais teóricos da disciplina
+## Referências Principais
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
+- BARBERÁ, I
+- CARLINI, N
+- GULYAMOV, S
+- JIAO, J
+- NIST (TABASSI, E
 
-## Relevância para a prática executiva e acadêmica
+## Como Usar
 
-Na prática profissional, esta disciplina reduz exposição a incidentes técnicos, jurídicos e reputacionais em produtos baseados em LLMs. Academicamente, ela introduz uma visão crítica de segurança aplicada a sistemas generativos, articulando adversarialidade, compliance e governança de uso responsável.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-riscos-llms/) | Riscos e ataques em LLMs | `llm_risks.py` |
-| [02](aula02-guardrails/) | Guardrails: NeMo, Guardrails AI | `guardrails_demo.py` |
-| [03](aula03-prompt-injection/) | Prompt injection: ataques + defesas | `prompt_injection.py` |
-| [04](aula04-compliance-pii/) | Compliance: audit logging + PII detection | `pii_detector.py` |
-| [05](aula05-projeto-seguranca/) | Projeto segurança integrador | notebook |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.

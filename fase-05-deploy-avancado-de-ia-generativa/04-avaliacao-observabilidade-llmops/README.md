@@ -1,48 +1,40 @@
-# 04 — Avaliação e Observabilidade em LLMOps
+# 04 — Avaliação e Observabilidade
 
-> 5h de vídeo · 5 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-LLMs geram saídas probabilísticas, caras e difíceis de inspecionar sem instrumentação adequada. Esta disciplina mostra como medir qualidade, rastrear execução e controlar custo e latência em aplicações generativas, tornando LLMOps um processo verificável em vez de intuitivo.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: Métricas de Qualidade e Robustez em LLMs; Avaliação de Sistemas RAG (Retrieval-Augmented Generation); Avaliação Offline vs. Online (LLM-as-a-Judge); Telemetria e Observabilidade de LLM em Produção.
 
-- aplicar métricas clássicas e modernas de avaliação em NLP e geração;
-- usar abordagens automatizadas como RAGAS e LLM-as-judge com senso crítico;
-- instrumentar tracing e observabilidade para fluxos generativos;
-- acompanhar custo e latência como dimensões de qualidade operacional;
-- consolidar uma visão de LLMOps ponta a ponta.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Comece pelas métricas para construir vocabulário de avaliação.
-2. Em seguida, compare métodos automatizados e seus limites.
-3. Use tracing, custo e latência para fechar a dimensão operacional.
-4. Trate o projeto final como síntese do que significa operar LLMs com evidência.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | Métricas de Qualidade e Robustez em LLMs | Fundamentos de avaliação de LLMs: métricas de qualidade, veracidade e segurança ... |
+| 02 | Avaliação de Sistemas RAG (Retrieval-Augmented Generation) | Qualidade em LLMs com busca externa: relevância do conteúdo recuperado e fidelid... |
+| 03 | Avaliação Offline vs. Online (LLM-as-a-Judge) | Métodos de avaliação de modelos: testes offline tradicionais versus avaliação co... |
+| 04 | Telemetria e Observabilidade de LLM em Produção | Monitoramento técnico de LLMs: tracing de chamadas, uso de tokens, desempenho e ... |
+| 05 | Teste A/B de Prompts e Deploy Seguro de Modelos | Estratégias de experimentação e rollout: comparar variações de prompts/modelos e... |
+| 06 | Governança de Dados e Monitoramento de ML | Controle e qualidade de dados em ML: gestão de dados para avaliação e detecção d... |
+| 07 | Ética e Viés na Avaliação de Modelos de ML | Questões de fairness e responsabilidade: identificação de vieses e mitigação dur... |
+| 08 | Observabilidade Avançada e Melhores Práticas em LLMOps | Integração dos aspectos de avaliação e monitoramento em ambientes de produção co... |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- O caminho principal é `fase-05-deploy-avancado-de-ia-generativa/04-avaliacao-observabilidade-llmops/`.
-- Ao citar uma técnica de avaliação ou tracing, referencie a aula correspondente.
-- O README organiza a interpretação da trilha; scripts e notebooks mostram como a medição é implementada.
-- Critérios institucionais de avaliação do curso permanecem na governança principal.
+AWS, Azure, DVC, Docker, FAISS, Grafana, Great Expectations, LangChain, Langfuse, MLflow, OpenTelemetry, Prometheus, Python
 
-## Referenciais teóricos da disciplina
+## Referências Principais
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
+- BRECK, E
+- ES, S
+- LEEST, J
+- LI, H
+- LIANG, P
 
-## Relevância para a prática executiva e acadêmica
+## Como Usar
 
-Executivamente, esta disciplina ajuda a tomar decisões melhores sobre qualidade percebida, custo e confiabilidade de aplicações generativas. Academicamente, ela oferece uma base concreta para discutir avaliação de sistemas probabilísticos, instrumentação e validade de proxies automáticos de qualidade.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-metricas-nlp/) | Métricas: BLEU, ROUGE, BERTScore | `nlp_metrics.py` |
-| [02](aula02-avaliacao-automatizada/) | RAGAS, LLM-as-judge | `ragas_evaluation.py` |
-| [03](aula03-tracing-llmops/) | Tracing: LangSmith, Phoenix/Arize | `llm_tracing.py` |
-| [04](aula04-custo-latencia/) | Custo e latência: tracking e otimização | `cost_tracker.py` |
-| [05](aula05-projeto-llmops/) | Projeto LLMOps end-to-end | notebook integrador |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.

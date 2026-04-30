@@ -1,46 +1,40 @@
-# 03 — Aplicações Avançadas e Escalabilidade
+# 03 — Aplicacoes Avancadas
 
-> 4h de vídeo · 4 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-Sistemas com LLMs e agentes rapidamente encontram limites de estado, concorrência, coordenação e custo. Esta disciplina trata da arquitetura de aplicações mais sofisticadas, nas quais memória, múltiplos agentes e estratégias de escala passam a ser parte do problema principal.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: Fundamentos de MLOps e Arquiteturas de ML em Produção; Orquestração de Pipelines e CI/CD em ML; Deploy de Pipelines Complexos: Multimodalidade e RAG; Gerenciamento de Memória e Estado em LLMs e Agentes.
 
-- organizar fluxos multiagente com coordenação explícita;
-- lidar com memória e estado em conversas de longa duração;
-- aplicar concorrência, batching e escalabilidade horizontal em workloads generativos;
-- integrar essas preocupações em um projeto avançado coerente.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Comece pela orquestração multiagente para entender divisão de responsabilidades.
-2. Em seguida, trate memória e estado como requisitos de produto e não apenas detalhe técnico.
-3. Use a aula de escalabilidade para avaliar throughput, latência e custo.
-4. Feche no projeto integrador para observar como as peças se conectam.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | Fundamentos de MLOps e Arquiteturas de ML em Produção | Visão geral de MLOps, arquitetura de sistemas de ML, dívida técnica, ciclo de vi... |
+| 02 | Orquestração de Pipelines e CI/CD em ML | Orquestração de workflows, automação CI/CD, versionamento de dados e modelos. |
+| 03 | Deploy de Pipelines Complexos: Multimodalidade e RAG | Pipelines multimodais, RAG, fusão de modalidades, busca vetorial, modularização. |
+| 04 | Gerenciamento de Memória e Estado em LLMs e Agentes | Memória em LLMs, agentes com estado, memória vetorial, grafos de conhecimento. |
+| 05 | Escalabilidade Horizontal e Balanceamento de Carga | Escalabilidade horizontal, balanceamento de carga, paralelismo, auto-scaling. |
+| 06 | Resiliência, Observabilidade e Detecção de Drift em Produção | Resiliência de sistemas, observabilidade, monitoramento de modelo, detecção de d... |
+| 07 | Governança de Dados e Monitoramento de Modelos em Produção | Governança de dados, linhagem, validação de dados, compliance, model registry. |
+| 08 | Ética e Viés na Validação de Dados em ML | Fairness, viés algorítmico, validação ética, documentação de modelos, responsabi... |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- O caminho canônico é `fase-05-deploy-avancado-de-ia-generativa/03-aplicacoes-avancadas-escalabilidade/`.
-- Cite a aula específica quando o assunto for multiagentes, memória ou escalabilidade.
-- Este README funciona como índice didático; notebooks e scripts mostram a implementação e os trade-offs.
-- A camada normativa e avaliativa permanece fora desta pasta.
+AWS, Airflow, Azure, Chroma, DVC, Docker, Evidently, FAISS, Git, GitHub Actions, Grafana, Great Expectations, Kubeflow, Kubernetes, LangChain, MLflow, Prometheus, PyTorch, Python, Ray
 
-## Referenciais teóricos da disciplina
+## Referências Principais
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
+- Huyen, C. (2022)
+- Lewis, P. et al. (2020)
+- Lu, J. et al. (2018)
+- Mehrabi, N. et al. (2021)
+- Moritz, P. et al. (2018)
 
-## Relevância para a prática executiva e acadêmica
+## Como Usar
 
-Na prática, essa disciplina ajuda a evitar soluções generativas que quebram ao ganhar usuários, contexto ou complexidade. Em termos acadêmicos, ela permite analisar arquitetura distribuída, gerenciamento de estado e coordenação de agentes como problemas centrais de engenharia contemporânea.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-multi-agent/) | Multi-agent: orquestração | `multi_agent_orchestrator.py` |
-| [02](aula02-memoria-estado/) | Memória e estado em conversas | `conversation_memory.py` |
-| [03](aula03-escalabilidade/) | Async, batching, horizontal scaling | `async_inference.py`, notebook |
-| [04](aula04-projeto-avancado/) | Projeto avançado integrador | notebook |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.

@@ -1,46 +1,40 @@
-# 04 — Monitoração de Performance
+# 04 — Monitoracao Performance
 
-> 4h de vídeo · 4 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-Depois do deploy, a pergunta deixa de ser “funciona?” e passa a ser “como está se comportando ao longo do tempo?”. Esta disciplina introduz métricas, dashboards e alertas para observar o desempenho de modelos e APIs em produção.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: Aula 1: Latência vs. Throughput; Aula 2: Otimização de Modelos Supervisionados I; Aula 3: Otimização de Modelos Supervisionados II; Aula 4: Otimização de Modelos Não Supervisionados.
 
-- definir métricas úteis para serviços de ML em operação;
-- instrumentar aplicações com Prometheus e Grafana;
-- configurar regras de alerta e sinais de anomalia;
-- consolidar uma visão de monitoramento que suporte tomada de decisão.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Comece pela coleta de métricas para entender o que vale medir.
-2. Em seguida, reproduza a stack com Prometheus e Grafana.
-3. Use a aula de alertas para pensar resposta operacional, não só visualização.
-4. Feche no projeto consolidado para observar a disciplina como sistema integrado.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | Aula 1: Latência vs. Throughput | - Métricas de desempenho: latência e throughput - Diferenças e trade-offs - Apli... |
+| 02 | Aula 2: Otimização de Modelos Supervisionados I | - Hiperparâmetros - Eficiência de treinamento - Regularização |
+| 03 | Aula 3: Otimização de Modelos Supervisionados II | - Compressão de modelos - Pruning e quantização - Knowledge distillation |
+| 04 | Aula 4: Otimização de Modelos Não Supervisionados | - Clustering e redução de dimensionalidade - Avaliação de modelos não supervisio... |
+| 05 | Aula 5: Pipelines de Serviço – Previsões em Lote vs. Tempo Real | - Arquiteturas de inferência - Comparação entre batch e real-time - Freshness e ... |
+| 06 | Aula 6: Infraestrutura e Aceleração para Ambientes de Alto Throughput | - Hardware acelerador (GPU, TPU) - Técnicas de batching - Arquiteturas de alta p... |
+| 07 | Aula 7: Orquestração e Escalabilidade de Modelos em Produção | - Containerização com Docker - Orquestração com Kubernetes - Ferramentas nativas... |
+| 08 | Aula 8: Monitoramento de Performance e Manutenção de Modelos | - Monitoramento de métricas de sistema e modelo - Data drift e concept drift - R... |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- O caminho da trilha é `fase-03-cloud-e-mlops/04-monitoracao-performance/`.
-- Cite a aula e o artefato correspondente quando precisar mostrar instrumentação, dashboard ou alerta.
-- O README resume intenção e navegação; configurações, notebooks e scripts são a prova executável.
-- Regras de avaliação e processos institucionais não são mantidas nesta pasta.
+Docker, Kubeflow, Kubernetes, TensorFlow
 
-## Referenciais teóricos da disciplina
+## Referências Principais
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
+- Bian, K.; Priyadarshi, R. – 'Machine Learning Optimization Techniques: A Survey' (2024)
+- Dantas, P. V. et al. – 'A Comprehensive Review of Model Compression Techniques in ML' (2024)
+- Feng, Y. et al. – 'Distributed K-Means Algorithm Based on Spark' (2024)
+- Maheshwari, C. – 'From Batch to Streaming: Building Real-time Inference Pipelines for ML' (2025)
+- McCall, A. – 'AI Model Serving at Scale: Kubernetes-based Orchestration and Optimization for High-Performance Inference' (2025)
 
-## Relevância para a prática executiva e acadêmica
+## Como Usar
 
-Em ambientes reais, observabilidade é pré-condição para SLA, custo controlado e resposta a incidentes. No plano acadêmico, a disciplina ajuda a operacionalizar conceitos de medição, monitoramento e anomalia com evidência concreta e reproduzível.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-metricas-producao/) | Métricas de modelo em produção | `collect_metrics.py` |
-| [02](aula02-prometheus-grafana/) | Prometheus + Grafana + FastAPI instrumentada | `README.md`, `api_instrumented.py`, `docker-compose.yml`, `prometheus.yml`, notebook |
-| [03](aula03-alertas/) | Alertas, anomaly detection | `alert_rules.yml`, `anomaly_detection.py` |
-| [04](aula04-projeto-monitoramento/) | Projeto de monitoramento consolidado | notebook |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.

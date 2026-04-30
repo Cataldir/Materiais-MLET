@@ -1,48 +1,40 @@
 # 03 — Docker e Kubernetes
 
-> 5h de vídeo · 5 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-Modelos e APIs de ML precisam sair do ambiente do autor e entrar em ambientes reproduzíveis, transportáveis e operáveis. Esta disciplina mostra como contêineres e orquestração ajudam a padronizar execução, reduzir dependência do host local e preparar workloads para deploy e escala.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: Fundamentos de Containers e Virtualização; Introdução ao Docker; Boas Práticas em Docker para ML; Orquestração de Contêineres com Kubernetes.
 
-- construir imagens Docker adequadas a serviços e jobs de ML;
-- usar multi-stage build e imagens especializadas, inclusive para cenários com GPU;
-- compor serviços com Docker Compose;
-- entender objetos essenciais de Kubernetes para publicar workloads;
-- reconhecer estratégias de rollout e empacotamento com Helm e Skaffold.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Comece pelos fundamentos de Docker e só depois avance para cenários mais ricos.
-2. Reproduza o `docker-compose.yml` para entender integração entre componentes.
-3. Use a pasta `k8s/` como transição entre conteinerização local e operação em cluster.
-4. Trate a última aula como introdução a rollout controlado e não como checklist cego de YAML.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | Fundamentos de Containers e Virtualização | – Conceito de contêiner de software: comparação entre containers e máquinas virt... |
+| 02 | Introdução ao Docker | – Arquitetura do Docker: componentes principais (Docker Engine/Daemon, Docker CL... |
+| 03 | Boas Práticas em Docker para ML | – Otimização de Imagens: técnicas para reduzir o tamanho e melhorar a eficiência... |
+| 04 | Orquestração de Contêineres com Kubernetes | – Motivação para orquestração: desafios de gerenciar múltiplos contêineres em pr... |
+| 05 | Kubernetes na Prática: Implantando Modelos de ML | – Configuração do Ambiente: preparação de um cluster local (Minikube ou Kubernet... |
+| 06 | Kubernetes Avançado: Persistência, Configuração e Escala | – Armazenamento Persistente: introdução ao conceito de Volumes no Kubernetes. Ex... |
+| 07 | Ciclos de Deploy e Automação (CI/CD & MLOps) | – Integração Contínua (CI): conceitos de CI aplicados a ML – integração frequent... |
+| 08 | Monitoramento de Contêineres e Modelos em Produção | – Observabilidade 101: conceito de observabilidade em sistemas – métricas, logs ... |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- A referência principal está em `fase-02-containers-e-ambientes-reprodutiveis/03-docker-kubernetes/`.
-- Cite a aula específica quando o foco for build, compose, Kubernetes ou rollout.
-- Este README é a camada de orientação; Dockerfiles, manifests e charts são a evidência executável.
-- Para políticas do curso, use a camada canônica de governança em vez de reproduzir regra localmente.
+AWS, Azure, Docker, Flask, Git, GitHub Actions, Grafana, Helm, Jenkins, Kubeflow, Kubernetes, MLflow, NVIDIA, Prometheus, PyTorch, Python, TensorFlow
 
-## Referenciais teóricos da disciplina
+## Referências Principais
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
+- – Aula expositiva com exemplos visuais: Uso de slides e diagramas para ilustrar 
+- – Estudo de caso e discussão: O instrutor apresenta um estudo de caso realista –
+- – Exposição dialogada com analogias: Aula expositiva ilustrada com comparações v
+- – Hands-on guiado: Aula focada em prática supervisionada
+- – Hands-on orientado pelo instrutor: A aula acontece no laboratório de informáti
 
-## Relevância para a prática executiva e acadêmica
+## Como Usar
 
-Executivamente, a disciplina ajuda a reduzir atrito entre desenvolvimento, operação e ciência de dados ao padronizar empacotamento e publicação. Academicamente, ela introduz infraestrutura como parte do sistema de ML, algo essencial para analisar confiabilidade, portabilidade e custo de execução.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-fundamentos-docker/) | Fundamentos Docker | `Dockerfile`, `.dockerignore`, `app.py` |
-| [02](aula02-multistage-gpu/) | Multi-stage build, imagem GPU | `Dockerfile.multistage`, `Dockerfile.gpu` |
-| [03](aula03-docker-compose/) | Docker Compose: API + Model + DB | `docker-compose.yml` |
-| [04](aula04-kubernetes/) | K8s: deployment, service, HPA, ConfigMap | `k8s/` |
-| [05](aula05-helm-canary/) | Canary, rolling update, Helm, Skaffold | `helm/`, `skaffold.yaml` |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.

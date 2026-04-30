@@ -1,51 +1,40 @@
 # 01 — Data Drift
 
-> 8h de vídeo · 8 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-Um modelo em produção degrada mesmo quando o código não muda. Esta disciplina torna explícito o problema da mudança de distribuição, do comportamento do usuário e do contexto operacional, ensinando como detectar, interpretar e reagir a drift de forma estruturada.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: Introdução ao Drift em Dados e Modelos; Técnicas de Detecção de Drift (Estatística); Estratégias de Mitigação de Drift; Métricas Avançadas para Detecção de Drift.
 
-- diferenciar data drift, concept drift e label drift;
-- aplicar testes estatísticos e indicadores de mudança de distribuição;
-- usar ferramentas como Evidently e NannyML para relatórios e monitoramento;
-- estruturar pipelines de alerta e estratégias de retraining;
-- consolidar um projeto de drift como parte do sistema de produção.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Siga a sequência das aulas, porque a disciplina progride do conceito ao sistema operacionalizado.
-2. Use os scripts estatísticos e dashboards para comparar abordagens de detecção.
-3. Trate a aula de pipeline e alertas como ponte entre análise e resposta operacional.
-4. Feche com o projeto integrador para enxergar drift como processo contínuo.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | Introdução ao Drift em Dados e Modelos | Diferenças entre Data Drift, Concept Drift e Label Drift. Impacto na degradação ... |
+| 02 | Técnicas de Detecção de Drift (Estatística) | Métodos estatísticos para detecção de drift: Kolmogorov-Smirnov, PSI, Qui-quadra... |
+| 03 | Estratégias de Mitigação de Drift | Técnicas para mitigar efeitos de drift: re-treino, aprendizado online, janelas d... |
+| 04 | Métricas Avançadas para Detecção de Drift | Métricas de divergência: KL, JS, Hellinger, Wasserstein, MMD, Energy Distance, P... |
+| 05 | Drift em Embeddings e Testes de Duas Amostras | Detecção de drift em embeddings de texto/imagem/áudio; testes de duas amostras. |
+| 06 | Detecção de Concept Drift vs. Covariate/Label Drift | Algoritmos para detectar concept drift e covariate/label drift em dados de fluxo... |
+| 07 | Monitoramento Contínuo e Data SLOs | Detecção contínua de drift; definição de thresholds orientados a risco (SLOs). |
+| 08 | Ferramentas para Drift e Validação de Dados | Ferramentas para monitoramento de drift e validação de dados: Evidently, WhyLabs... |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- O índice canônico está em `fase-04-monitoramento-e-governanca/01-data-drift/`.
-- Cite a aula específica ao mencionar técnicas, ferramentas ou estratégias de resposta.
-- Este README organiza o percurso e o propósito; scripts, notebooks e pipeline mostram a implementação prática.
-- Regras de governança formal sobre operação e evidência devem ser consultadas no repositório principal.
+Evidently
 
-## Referenciais teóricos da disciplina
+## Referências Principais
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
+- Chip Huyen, 'Designing Machine Learning Systems' (O’Reilly, 2022)
+- Gama et al
+- Gama et al. (2014)
+- Glen et al. (2021)
+- Moreno-Torres et al., 'A Unifying View on Dataset Shift in Classification' (2012)
 
-## Relevância para a prática executiva e acadêmica
+## Como Usar
 
-Executivamente, drift é uma das causas mais frequentes de queda silenciosa de valor em produtos de ML. No ambiente acadêmico, a disciplina aproxima teoria estatística, observabilidade e desenho experimental contínuo, ajudando a tratar modelos como sistemas dinâmicos sujeitos a mudança de contexto.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-tipos-drift/) | Data/concept/label drift | `drift_simulator.py`, notebook |
-| [02](aula02-testes-estatisticos/) | Testes estatísticos: KS, PSI, Chi², JS | `statistical_tests.py` |
-| [03](aula03-evidently/) | Evidently: reports + dashboards | `evidently_reports.py` |
-| [04](aula04-nannyml/) | NannyML: CBPE, estimativa sem labels | `nannyml_demo.py` |
-| [05](aula05-drift-multivariado/) | Drift multivariado: MMD, autoencoder | `multivariate_drift.py` |
-| [06](aula06-pipeline-alertas/) | Pipeline automatizado + alertas | `README.md`, `drift_pipeline.py`, notebook |
-| [07](aula07-retraining/) | Retraining: periódico e trigger-based | `retraining_strategy.py` |
-| [08](aula08-projeto-drift/) | Projeto completo de drift | notebook integrador |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.

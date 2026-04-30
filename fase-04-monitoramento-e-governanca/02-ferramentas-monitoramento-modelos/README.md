@@ -1,45 +1,40 @@
-# 02 — Ferramentas de Monitoramento de Modelos
+# 02 — Monitoramento de Modelos
 
-> 3h de vídeo · 3 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-Depois de entender por que monitorar, é preciso conhecer ferramentas concretas que tornem isso viável. Esta disciplina apresenta stacks e bibliotecas que ajudam a transformar sinais de produção em perfis, dashboards e acompanhamento contínuo do comportamento do modelo.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: Introdução: Por que Monitorar Modelos de ML em Produção; Riscos e Desafios: Data Drift e Falhas 'Silenciosas'; O Que Monitorar? Indicadores & Métricas em ML; Introdução ao Prometheus.
 
-- usar ferramentas de profiling e observação como whylogs;
-- integrar rastreamento contínuo com MLflow em contexto de monitoramento;
-- montar dashboards de apoio com Grafana;
-- comparar o papel de cada ferramenta dentro de uma arquitetura de monitoramento.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Comece por whylogs para entender profiling de produção.
-2. Em seguida, veja como o MLflow pode participar de uma esteira contínua de monitoramento.
-3. Use a aula de Grafana para enxergar a dimensão visual e operacional do acompanhamento.
-4. Recombine essas peças com Data Drift e Monitoramento de Pipelines para montar uma visão integrada.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | Introdução: Por que Monitorar Modelos de ML em Produção | Motivações e importância do monitoramento contínuo de modelos após o deploy. Dif... |
+| 02 | Riscos e Desafios: Data Drift e Falhas 'Silenciosas' | Problemas comuns sem monitoramento: drifts de dados e conceito, deterioração de ... |
+| 03 | O Que Monitorar? Indicadores & Métricas em ML | Métricas-chave em modelos de ML: performance, qualidade dos dados, drift, métric... |
+| 04 | Ferramentas de Métricas I – Introdução ao Prometheus | Prometheus como solução de coleta de métricas. Arquitetura pull. Instrumentação ... |
+| 05 | Ferramentas de Métricas II – Dashboards com Grafana | Grafana para visualização de métricas. Integração com Prometheus. Criação de das... |
+| 06 | Observabilidade em ML – Logs e Traces | Observabilidade em ML: logs detalhados e traces. Três pilares: logs, métricas, t... |
+| 07 | Práticas de Logging e Monitoramento Contínuo | Boas práticas para logar predições e dados. Ciclo contínuo de feedback e reavali... |
+| 08 | Integração Completa: Observabilidade & Monitoramento Unificados | Arquitetura unificada de MLOps. Ferramentas integradas. SLOs de modelo. |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- O caminho principal é `fase-04-monitoramento-e-governanca/02-ferramentas-monitoramento-modelos/`.
-- Cite a ferramenta e a aula correspondente quando precisar apontar um exemplo concreto.
-- O README contextualiza uso e comparação; os scripts e stacks demonstram a aplicação prática.
-- A camada normativa continua centralizada na governança do repositório principal.
+Grafana, Prometheus
 
-## Referenciais teóricos da disciplina
+## Referências Principais
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
+- Barua et al
+- Brazil, B
+- Chen et al
+- Klaise et al
+- Murphy et al
 
-## Relevância para a prática executiva e acadêmica
+## Como Usar
 
-Na prática profissional, escolher bem as ferramentas reduz tempo de observação, melhora diagnóstico e evita monitoramento superficial. Academicamente, a disciplina ajuda a distinguir conceito de implementação e permite analisar limites, cobertura e custo de diferentes estratégias instrumentadas.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-whylogs/) | whylogs: profiling em produção | `whylogs_profiling.py` |
-| [02](aula02-mlflow-monitoramento/) | MLflow para monitoramento contínuo | `mlflow_monitoring.py` |
-| [03](aula03-grafana-ml/) | Dashboards Grafana para ML | `docker-compose.yml` |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.
