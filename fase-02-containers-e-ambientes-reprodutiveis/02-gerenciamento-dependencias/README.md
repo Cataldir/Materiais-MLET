@@ -1,11 +1,11 @@
 # 02 — Gerenciamento de Dependências
 
-> 8 aulas · ~360min de video
+> 4 aulas · ~180min de video
 
 
 ## Resumo da Disciplina
 
-Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: Reprodutibilidade em Ciência de Dados; Poetry: Gerenciamento Integrado; Uv: Velocidade e Automação; Controle de Versões (Código e APIs).
+Esta disciplina cobre 4 temas práticos sobre reprodutibilidade e controle de ambientes em projetos de ML: isolamento com venv, gerenciamento com pip/requirements, Poetry vs uv, e resolução de conflitos.
 
 
 ## Plano de Aulas
@@ -16,10 +16,6 @@ Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação e
 | 02 | Poetry: Gerenciamento Integrado | Introdução ao Poetry; estrutura do pyproject.toml; lockfile; comandos básicos (i... |
 | 03 | Uv: Velocidade e Automação | Conceito do Uv; diferenciais (performance, .python-version); comandos (uv init, ... |
 | 04 | Controle de Versões (Código e APIs) | Git aplicado à reprodutibilidade; versionamento de arquivos de dependência; boas... |
-| 05 | Versionamento de Dados e Modelos | Introdução ao DVC e MLflow; rastreamento de datasets; registro de modelos e métr... |
-| 06 | Padronização com pyproject.toml | Estrutura detalhada do arquivo; vantagens da padronização; integração com ferram... |
-| 07 | Documentação e Governança | Como documentar ambientes (README, instruções); políticas de atualização; govern... |
-| 08 | CI/CD e Automação | Conceitos de CI/CD; configuração de pipeline (instalação, testes, cache); integr... |
 
 ## Ferramentas e Bibliotecas
 
