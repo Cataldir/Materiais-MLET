@@ -1,51 +1,40 @@
-# 01 — Deploy de Modelos de IA Generativa
+# 01 — Deploy de LLMs
 
-> 3h de vídeo · 3 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-Modelos generativos trazem capacidades novas, mas também novos custos, requisitos de infraestrutura e decisões de serving. Esta disciplina introduz o deploy de LLMs como um problema de engenharia: capacidade, otimização, empacotamento e compatibilidade entre qualidade de resposta e restrição operacional.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: 1; 2; 3; 4.
 
-- revisar fundamentos que afetam serving de LLMs, como tokenização e sampling;
-- usar stacks de serving como vLLM e TGI;
-- aplicar técnicas de otimização, quantização e adaptação eficiente;
-- entender o impacto dessas decisões em custo, latência e footprint computacional.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Comece pelos fundamentos para não tratar serving como caixa-preta.
-2. Avance para vLLM e TGI observando diferenças de operação e configuração.
-3. Use a aula de otimização para avaliar quais compromissos fazem sentido em produção.
-4. Consulte o pacote adicional para conectar a trilha de LLMs com pipelines clássicos de NLP.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | 1 | Fundamentos teóricos de LLMs, infraestrutura de deploy, model serving, hardware,... |
+| 02 | 2 | Teoria de compressão de modelos, quantização, pruning, distilação, trade-offs de... |
+| 03 | 3 | Inferência autoregressiva, otimização de latência, batching, speculative decodin... |
+| 04 | 4 | RAG, bancos vetoriais, fine-tuning eficiente, prompt engineering, métricas de av... |
+| 05 | 5 | Monitoramento de sistemas ML, observabilidade, detecção de drift, métricas de qu... |
+| 06 | 6 | Segurança em LLMs, OWASP Top 10, prompt injection, vazamento de dados, defesas e... |
+| 07 | 7 | Orquestração de workflows, MLOps vs LLMOps, escalabilidade, feature stores, mult... |
+| 08 | 8 | CI/CD para LLMs, versionamento, A/B testing, rollbacks, infraestrutura como códi... |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- O caminho oficial é `fase-05-deploy-avancado-de-ia-generativa/01-deploy-modelos-ia-generativa/`.
-- Ao citar um padrão de serving ou otimização, referencie a aula correspondente e o arquivo central.
-- Este README fornece o enquadramento da trilha; scripts, Dockerfiles e referências mostram a implementação concreta.
-- Aspectos normativos e critérios formais continuam fora desta pasta, na governança central do programa.
+AWS, Airflow, Azure, BentoML, Chroma, DVC, Docker, FAISS, FastAPI, Git, GitHub Actions, Grafana, Kubeflow, Kubernetes, LangChain, Langfuse, MLflow, OpenTelemetry, Prometheus, Python, Ray, TensorRT, vLLM
 
-## Referenciais teóricos da disciplina
+## Referências Principais
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
+- ALAMMAR, Jay; GROOTENDORST, Maarten
+- BOUCHARD, Louis-François; PETERS, Louie
+- BROUSSEAU, Christopher; SHARP, Matthew
+- HUMBLE, Jez; FARLEY, David
+- HUYEN, Chip
 
-## Relevância para a prática executiva e acadêmica
+## Como Usar
 
-Na prática profissional, esta disciplina ajuda a separar entusiasmo por IA generativa de decisões sustentáveis de infraestrutura. No plano acadêmico, ela reforça a análise de trade-offs entre arquitetura, compressão, eficiência e qualidade de resposta em sistemas probabilísticos de larga escala.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-fundamentos-llms/) | Fundamentos LLMs: arquitetura, tokenização, sampling | `llm_fundamentals.py` |
-| [02](aula02-serving-vllm-tgi/) | Serving com vLLM e TGI | `vllm_serve.py`, `Dockerfile.vllm` |
-| [03](aula03-otimizacao-quantizacao/) | Otimização: GPTQ, AWQ, bitsandbytes, LoRA | `quantization.py`, `lora_finetuning.py` |
-
-## Pacotes canônicos adicionais
-
-| Pacote | Origem | Objetivo |
-|------|------|---------|
-| [referencia-nlp-preprocessamento-sentimento](referencia-nlp-preprocessamento-sentimento/README.md) | `origin/nlp-lectures` | Pack leve de preprocessamento e baseline de sentimento para comparar pipelines classicos com a trilha de LLMs |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.

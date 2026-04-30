@@ -1,47 +1,40 @@
-# 02 — Integração com CI/CD
+# 02 — Integração com CICD
 
-> 5h de vídeo · 5 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-Sem automação, a qualidade de um projeto depende demais de disciplina manual e memória do time. Esta disciplina mostra como CI/CD transforma checks de qualidade, testes, build e deploy em rotina previsível, reduzindo regressão e tornando a entrega de ML mais confiável.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: Conceitos de CI/CD aplicados a ML (06/02/2025); Integração Contínua para Data Science com GitHub Actions (13/02/2025); Pipeline CI/CD com GitHub Actions (Projeto de ML) (20/02/2025); Testes Automatizados no Pipeline de ML (27/02/2025).
 
-- estruturar pipelines de integração contínua para projetos de ML;
-- usar GitHub Actions e workflows equivalentes para automatizar verificações;
-- incorporar testes e gates de qualidade ao ciclo de entrega;
-- entender padrões de entrega contínua e deploy controlado, como blue-green.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Comece pelos fundamentos de CI e pelos exemplos mínimos de workflow.
-2. Evolua para qualidade em CI antes de automatizar deploy.
-3. Use o pipeline completo como peça integradora da disciplina.
-4. Releia esta trilha junto com deploy e monitoramento para conectar entrega e operação.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | Aula 1 – Conceitos de CI/CD aplicados a ML (06/02/2025) | Introdução ao MLOps e CI/CD em ML – Visão geral da integração de DevOps ao ML. B... |
+| 02 | Aula 2 – Integração Contínua para Data Science com GitHub Actions (13/02/2025) | Ferramentas de CI/CD em ML (GitHub Actions) – Automação de fluxos de trabalho em... |
+| 03 | Aula 3 – Pipeline CI/CD com GitHub Actions (Projeto de ML) (20/02/2025) | Construção de um pipeline de CI/CD completo – Do commit até um modelo pronto par... |
+| 04 | Aula 4 – Testes Automatizados no Pipeline de ML (27/02/2025) | Qualidade e testes em pipelines de ML – Validação de dados, testes de modelo e t... |
+| 05 | Aula 5 – Automatizando o Deploy de Modelos (Parte 1: Containerização) (06/03/2025) | Empacotamento e Containerização de modelos de ML – Uso de Docker para garantir r... |
+| 06 | Aula 6 – Automatizando o Deploy de Modelos (Parte 2: Entrega Contínua) (13/03/2025) | Entrega Contínua e Implantação de modelos – Deploy automatizado em produção com ... |
+| 07 | Aula 7 – Boas Práticas de CI/CD em ML (MLOps) (20/03/2025) | Princípios e melhores práticas – Reprodutibilidade, Automatização, Monitoramento... |
+| 08 | Aula 8 – Aprendizado Contínuo e Monitoramento de Modelos (27/03/2025) | Continuous Training & Model Monitoring – Manutenção e evolução de modelos após o... |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- O caminho base é `fase-03-cloud-e-mlops/02-integracao-cicd/`.
-- Ao citar exemplos concretos, referencie o workflow ou a aula correspondente.
-- O README sintetiza propósito e uso; os arquivos YAML e scripts materializam a automação.
-- As políticas formais do curso continuam centralizadas na governança canônica.
+DVC, Docker, GitHub Actions, Kubernetes
 
-## Referenciais teóricos da disciplina
+## Referências Principais
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
+- DataCamp (2024)
+- GeeksforGeeks (2025)
+- Gift & Deza (2021)
+- Google Cloud (2024)
+- Lokiny (2023)
 
-## Relevância para a prática executiva e acadêmica
+## Como Usar
 
-Executivamente, CI/CD reduz tempo de feedback e custo de erro tardio. Academicamente, a disciplina permite discutir qualidade de software experimental em termos observáveis, com critérios reproduzíveis de validação, build e release.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-fundamentos-ci/) | Fundamentos CI: lint + test | `README.md`, `.github/workflows/ci.yml`, `ci_fundamentals.py`, notebook |
-| [02](aula02-github-actions-ml/) | GitHub Actions para ML | workflows ML |
-| [03](aula03-testes-qualidade-ci/) | Testes de qualidade no CI | scripts de teste |
-| [04](aula04-cd-deploy/) | CD: deploy automático, blue-green | `cd-deploy.yml` |
-| [05](aula05-pipeline-completo/) | Projeto CI/CD completo | `full-ml-pipeline.yml` |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.

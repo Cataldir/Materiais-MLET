@@ -1,46 +1,40 @@
-# 06 — Latência e Performance — Dados Não Estruturados
+# 06 — Latencia e Performance
 
-> 4h de vídeo · 4 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-Workloads com imagem, texto e deep learning costumam trazer custos e restrições de latência muito diferentes dos cenários tabulares. Esta disciplina trata de otimização como parte do design do sistema, mostrando que performance é requisito funcional quando o modelo precisa servir com escala e previsibilidade.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: Introdução à Latência e Performance em Modelos de ML; Desafios de Performance em NLP e Áudio; Desafios de Performance em Visão Computacional; Pruning e Quantização.
 
-- aplicar técnicas de otimização como quantização, ONNX e pruning;
-- comparar servidores especializados para inferência de modelos pesados;
-- otimizar pré-processamento de dados não estruturados;
-- medir performance de ponta a ponta com benchmarks coerentes.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Comece pelas técnicas de otimização para entender o impacto no artefato do modelo.
-2. Avance para servidores especializados e compare suas propostas.
-3. Trate pré-processamento como parte essencial da latência total.
-4. Use o benchmark final para consolidar uma visão sistêmica de gargalos.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | Aula 1 – Introdução à Latência e Performance em Modelos de ML | Conceitos de latência, throughput, métricas de desempenho, desafios em NLP e Vis... |
+| 02 | Aula 2 – Desafios de Performance em NLP e Áudio | Modelos sequenciais, baixa latência em NLP e áudio, gargalos computacionais |
+| 03 | Aula 3 – Desafios de Performance em Visão Computacional | CNNs, modelos leves, trade-offs de resolução, arquiteturas modernas |
+| 04 | Aula 4 – Otimização de Modelos I – Pruning e Quantização | Compressão de modelos, pruning, quantização, impacto na latência e acurácia |
+| 05 | Aula 5 – Otimização de Modelos II – Transfer Learning | Transferência de aprendizado, modelos pré-treinados, fine-tuning, feature extrac... |
+| 06 | Aula 6 – Aceleração com Hardware (GPU/TPU) | Uso de GPUs, TPUs, comparação de desempenho, frameworks de programação |
+| 07 | Aula 7 – Inferência Distribuída e Paralelismo | Inferência distribuída, paralelismo de dados e modelos, frameworks de serving |
+| 08 | Aula 8 – Escalabilidade e Orquestração de Aplicações Multimodais | Pipelines multimodais, orquestração com Kubernetes, MLOps, escalabilidade |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- O caminho canônico é `fase-03-cloud-e-mlops/06-latencia-performance/`.
-- Ao citar uma técnica específica, referencie a aula em que ela é demonstrada e o script principal associado.
-- O README organiza o percurso; os benchmarks, handlers e scripts mostram a evidência operacional.
-- Regras acadêmicas e de governança seguem fora desta trilha.
+Airflow, Kubeflow, Kubernetes, MLflow, NVIDIA
 
-## Referenciais teóricos da disciplina
+## Referências Principais
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
+- Deep Compression – S. Han et al. (2016)
+- Distributed Model Serving: Latency-Accuracy Tradeoffs in Multi-Tenant Inference Systems – A. K. Dash (2025)
+- Dynamo, a Distributed Inference Framework for AI – A. Elmeleegy et al. (2025)
+- Efficient Deep Learning: A Survey on Making Deep Learning Models Smaller, Faster, and Better – G. Menghani (2021)
+- Efficient Transformers: A Survey – Y. Tay et al. (2020)
 
-## Relevância para a prática executiva e acadêmica
+## Como Usar
 
-Na prática, essa disciplina ajuda a controlar custo computacional e experiência do usuário em produtos de IA mais pesados. Em termos acadêmicos, ela reforça avaliação experimental orientada a desempenho, permitindo discutir throughput, latência e otimização de forma replicável.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-quantizacao-onnx/) | Quantização, ONNX, pruning | `convert_to_onnx.py`, `benchmark.py` |
-| [02](aula02-triton-torchserve/) | Triton, TorchServe | configs + handlers |
-| [03](aula03-preprocessing-otimizado/) | Pré-processamento imagem/texto | `image_preprocessing.py`, `text_preprocessing.py` |
-| [04](aula04-benchmark-completo/) | Benchmark completo | `benchmark_e2e.py` |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.

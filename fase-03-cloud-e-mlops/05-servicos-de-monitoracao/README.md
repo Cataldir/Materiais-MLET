@@ -1,45 +1,40 @@
-# 05 — Serviços de Monitoração
+# 05 — Servicos de Monitoracao
 
-> 3h de vídeo · 3 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-Nem todo contexto vai operar observabilidade com a mesma stack. Esta disciplina amplia a visão de monitoramento mostrando ferramentas e serviços diferentes, do ELK a ofertas gerenciadas de nuvem, para que o estudante entenda padrões e não fique preso a uma implementação única.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: Introdução à Observabilidade e Monitoramento em Sistemas de ML; Parte 1; Visualização de Métricas e Dashboards com Grafana; Monitoramento de Ambientes Containerizados com Prometheus.
 
-- revisar fundamentos de observabilidade aplicados a sistemas de ML;
-- usar uma stack de logs e visualização como ELK;
-- comparar serviços gerenciados de monitoramento em diferentes provedores;
-- avaliar trade-offs entre operar a própria stack e consumir observabilidade gerenciada.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Use a aula introdutória para alinhar vocabulário e sinais operacionais.
-2. Reproduza a stack ELK para observar o fluxo ponta a ponta de logs.
-3. Estude a aula de cloud monitoring em chave comparativa e arquitetural.
-4. Combine esta disciplina com Monitoração de Performance para formar uma visão mais completa de operação.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | Aula 1 (06/02/2025) – Introdução à Observabilidade e Monitoramento em Sistemas de ML | Conceitos fundamentais de observabilidade: três pilares (métricas, logs, traces)... |
+| 02 | Aula 2 (13/02/2025) – Métricas e Monitoramento com Prometheus – Parte 1 | Fundamentos do Prometheus: arquitetura, coleta de métricas, modelo pull, exporte... |
+| 03 | Aula 3 (20/02/2025) – Visualização de Métricas e Dashboards com Grafana | Introdução ao Grafana: dashboards interativos, integração com Prometheus, alerta... |
+| 04 | Aula 4 (27/02/2025) – Monitoramento de Ambientes Containerizados com Prometheus | Monitoramento em Kubernetes: service discovery, exporters (cAdvisor, kube-state-... |
+| 05 | Aula 5 (06/03/2025) – Monitoramento em Nuvem com Azure Monitor | Azure Monitor: métricas, logs, Application Insights, integração com AKS/ACA |
+| 06 | Aula 6 (13/03/2025) – Monitoramento em Nuvem com Amazon CloudWatch | Amazon CloudWatch: métricas, logs, dashboards, alarmes, integração com EKS/ECS |
+| 07 | Aula 7 (20/03/2025) – Integração Híbrida e Comparativo de Soluções de Monitoramento | Monitoramento híbrido/multi-nuvem: Prometheus, Grafana, Azure Monitor, CloudWatc... |
+| 08 | Aula 8 (27/03/2025) – Tendências Avançadas e Melhores Práticas em Monitoramento de ML | OpenTelemetry, AIOps, SRE, MLOps, métricas de modelos de ML, deriva de dados |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- O caminho principal é `fase-03-cloud-e-mlops/05-servicos-de-monitoracao/`.
-- Ao mencionar uma ferramenta específica, cite a aula correspondente e o artefato principal.
-- O README oferece contexto de uso; a implementação está nas stacks, scripts e configs das aulas.
-- A camada normativa segue separada na governança canônica do repositório principal.
+AWS, Azure, Grafana, Helm, Kubernetes, OpenTelemetry, Prometheus, Python
 
-## Referenciais teóricos da disciplina
+## Referências Principais
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
+- AWS (2024) – Real-Time Performance Monitoring with Amazon CloudWatch; AWS Docs
+- Banerjee (2025)
+- Fernández & Ramírez (2024)
+- Grafana Labs (2024)
+- Leest et al. (2025)
 
-## Relevância para a prática executiva e acadêmica
+## Como Usar
 
-Do ponto de vista executivo, a disciplina ajuda a decidir entre custo, controle operacional e velocidade de adoção. No ambiente acadêmico, permite comparar abordagens de observabilidade como escolhas de arquitetura e não apenas como detalhes de ferramenta.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-observabilidade-ml/) | Observabilidade para ML | notebook introdutório |
-| [02](aula02-elk-stack/) | ELK Stack: Elasticsearch + Logstash + Kibana | `docker-compose.yml`, `logstash.conf` |
-| [03](aula03-cloud-monitoring/) | CloudWatch, Stackdriver, Azure Monitor | scripts por provider |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.

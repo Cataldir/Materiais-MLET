@@ -1,57 +1,40 @@
-# 04 — Controle de Dados e Modelos — DVC + MLflow
+# 04 — Controle de Versão de Dados e Modelos
 
-> 5h de vídeo · 7 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-Quando dados, parâmetros e modelos não têm rastreabilidade, o projeto perde auditabilidade e se torna difícil de reproduzir ou evoluir. Esta disciplina apresenta as ferramentas centrais para versionar ativos de ML e tornar o experimento uma linha de produção observável.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: Por que Controlar Dados e Modelos?; Fundamentos do DVC (Data Version Control); Armazenamento Remoto e Integração com GitHub; Introdução ao MLflow (Experiment Tracking).
 
-- justificar por que versionamento de dados e modelos é parte da solução, não detalhe operacional;
-- usar DVC para rastrear datasets, pipelines e estágios de processamento;
-- usar MLflow para registrar parâmetros, métricas, artefatos e modelos;
-- integrar DVC e MLflow em um fluxo consistente de experimentação e entrega;
-- estender esse fluxo para contextos de CI/CD.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Comece pela motivação do versionamento antes de entrar nas ferramentas.
-2. Siga a sequência DVC básico, remoto e tracking no MLflow.
-3. Use o pipeline integrado para entender como os componentes se conectam.
-4. Explore os pacotes adicionais para ver o padrão aplicado em casos mais próximos de produto.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | Por que Controlar Dados e Modelos? | Conceitos de Versionamento em ML: Introdução aos problemas que surgem quando não... |
+| 02 | Fundamentos do DVC (Data Version Control) | O que é DVC e Instalação: Introdução ao DVC como ferramenta que estende o Git pa... |
+| 03 | Armazenamento Remoto e Integração com GitHub | Configuração de Remotes (Cloud Storage): Explicar a necessidade de um remote par... |
+| 04 | Introdução ao MLflow (Experiment Tracking) | Visão Geral do MLflow: Apresentar o MLflow como plataforma open-source que auxil... |
+| 05 | Model Registry e Governança de Modelos | O que é o Model Registry (MLflow): Explicar que além de registrar experimentos, ... |
+| 06 | Pipelines Integrados DVC + MLflow | Conectando Dados Versionados aos Experimentos: Explicar que nesta aula juntamos ... |
+| 07 | Boas Práticas e Automação (CI/CD) em MLOps | Guidelines de Versionamento e Organização: Recapitular e consolidar princípios q... |
+| 08 | Casos de Uso Reais e Tendências em MLOps | Estudos de Caso (Reais): Apresentar resumos de cenários verídicos onde versionam... |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- O caminho de referência é `fase-02-containers-e-ambientes-reprodutiveis/04-dvc-mlflow/`.
-- Ao citar um exemplo, aponte para a aula ou para o pacote canônico adicional correspondente.
-- Este README funciona como índice executivo e acadêmico da trilha; arquivos `dvc.yaml`, scripts e exemplos de tracking mostram a materialização da prática.
-- Para critérios institucionais de uso e avaliação, consulte a governança principal.
+AWS, Azure, DVC, Git, GitHub Actions, MLflow, PyTorch, Python, TensorFlow, scikit-learn
 
-## Referenciais teóricos da disciplina
+## Referências Principais
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
+- Aula Demonstrativa e Prática Supervisionada: O instrutor configura antecipadamen
+- Demonstração Interativa de Pipeline CI/CD: O instrutor apresenta um exemplo real
+- Demonstração prática guiada: O instrutor projeta seu terminal e inicia um reposi
+- Exposição Dialogada e Estudo de Caso: O professor inicia questionando a turma: “
+- Hands-on em Nuvem (Azure): Nesta aula, a turma configura de fato um remoto em nu
 
-## Relevância para a prática executiva e acadêmica
+## Como Usar
 
-Na rotina profissional, essa disciplina melhora governança de experimentos, recuperação de histórico e diálogo entre ciência, engenharia e operação. No plano acadêmico, ela reforça reprodutibilidade empírica e encadeamento explícito entre hipótese, dado, parâmetro, resultado e artefato final.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-problema-versionamento/) | Por que versionar dados e modelos | notebook |
-| [02](aula02-dvc-basico/) | DVC init, track, .dvc files, pipelines | `dvc.yaml`, scripts |
-| [03](aula03-dvc-remoto/) | DVC remoto (S3, GCS) + GitHub | scripts de setup |
-| [04](aula04-mlflow-tracking/) | MLflow tracking: parâmetros, métricas, artefatos | `mlflow_tracking.py` |
-| [05](aula05-mlflow-registry/) | MLflow Model Registry: register + stages | `mlflow_registry.py` |
-| [06](aula06-pipeline-integrado/) | Pipeline DVC + MLflow integrado | `dvc.yaml`, `params.yaml`, `src/` |
-| [07](aula07-cicd-dvc-mlflow/) | CI/CD com DVC + MLflow | `.github/workflows/` |
-
-## Pacotes canônicos adicionais
-
-| Pacote | Origem | Objetivo |
-|------|------|---------|
-| [referencia-mlflow-sumarizacao](referencia-mlflow-sumarizacao/README.md) | `origin/mlflow-bentoml` | Tracking local, assinatura de modelo e logging de artefatos para um caso de sumarização |
-| [referencia-recomendacao-negocio](referencia-recomendacao-negocio/README.md) | `origin/recommendation-systems` | Caso de negócio com popularidade, features e propensão para recomendação comercial |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.

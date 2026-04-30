@@ -1,46 +1,32 @@
 # 01 — Clean Code para Engenharia de ML
 
-> 4h de vídeo · 4 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-Feature engineering e modelagem produzem valor, mas sem legibilidade e estrutura o custo de manutenção cresce rápido demais. Esta disciplina mostra como princípios de clean code ajudam times de ML a preservar clareza, separar responsabilidades e reagir melhor a mudanças de dados, regras de negócio e requisitos operacionais.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: Boas Práticas de Código Limpo em ML; Refatoração de Código e Qualidade em ML; Padrões de Projeto em ML -- Parte 1; Arquiteturas de Serviços e Clean Architecture -- Parte 2.
 
-- reconhecer anti-patterns comuns em código de ML;
-- aplicar SRP e refatoração em funções e pipelines frágeis;
-- estruturar tratamento de erros e logging resiliente;
-- comparar um projeto legado com sua versão refatorada para entender ganho real de qualidade.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Comece comparando exemplos `before/` e `after/` para visualizar o problema.
-2. Reproduza a refatoração incremental antes de partir para o projeto completo.
-3. Use a aula de erros e logging para pensar em robustez, não só em estilo.
-4. Reaproveite estes padrões em qualquer disciplina que exponha scripts ou pipelines maiores.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | Boas Práticas de Código Limpo em ML |  |
+| 02 | Refatoração de Código e Qualidade em ML |  |
+| 03 | Padrões de Projeto em ML -- Parte 1 | Introdução aos **Design Patterns (Padrões de Projeto)** clássicos de engenharia ... |
+| 04 | Arquiteturas de Serviços e Clean Architecture -- Parte 2 | Continuação de padrões em nível mais alto, focando em **arquitetura de software*... |
+| 05 | Programação Funcional aplicada a Pipelines de ML | Exploração do **paradigma de programação funcional (FP)** e como utilizá-lo para... |
+| 06 | Programação Orientada a Objetos (POO) em projetos de ML | Abordagem do **paradigma Orientado a Objetos** (OO) aplicado ao desenvolvimento ... |
+| 07 | Padronização de Código de Modelos de ML | Nesta aula, o foco é consolidar tudo aprendido em **guidelines e padrões interno... |
+| 08 | Padronização de *Pipelines* de ML e Conclusão | Última aula dedicada a **integrar todos os aprendizados** na construção e manute... |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- O caminho principal é `fase-02-containers-e-ambientes-reprodutiveis/01-clean-code-ml/`.
-- Para discussões específicas, cite a aula que contém o anti-pattern ou refatoração de interesse.
-- Este README organiza a intenção pedagógica; os diretórios `legacy/`, `refactored/`, `before/` e `after/` mostram a evidência prática.
-- Questões normativas permanecem na governança principal do programa.
+Airflow, DVC, Git, Kubeflow, MLflow, PyTorch, Python, TensorFlow, scikit-learn
 
-## Referenciais teóricos da disciplina
+## Como Usar
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
-
-## Relevância para a prática executiva e acadêmica
-
-Na prática de engenharia, clean code reduz risco de regressão, acelera revisão e melhora colaboração entre perfis técnicos diferentes. No contexto acadêmico, a disciplina reforça análise crítica de qualidade de artefatos e explicita critérios para avaliar estrutura, legibilidade e manutenção em software de dados.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-principios-antipatterns/) | Princípios clean code, anti-patterns | `before/`, `after/` |
-| [02](aula02-srp-refatoracao/) | Funções com SRP, refatoração | `srp_example.py` |
-| [03](aula03-erros-logging/) | Tratamento de erros, logging resiliente | `resilient_pipeline.py` |
-| [04](aula04-projeto-refatoracao/) | Projeto completo de refatoração | `legacy/`, `refactored/` |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.
