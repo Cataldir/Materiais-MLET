@@ -47,11 +47,11 @@
 | 01 | Deploy em Nuvem | Carlos E. Aragão | 8/8 | ✅ APROVADO |
 | 02 | Integração com CI/CD | Douglas Martins | 8/8 | ✅ APROVADO |
 | 03 | Pipeline de Treino e Deploy | José Neto | 8/8 | ✅ APROVADO |
-| 04 | Monitoração de Performance | Alex Faiotto | 4/? | ⚠️ PENDENTE |
+| 04 | Monitoração de Performance | Alex Faiotto | 4/4 | ✅ ENTREGUE (Google Drive, Apr 30) |
 | 05 | Serviços de Monitoração | Jhony Andreatta | 3/? | ⚠️ PENDENTE |
 | 06 | Latência e Performance | Fernando Filiputti | 8/8 | ✅ APROVADO |
 
-**Fase 03: ~60% aprovada formalmente. 04 e 05 aguardam formalização.**
+**Fase 03: ~70% aprovada. 05 (Jhony) aguarda formalização.**
 
 ---
 
