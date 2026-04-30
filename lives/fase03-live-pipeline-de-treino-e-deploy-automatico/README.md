@@ -8,7 +8,7 @@
 
 Automação end-to-end de pipelines de treino e deploy com orquestração e feature stores
 
-**Disciplina de referência:** [`fase-03-deploy-e-servir-modelos/03-pipeline-treino-deploy-automatico`](../../fase-03-deploy-e-servir-modelos/03-pipeline-treino-deploy-automatico/README.md)
+**Disciplina de referência:** [`fase-03-cloud-e-mlops/03-pipeline-treino-deploy-automatico`](../../fase-03-cloud-e-mlops/03-pipeline-treino-deploy-automatico/README.md)
 
 ---
 
@@ -52,5 +52,5 @@ Automação end-to-end de pipelines de treino e deploy com orquestração e feat
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-03-deploy-e-servir-modelos/03-pipeline-treino-deploy-automatico`](../../fase-03-deploy-e-servir-modelos/03-pipeline-treino-deploy-automatico/README.md)
+- Material completo da disciplina: [`fase-03-cloud-e-mlops/03-pipeline-treino-deploy-automatico`](../../fase-03-cloud-e-mlops/03-pipeline-treino-deploy-automatico/README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.

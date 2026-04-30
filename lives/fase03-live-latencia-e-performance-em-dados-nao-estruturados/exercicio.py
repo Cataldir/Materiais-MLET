@@ -1,7 +1,7 @@
 """Exercício prático — Latência e Performance em Dados Não Estruturados
 
 Fase 03 | Live de Hands-on
-Disciplina: fase-03-deploy-e-servir-modelos/06-latencia-performance
+Disciplina: fase-03-cloud-e-mlops/06-latencia-performance
 
 Conceitos-chave:
   - Quantização INT8
@@ -33,7 +33,7 @@ def main() -> None:
     logger.info("  3. Pipeline de pré-processamento otimizado")
     logger.info("")
     logger.info("Consulte o README para instruções detalhadas.")
-    logger.info("Material de referência: fase-03-deploy-e-servir-modelos/06-latencia-performance")
+    logger.info("Material de referência: fase-03-cloud-e-mlops/06-latencia-performance")
 
 
 if __name__ == "__main__":

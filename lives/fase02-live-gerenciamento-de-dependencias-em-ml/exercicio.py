@@ -1,7 +1,7 @@
 """Exercício prático — Gerenciamento de Dependências em ML
 
 Fase 02 | Live de Hands-on
-Disciplina: fase-02-feature-engineering-versionamento/02-gerenciamento-dependencias
+Disciplina: fase-02-containers-e-ambientes-reprodutiveis/02-gerenciamento-dependencias
 
 Conceitos-chave:
   - venv vs Poetry vs uv
@@ -33,7 +33,7 @@ def main() -> None:
     logger.info("  3. Migrar requirements.txt para pyproject.toml")
     logger.info("")
     logger.info("Consulte o README para instruções detalhadas.")
-    logger.info("Material de referência: fase-02-feature-engineering-versionamento/02-gerenciamento-dependencias")
+    logger.info("Material de referência: fase-02-containers-e-ambientes-reprodutiveis/02-gerenciamento-dependencias")
 
 
 if __name__ == "__main__":

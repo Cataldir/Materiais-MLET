@@ -8,7 +8,7 @@
 
 Otimização de latência, modelos de rede neural e entrega final
 
-**Disciplina de referência:** [`fase-03-deploy-e-servir-modelos/06-latencia-performance`](../../fase-03-deploy-e-servir-modelos/06-latencia-performance/README.md)
+**Disciplina de referência:** [`fase-03-cloud-e-mlops/06-latencia-performance`](../../fase-03-cloud-e-mlops/06-latencia-performance/README.md)
 
 ---
 
@@ -41,5 +41,5 @@ Otimização de latência, modelos de rede neural e entrega final
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-03-deploy-e-servir-modelos/06-latencia-performance`](../../fase-03-deploy-e-servir-modelos/06-latencia-performance/README.md)
+- Material completo da disciplina: [`fase-03-cloud-e-mlops/06-latencia-performance`](../../fase-03-cloud-e-mlops/06-latencia-performance/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.

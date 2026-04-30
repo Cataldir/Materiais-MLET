@@ -8,7 +8,7 @@
 
 Fundamentos de redes neurais, arquiteturas e treinamento
 
-**Disciplina de referência:** [`fase-01-fundamentos-de-ml/02-fundamentos-modelos-ml`](../../fase-01-fundamentos-de-ml/02-fundamentos-modelos-ml/README.md)
+**Disciplina de referência:** [`fase-01-produtizacao-de-modelos/02-fundamentos-modelos-ml`](../../fase-01-produtizacao-de-modelos/02-fundamentos-modelos-ml/README.md)
 
 ---
 
@@ -43,5 +43,5 @@ Fundamentos de redes neurais, arquiteturas e treinamento
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-01-fundamentos-de-ml/02-fundamentos-modelos-ml`](../../fase-01-fundamentos-de-ml/02-fundamentos-modelos-ml/README.md)
+- Material completo da disciplina: [`fase-01-produtizacao-de-modelos/02-fundamentos-modelos-ml`](../../fase-01-produtizacao-de-modelos/02-fundamentos-modelos-ml/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.

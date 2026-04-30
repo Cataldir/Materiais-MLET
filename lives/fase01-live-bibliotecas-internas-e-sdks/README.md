@@ -8,7 +8,7 @@
 
 Empacotamento de código ML em bibliotecas reutilizáveis com documentação, versionamento semântico e publicação
 
-**Disciplina de referência:** [`fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks`](../../fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks/README.md)
+**Disciplina de referência:** [`fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks`](../../fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks/README.md)
 
 ---
 
@@ -53,5 +53,5 @@ Empacotamento de código ML em bibliotecas reutilizáveis com documentação, ve
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks`](../../fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks/README.md)
+- Material completo da disciplina: [`fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks`](../../fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks/README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.

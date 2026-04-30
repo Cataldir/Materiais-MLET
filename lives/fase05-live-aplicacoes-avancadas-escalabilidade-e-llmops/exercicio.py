@@ -1,7 +1,7 @@
 """Exercício prático — Aplicações Avançadas, Escalabilidade e LLMOps
 
 Fase 05 | Live de Hands-on
-Disciplina: fase-05-llms-e-agentes/03-aplicacoes-avancadas-escalabilidade
+Disciplina: fase-05-deploy-avancado-de-ia-generativa/03-aplicacoes-avancadas-escalabilidade
 
 Conceitos-chave:
   - Multi-agent orchestration
@@ -33,7 +33,7 @@ def main() -> None:
     logger.info("  3. Benchmark de custo e latência")
     logger.info("")
     logger.info("Consulte o README para instruções detalhadas.")
-    logger.info("Material de referência: fase-05-llms-e-agentes/03-aplicacoes-avancadas-escalabilidade")
+    logger.info("Material de referência: fase-05-deploy-avancado-de-ia-generativa/03-aplicacoes-avancadas-escalabilidade")
 
 
 if __name__ == "__main__":

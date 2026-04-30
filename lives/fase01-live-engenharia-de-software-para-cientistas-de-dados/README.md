@@ -8,7 +8,7 @@
 
 Aplicação de princípios SOLID, testes automatizados, qualidade de código e gestão de dependências em projetos de ciência de dados
 
-**Disciplina de referência:** [`fase-01-fundamentos-de-ml/03-engenharia-software-cientistas-dados`](../../fase-01-fundamentos-de-ml/03-engenharia-software-cientistas-dados/README.md)
+**Disciplina de referência:** [`fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados`](../../fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados/README.md)
 
 ---
 
@@ -53,5 +53,5 @@ Aplicação de princípios SOLID, testes automatizados, qualidade de código e g
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-01-fundamentos-de-ml/03-engenharia-software-cientistas-dados`](../../fase-01-fundamentos-de-ml/03-engenharia-software-cientistas-dados/README.md)
+- Material completo da disciplina: [`fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados`](../../fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados/README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.

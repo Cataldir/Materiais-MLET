@@ -8,7 +8,7 @@
 
 Operacionalização de agentes baseados em LLMs com tools, RAG e deploy em produção
 
-**Disciplina de referência:** [`fase-05-llms-e-agentes/02-deploy-agentes-llms`](../../fase-05-llms-e-agentes/02-deploy-agentes-llms/README.md)
+**Disciplina de referência:** [`fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms`](../../fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms/README.md)
 
 ---
 
@@ -50,5 +50,5 @@ Operacionalização de agentes baseados em LLMs com tools, RAG e deploy em produ
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-05-llms-e-agentes/02-deploy-agentes-llms`](../../fase-05-llms-e-agentes/02-deploy-agentes-llms/README.md)
+- Material completo da disciplina: [`fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms`](../../fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms/README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.

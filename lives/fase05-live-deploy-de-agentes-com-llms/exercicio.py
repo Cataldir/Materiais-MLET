@@ -1,7 +1,7 @@
 """Exercício prático — Deploy de Agentes com LLMs
 
 Fase 05 | Live de Hands-on
-Disciplina: fase-05-llms-e-agentes/02-deploy-agentes-llms
+Disciplina: fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms
 
 Conceitos-chave:
   - Agentes com tools
@@ -33,7 +33,7 @@ def main() -> None:
     logger.info("  3. Deploy de agente como serviço REST")
     logger.info("")
     logger.info("Consulte o README para instruções detalhadas.")
-    logger.info("Material de referência: fase-05-llms-e-agentes/02-deploy-agentes-llms")
+    logger.info("Material de referência: fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms")
 
 
 if __name__ == "__main__":

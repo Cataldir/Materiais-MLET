@@ -8,7 +8,7 @@
 
 Pipelines de CI/CD automatizados para Machine Learning
 
-**Disciplina de referência:** [`fase-03-deploy-e-servir-modelos/02-integracao-cicd`](../../fase-03-deploy-e-servir-modelos/02-integracao-cicd/README.md)
+**Disciplina de referência:** [`fase-03-cloud-e-mlops/02-integracao-cicd`](../../fase-03-cloud-e-mlops/02-integracao-cicd/README.md)
 
 ---
 
@@ -42,5 +42,5 @@ Pipelines de CI/CD automatizados para Machine Learning
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-03-deploy-e-servir-modelos/02-integracao-cicd`](../../fase-03-deploy-e-servir-modelos/02-integracao-cicd/README.md)
+- Material completo da disciplina: [`fase-03-cloud-e-mlops/02-integracao-cicd`](../../fase-03-cloud-e-mlops/02-integracao-cicd/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.

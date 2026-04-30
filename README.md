@@ -19,11 +19,11 @@ Na prática, isso significa que o repositório deve responder a quatro perguntas
 
 | Fase | Nome | Papel na formação | Resultado esperado |
 | ---- | ---- | ----------------- | ------------------ |
-| [01](fase-01-fundamentos-de-ml/README.md) | Fundamentos de ML | construir base técnica, de produto e de engenharia | entender o ciclo de vida do modelo e produzir primeiras soluções estruturadas |
-| [02](fase-02-feature-engineering-versionamento/README.md) | Feature Engineering e Versionamento | tornar experimentos reprodutíveis e sustentáveis | empacotar, versionar e operacionalizar ativos de dados e modelos |
-| [03](fase-03-deploy-e-servir-modelos/README.md) | Deploy e Servir Modelos | levar ML para ambientes de execução reais | automatizar treino, deploy, serving e observabilidade inicial |
+| [01](fase-01-produtizacao-de-modelos/README.md) | Produtização de Modelos | construir base técnica, de produto e de engenharia | entender o ciclo de vida do modelo e produzir primeiras soluções estruturadas |
+| [02](fase-02-containers-e-ambientes-reprodutiveis/README.md) | Containers e Ambientes Reprodutíveis | tornar experimentos reprodutíveis e sustentáveis | empacotar, versionar e operacionalizar ativos de dados e modelos |
+| [03](fase-03-cloud-e-mlops/README.md) | Cloud e MLOps | levar ML para ambientes de execução reais | automatizar treino, deploy, serving e observabilidade inicial |
 | [04](fase-04-monitoramento-e-governanca/README.md) | Monitoramento e Governança | controlar risco, qualidade e confiabilidade | monitorar deriva, validar dados e formalizar compliance operacional |
-| [05](fase-05-llms-e-agentes/README.md) | LLMs e Agentes | aplicar a base de engenharia a sistemas generativos | servir, avaliar, escalar e proteger aplicações com LLMs e agentes |
+| [05](fase-05-deploy-avancado-de-ia-generativa/README.md) | Deploy Avançado de IA Generativa | aplicar a base de engenharia a sistemas generativos | servir, avaliar, escalar e proteger aplicações com LLMs e agentes |
 
 ## Como navegar
 
@@ -45,11 +45,11 @@ Este repositório não replica a governança integral para evitar drift document
 
 | Fase | Disciplinas | Ênfase executável atual |
 | ---- | ----------- | ----------------------- |
-| [01](fase-01-fundamentos-de-ml/README.md) | 5 | fundamentos de modelagem, engenharia de software, APIs e SDKs internos |
-| [02](fase-02-feature-engineering-versionamento/README.md) | 4 | clean code, ambientes, conteinerização e versionamento com DVC e MLflow |
-| [03](fase-03-deploy-e-servir-modelos/README.md) | 6 | deploy em nuvem, CI/CD, pipelines automatizados, monitoramento e performance |
+| [01](fase-01-produtizacao-de-modelos/README.md) | 5 | fundamentos de modelagem, engenharia de software, APIs e SDKs internos |
+| [02](fase-02-containers-e-ambientes-reprodutiveis/README.md) | 4 | clean code, ambientes, conteinerização e versionamento com DVC e MLflow |
+| [03](fase-03-cloud-e-mlops/README.md) | 6 | deploy em nuvem, CI/CD, pipelines automatizados, monitoramento e performance |
 | [04](fase-04-monitoramento-e-governanca/README.md) | 6 | drift, qualidade de dados, observabilidade, compliance e inferência causal |
-| [05](fase-05-llms-e-agentes/README.md) | 5 | serving de LLMs, agentes, escalabilidade, avaliação e segurança |
+| [05](fase-05-deploy-avancado-de-ia-generativa/README.md) | 5 | serving de LLMs, agentes, escalabilidade, avaliação e segurança |
 
 ## Lives e grupos de estudo
 

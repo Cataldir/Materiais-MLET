@@ -1,7 +1,7 @@
 """Exercício prático — APIs para Inferência de Modelos (Flask e FastAPI)
 
 Fase 01 | Live de Hands-on
-Disciplina: fase-01-fundamentos-de-ml/04-apis-inferencia-modelos
+Disciplina: fase-01-produtizacao-de-modelos/04-apis-inferencia-modelos
 
 Conceitos-chave:
   - Flask vs FastAPI
@@ -33,7 +33,7 @@ def main() -> None:
     logger.info("  3. Implementar health check e middleware de latência")
     logger.info("")
     logger.info("Consulte o README para instruções detalhadas.")
-    logger.info("Material de referência: fase-01-fundamentos-de-ml/04-apis-inferencia-modelos")
+    logger.info("Material de referência: fase-01-produtizacao-de-modelos/04-apis-inferencia-modelos")
 
 
 if __name__ == "__main__":

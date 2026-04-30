@@ -1,7 +1,7 @@
 """Exercício prático — Engenharia de Software para Cientistas de Dados
 
 Fase 01 | Live de Hands-on
-Disciplina: fase-01-fundamentos-de-ml/03-engenharia-software-cientistas-dados
+Disciplina: fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados
 
 Conceitos-chave:
   - SOLID aplicado a ML
@@ -33,7 +33,7 @@ def main() -> None:
     logger.info("  3. Configurar pre-commit hooks com ruff")
     logger.info("")
     logger.info("Consulte o README para instruções detalhadas.")
-    logger.info("Material de referência: fase-01-fundamentos-de-ml/03-engenharia-software-cientistas-dados")
+    logger.info("Material de referência: fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados")
 
 
 if __name__ == "__main__":

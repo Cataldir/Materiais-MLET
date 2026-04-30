@@ -51,19 +51,19 @@ validate-bootstrap:  ## Run lightweight bootstrap validation for curation work
 	$(PYTHON) tools/repo_tasks.py validate
 
 test-fase01:  ## Run Fase 01 tests
-	pytest fase-01-fundamentos-de-ml/ -v
+	pytest fase-01-produtizacao-de-modelos/ -v
 
 test-fase02:  ## Run Fase 02 tests
-	pytest fase-02-feature-engineering-versionamento/ -v
+	pytest fase-02-containers-e-ambientes-reprodutiveis/ -v
 
 test-fase03:  ## Run Fase 03 tests
-	pytest fase-03-deploy-e-servir-modelos/ -v
+	pytest fase-03-cloud-e-mlops/ -v
 
 test-fase04:  ## Run Fase 04 tests
 	pytest fase-04-monitoramento-e-governanca/ -v
 
 test-fase05:  ## Run Fase 05 tests
-	pytest fase-05-llms-e-agentes/ -v
+	pytest fase-05-deploy-avancado-de-ia-generativa/ -v
 
 notebooks-check:  ## Run lightweight structural validation for tracked notebooks
 	$(PYTHON) tools/repo_tasks.py notebooks-check

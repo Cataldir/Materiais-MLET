@@ -8,7 +8,7 @@
 
 Padrões avançados de multi-agent, escalabilidade e operações de LLMs em produção
 
-**Disciplina de referência:** [`fase-05-llms-e-agentes/03-aplicacoes-avancadas-escalabilidade`](../../fase-05-llms-e-agentes/03-aplicacoes-avancadas-escalabilidade/README.md)
+**Disciplina de referência:** [`fase-05-deploy-avancado-de-ia-generativa/03-aplicacoes-avancadas-escalabilidade`](../../fase-05-deploy-avancado-de-ia-generativa/03-aplicacoes-avancadas-escalabilidade/README.md)
 
 ---
 
@@ -50,5 +50,5 @@ Padrões avançados de multi-agent, escalabilidade e operações de LLMs em prod
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-05-llms-e-agentes/03-aplicacoes-avancadas-escalabilidade`](../../fase-05-llms-e-agentes/03-aplicacoes-avancadas-escalabilidade/README.md)
+- Material completo da disciplina: [`fase-05-deploy-avancado-de-ia-generativa/03-aplicacoes-avancadas-escalabilidade`](../../fase-05-deploy-avancado-de-ia-generativa/03-aplicacoes-avancadas-escalabilidade/README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.

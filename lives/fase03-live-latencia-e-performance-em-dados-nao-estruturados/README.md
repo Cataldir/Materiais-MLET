@@ -8,7 +8,7 @@
 
 Otimização de latência em modelos de visão e NLP com quantização, ONNX e serving otimizado
 
-**Disciplina de referência:** [`fase-03-deploy-e-servir-modelos/06-latencia-performance`](../../fase-03-deploy-e-servir-modelos/06-latencia-performance/README.md)
+**Disciplina de referência:** [`fase-03-cloud-e-mlops/06-latencia-performance`](../../fase-03-cloud-e-mlops/06-latencia-performance/README.md)
 
 ---
 
@@ -51,5 +51,5 @@ Otimização de latência em modelos de visão e NLP com quantização, ONNX e s
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-03-deploy-e-servir-modelos/06-latencia-performance`](../../fase-03-deploy-e-servir-modelos/06-latencia-performance/README.md)
+- Material completo da disciplina: [`fase-03-cloud-e-mlops/06-latencia-performance`](../../fase-03-cloud-e-mlops/06-latencia-performance/README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.

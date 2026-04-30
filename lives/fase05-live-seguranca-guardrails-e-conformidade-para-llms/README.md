@@ -8,7 +8,7 @@
 
 Segurança de aplicações generativas com guardrails de input/output, red teaming e conformidade
 
-**Disciplina de referência:** [`fase-05-llms-e-agentes/05-seguranca-guardrails-conformidade`](../../fase-05-llms-e-agentes/05-seguranca-guardrails-conformidade/README.md)
+**Disciplina de referência:** [`fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade`](../../fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade/README.md)
 
 ---
 
@@ -50,5 +50,5 @@ Segurança de aplicações generativas com guardrails de input/output, red teami
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-05-llms-e-agentes/05-seguranca-guardrails-conformidade`](../../fase-05-llms-e-agentes/05-seguranca-guardrails-conformidade/README.md)
+- Material completo da disciplina: [`fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade`](../../fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade/README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.

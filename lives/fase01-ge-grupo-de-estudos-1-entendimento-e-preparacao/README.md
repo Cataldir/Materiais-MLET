@@ -8,7 +8,7 @@
 
 Entendimento do problema de negócio, preparação de dados e ML Canvas
 
-**Disciplina de referência:** [`fase-01-fundamentos-de-ml/01-ciclo-de-vida-de-modelos`](../../fase-01-fundamentos-de-ml/01-ciclo-de-vida-de-modelos/README.md)
+**Disciplina de referência:** [`fase-01-produtizacao-de-modelos/01-ciclo-de-vida-de-modelos`](../../fase-01-produtizacao-de-modelos/01-ciclo-de-vida-de-modelos/README.md)
 
 ---
 
@@ -43,5 +43,5 @@ Entendimento do problema de negócio, preparação de dados e ML Canvas
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-01-fundamentos-de-ml/01-ciclo-de-vida-de-modelos`](../../fase-01-fundamentos-de-ml/01-ciclo-de-vida-de-modelos/README.md)
+- Material completo da disciplina: [`fase-01-produtizacao-de-modelos/01-ciclo-de-vida-de-modelos`](../../fase-01-produtizacao-de-modelos/01-ciclo-de-vida-de-modelos/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.

@@ -1,7 +1,7 @@
 """Exercício prático — Segurança, Guardrails e Conformidade para LLMs
 
 Fase 05 | Live de Hands-on
-Disciplina: fase-05-llms-e-agentes/05-seguranca-guardrails-conformidade
+Disciplina: fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade
 
 Conceitos-chave:
   - Guardrails de input/output
@@ -33,7 +33,7 @@ def main() -> None:
     logger.info("  3. Executar 5 cenários de red teaming")
     logger.info("")
     logger.info("Consulte o README para instruções detalhadas.")
-    logger.info("Material de referência: fase-05-llms-e-agentes/05-seguranca-guardrails-conformidade")
+    logger.info("Material de referência: fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade")
 
 
 if __name__ == "__main__":

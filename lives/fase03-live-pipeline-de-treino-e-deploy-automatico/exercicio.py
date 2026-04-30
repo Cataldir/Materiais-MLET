@@ -1,7 +1,7 @@
 """Exercício prático — Pipeline de Treino e Deploy Automático
 
 Fase 03 | Live de Hands-on
-Disciplina: fase-03-deploy-e-servir-modelos/03-pipeline-treino-deploy-automatico
+Disciplina: fase-03-cloud-e-mlops/03-pipeline-treino-deploy-automatico
 
 Conceitos-chave:
   - Pipeline end-to-end
@@ -33,7 +33,7 @@ def main() -> None:
     logger.info("  3. Implementar canary com rollback automático")
     logger.info("")
     logger.info("Consulte o README para instruções detalhadas.")
-    logger.info("Material de referência: fase-03-deploy-e-servir-modelos/03-pipeline-treino-deploy-automatico")
+    logger.info("Material de referência: fase-03-cloud-e-mlops/03-pipeline-treino-deploy-automatico")
 
 
 if __name__ == "__main__":

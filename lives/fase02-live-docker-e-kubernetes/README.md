@@ -8,7 +8,7 @@
 
 Conteinerização de workloads ML com Docker multi-stage e orquestração com Kubernetes
 
-**Disciplina de referência:** [`fase-02-feature-engineering-versionamento/03-docker-kubernetes`](../../fase-02-feature-engineering-versionamento/03-docker-kubernetes/README.md)
+**Disciplina de referência:** [`fase-02-containers-e-ambientes-reprodutiveis/03-docker-kubernetes`](../../fase-02-containers-e-ambientes-reprodutiveis/03-docker-kubernetes/README.md)
 
 ---
 
@@ -52,5 +52,5 @@ Conteinerização de workloads ML com Docker multi-stage e orquestração com Ku
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-02-feature-engineering-versionamento/03-docker-kubernetes`](../../fase-02-feature-engineering-versionamento/03-docker-kubernetes/README.md)
+- Material completo da disciplina: [`fase-02-containers-e-ambientes-reprodutiveis/03-docker-kubernetes`](../../fase-02-containers-e-ambientes-reprodutiveis/03-docker-kubernetes/README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.

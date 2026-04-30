@@ -8,7 +8,7 @@
 
 Construção de APIs REST para servir modelos de ML com Flask e FastAPI, incluindo validação de entrada, middleware e testes
 
-**Disciplina de referência:** [`fase-01-fundamentos-de-ml/04-apis-inferencia-modelos`](../../fase-01-fundamentos-de-ml/04-apis-inferencia-modelos/README.md)
+**Disciplina de referência:** [`fase-01-produtizacao-de-modelos/04-apis-inferencia-modelos`](../../fase-01-produtizacao-de-modelos/04-apis-inferencia-modelos/README.md)
 
 ---
 
@@ -53,5 +53,5 @@ Construção de APIs REST para servir modelos de ML com Flask e FastAPI, incluin
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-01-fundamentos-de-ml/04-apis-inferencia-modelos`](../../fase-01-fundamentos-de-ml/04-apis-inferencia-modelos/README.md)
+- Material completo da disciplina: [`fase-01-produtizacao-de-modelos/04-apis-inferencia-modelos`](../../fase-01-produtizacao-de-modelos/04-apis-inferencia-modelos/README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.

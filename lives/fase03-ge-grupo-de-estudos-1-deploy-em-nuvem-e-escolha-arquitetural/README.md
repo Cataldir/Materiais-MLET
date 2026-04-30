@@ -8,7 +8,7 @@
 
 Deploy de modelos em nuvem e decisões arquiteturais
 
-**Disciplina de referência:** [`fase-03-deploy-e-servir-modelos/01-deploy-em-nuvem`](../../fase-03-deploy-e-servir-modelos/01-deploy-em-nuvem/README.md)
+**Disciplina de referência:** [`fase-03-cloud-e-mlops/01-deploy-em-nuvem`](../../fase-03-cloud-e-mlops/01-deploy-em-nuvem/README.md)
 
 ---
 
@@ -42,5 +42,5 @@ Deploy de modelos em nuvem e decisões arquiteturais
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-03-deploy-e-servir-modelos/01-deploy-em-nuvem`](../../fase-03-deploy-e-servir-modelos/01-deploy-em-nuvem/README.md)
+- Material completo da disciplina: [`fase-03-cloud-e-mlops/01-deploy-em-nuvem`](../../fase-03-cloud-e-mlops/01-deploy-em-nuvem/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.

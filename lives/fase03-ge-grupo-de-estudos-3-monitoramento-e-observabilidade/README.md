@@ -8,7 +8,7 @@
 
 Monitoração, alertas e observabilidade em produção
 
-**Disciplina de referência:** [`fase-03-deploy-e-servir-modelos/04-monitoracao-performance`](../../fase-03-deploy-e-servir-modelos/04-monitoracao-performance/README.md)
+**Disciplina de referência:** [`fase-03-cloud-e-mlops/04-monitoracao-performance`](../../fase-03-cloud-e-mlops/04-monitoracao-performance/README.md)
 
 ---
 
@@ -42,5 +42,5 @@ Monitoração, alertas e observabilidade em produção
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-03-deploy-e-servir-modelos/04-monitoracao-performance`](../../fase-03-deploy-e-servir-modelos/04-monitoracao-performance/README.md)
+- Material completo da disciplina: [`fase-03-cloud-e-mlops/04-monitoracao-performance`](../../fase-03-cloud-e-mlops/04-monitoracao-performance/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.

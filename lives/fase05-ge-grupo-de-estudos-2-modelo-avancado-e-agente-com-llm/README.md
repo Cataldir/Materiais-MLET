@@ -8,7 +8,7 @@
 
 Implementação de agentes e modelos avançados com LLMs
 
-**Disciplina de referência:** [`fase-05-llms-e-agentes/02-deploy-agentes-llms`](../../fase-05-llms-e-agentes/02-deploy-agentes-llms/README.md)
+**Disciplina de referência:** [`fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms`](../../fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms/README.md)
 
 ---
 
@@ -40,5 +40,5 @@ Implementação de agentes e modelos avançados com LLMs
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-05-llms-e-agentes/02-deploy-agentes-llms`](../../fase-05-llms-e-agentes/02-deploy-agentes-llms/README.md)
+- Material completo da disciplina: [`fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms`](../../fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.

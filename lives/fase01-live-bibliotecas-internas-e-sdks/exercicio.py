@@ -1,7 +1,7 @@
 """Exercício prático — Bibliotecas Internas e SDKs
 
 Fase 01 | Live de Hands-on
-Disciplina: fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks
+Disciplina: fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks
 
 Conceitos-chave:
   - Layout src/
@@ -33,7 +33,7 @@ def main() -> None:
     logger.info("  3. Configurar versionamento semântico")
     logger.info("")
     logger.info("Consulte o README para instruções detalhadas.")
-    logger.info("Material de referência: fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks")
+    logger.info("Material de referência: fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks")
 
 
 if __name__ == "__main__":

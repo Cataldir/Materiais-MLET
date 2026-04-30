@@ -1,7 +1,7 @@
 """Exercício prático — Controle de Dados e Modelos — DVC e MLflow
 
 Fase 02 | Live de Hands-on
-Disciplina: fase-02-feature-engineering-versionamento/04-dvc-mlflow
+Disciplina: fase-02-containers-e-ambientes-reprodutiveis/04-dvc-mlflow
 
 Conceitos-chave:
   - DVC pipelines
@@ -33,7 +33,7 @@ def main() -> None:
     logger.info("  3. Promover modelo no registry")
     logger.info("")
     logger.info("Consulte o README para instruções detalhadas.")
-    logger.info("Material de referência: fase-02-feature-engineering-versionamento/04-dvc-mlflow")
+    logger.info("Material de referência: fase-02-containers-e-ambientes-reprodutiveis/04-dvc-mlflow")
 
 
 if __name__ == "__main__":

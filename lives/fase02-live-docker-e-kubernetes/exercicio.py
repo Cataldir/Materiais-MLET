@@ -1,7 +1,7 @@
 """Exercício prático — Docker e Kubernetes
 
 Fase 02 | Live de Hands-on
-Disciplina: fase-02-feature-engineering-versionamento/03-docker-kubernetes
+Disciplina: fase-02-containers-e-ambientes-reprodutiveis/03-docker-kubernetes
 
 Conceitos-chave:
   - Dockerfile multi-stage
@@ -33,7 +33,7 @@ def main() -> None:
     logger.info("  3. Deploy em K8s com HPA")
     logger.info("")
     logger.info("Consulte o README para instruções detalhadas.")
-    logger.info("Material de referência: fase-02-feature-engineering-versionamento/03-docker-kubernetes")
+    logger.info("Material de referência: fase-02-containers-e-ambientes-reprodutiveis/03-docker-kubernetes")
 
 
 if __name__ == "__main__":

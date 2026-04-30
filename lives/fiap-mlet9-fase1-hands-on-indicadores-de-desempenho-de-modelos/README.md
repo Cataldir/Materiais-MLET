@@ -1,6 +1,6 @@
 # 📺 INDICADORES DE DESEMPENHO DE MODELOS
 
-> **Fase:** 01 — Fundamentos de ML
+> **Fase:** 01 — Produtização de Modelos
 **Data:** 2026-03-17
 **Professor:** Pedro Almeida
 **Tipo:** Live

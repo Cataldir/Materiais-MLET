@@ -8,7 +8,7 @@
 
 Documentação, SDKs internos e entrega de artefatos
 
-**Disciplina de referência:** [`fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks`](../../fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks/README.md)
+**Disciplina de referência:** [`fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks`](../../fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks/README.md)
 
 ---
 
@@ -42,5 +42,5 @@ Documentação, SDKs internos e entrega de artefatos
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks`](../../fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks/README.md)
+- Material completo da disciplina: [`fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks`](../../fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.

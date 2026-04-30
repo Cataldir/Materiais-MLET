@@ -8,7 +8,7 @@
 
 Avaliação de qualidade, métricas RAG e observabilidade LLM
 
-**Disciplina de referência:** [`fase-05-llms-e-agentes/04-avaliacao-observabilidade-llmops`](../../fase-05-llms-e-agentes/04-avaliacao-observabilidade-llmops/README.md)
+**Disciplina de referência:** [`fase-05-deploy-avancado-de-ia-generativa/04-avaliacao-observabilidade-llmops`](../../fase-05-deploy-avancado-de-ia-generativa/04-avaliacao-observabilidade-llmops/README.md)
 
 ---
 
@@ -40,5 +40,5 @@ Avaliação de qualidade, métricas RAG e observabilidade LLM
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-05-llms-e-agentes/04-avaliacao-observabilidade-llmops`](../../fase-05-llms-e-agentes/04-avaliacao-observabilidade-llmops/README.md)
+- Material completo da disciplina: [`fase-05-deploy-avancado-de-ia-generativa/04-avaliacao-observabilidade-llmops`](../../fase-05-deploy-avancado-de-ia-generativa/04-avaliacao-observabilidade-llmops/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.

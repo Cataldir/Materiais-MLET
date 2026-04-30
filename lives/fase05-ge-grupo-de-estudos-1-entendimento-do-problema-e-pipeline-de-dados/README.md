@@ -8,7 +8,7 @@
 
 Entendimento do datathon e construção de pipeline de dados
 
-**Disciplina de referência:** [`fase-05-llms-e-agentes/01-serving-llms`](../../fase-05-llms-e-agentes/01-serving-llms/README.md)
+**Disciplina de referência:** [`fase-05-deploy-avancado-de-ia-generativa/01-serving-llms`](../../fase-05-deploy-avancado-de-ia-generativa/01-serving-llms/README.md)
 
 ---
 
@@ -40,5 +40,5 @@ Entendimento do datathon e construção de pipeline de dados
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-05-llms-e-agentes/01-serving-llms`](../../fase-05-llms-e-agentes/01-serving-llms/README.md)
+- Material completo da disciplina: [`fase-05-deploy-avancado-de-ia-generativa/01-serving-llms`](../../fase-05-deploy-avancado-de-ia-generativa/01-serving-llms/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.

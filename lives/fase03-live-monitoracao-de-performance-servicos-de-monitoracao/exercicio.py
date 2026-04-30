@@ -1,7 +1,7 @@
 """Exercício prático — Monitoração de Performance + Serviços de Monitoração
 
 Fase 03 | Live de Hands-on
-Disciplina: fase-03-deploy-e-servir-modelos/04-monitoracao-performance
+Disciplina: fase-03-cloud-e-mlops/04-monitoracao-performance
 
 Conceitos-chave:
   - Prometheus + Grafana
@@ -33,7 +33,7 @@ def main() -> None:
     logger.info("  3. Configurar alertas de degradação")
     logger.info("")
     logger.info("Consulte o README para instruções detalhadas.")
-    logger.info("Material de referência: fase-03-deploy-e-servir-modelos/04-monitoracao-performance")
+    logger.info("Material de referência: fase-03-cloud-e-mlops/04-monitoracao-performance")
 
 
 if __name__ == "__main__":
