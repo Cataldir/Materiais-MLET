@@ -1,6 +1,6 @@
 # 9MLET — Status de Entregas
 
-> Atualizado: 2026-04-30 (auditoria completa de emails)
+> Atualizado: 2026-04-30 (auditoria completa + revalidação de threads)
 
 ## Legenda
 
@@ -44,14 +44,14 @@
 
 | # | Disciplina | Conteudista | Aulas | Status |
 |---|-----------|-------------|-------|--------|
-| 01 | Deploy em Nuvem | Carlos E. Aragão | 8/8 | ✅ APROVADO |
+| 01 | Deploy em Nuvem | Carlos E. Aragão | 8/8 | ✅ APROVADO (desafio pendente) |
 | 02 | Integração com CI/CD | Douglas Martins | 8/8 | ✅ APROVADO |
 | 03 | Pipeline de Treino e Deploy | José Neto | 8/8 | ✅ APROVADO |
 | 04 | Monitoração de Performance | Alex Faiotto | 4/4 | ✅ ENTREGUE (Google Drive, Apr 30) |
-| 05 | Serviços de Monitoração | Jhony Andreatta | 3/? | ⚠️ PENDENTE |
-| 06 | Latência e Performance | Fernando Filiputti | 8/8 | ✅ APROVADO |
+| 05 | Serviços de Monitoração | Jhony Andreatta | 3/8 | ⚠️ PENDENTE (5 aulas faltando) |
+| 06 | Latência e Performance | Fernando Filiputti | 8/8 | ✅ APROVADO (desafio em validação) |
 
-**Fase 03: ~70% aprovada. 05 (Jhony) aguarda formalização.**
+**Fase 03: ~70% aprovada. 01 desafio pendente, 05 (Jhony) 5 aulas faltando, 06 desafio em validação pelo conteudista.**
 
 ---
 
@@ -74,7 +74,7 @@
 
 | # | Disciplina | Conteudista | Aulas | Status |
 |---|-----------|-------------|-------|--------|
-| 01 | Deploy de Modelos de IA Gen | Ives Tulio | 0/8 | 📋 KICKOFF ENVIADO |
+| 01 | Deploy de Modelos de IA Gen | Ives Tulio | 0/8 | 📋 KICKOFF REENVIADO (email corrigido Apr 30) |
 | 02 | Deploy de Agentes com LLMs | Luiz Braz | 0/8 | 📋 KICKOFF ENVIADO |
 | 03 | Aplicações Avançadas | (não identificado) | 0/8 | 📋 KICKOFF ENVIADO |
 | 04 | Avaliação e Observabilidade | José Neto | 0/8 | 📋 KICKOFF ENVIADO |
@@ -90,15 +90,19 @@
 |------|-----------|-------|---|
 | 01 | 5/5 | 5 | 100% |
 | 02 | 3/4 | 4 | 75% |
-| 03 | 4/6 | 6 | 67% |
+| 03 | 5/6 | 6 | 83% |
 | 04 | 1/6 | 6 | 17% |
 | 05 | 0/5 | 5 | 0% |
-| **Total** | **13/26** | **26** | **50%** |
+| **Total** | **14/26** | **26** | **54%** |
 
 ## Notas
 
 - Fase 02/02 (Gerenciamento Dependências): Erick Muller substituiu Thiago Cardoso que desistiu em Jan/2026.
 - Fase 02/04 (DVC+MLflow): Sulamita entregou 7 aulas, gravação remota (Henrique Gerade) em andamento.
-- Fase 03/04 e 03/05: Materiais parciais no repo, aguardando formalização.
-- Fase 04/04 (Validação de Dados): 3 aulas com >15pp foram corrigidas pelo coordenador.
+- Fase 03/01 (Deploy em Nuvem): Aulas aprovadas, desafio ainda não entregue — cobrado ao Carlos Apr 30.
+- Fase 03/04 (Monitoração Performance): Alex Faiotto entregou via Google Drive Apr 30, aguarda validação formal.
+- Fase 03/05 (Serviços Monitoração): Jhony entregou 3/8 aulas — PÓS ON cobrou material completo Apr 29.
+- Fase 03/06 (Latência): Desafio enviado ao Fernando para validação Apr 30.
+- Fase 04/04 (Validação de Dados): Aprovado com ressalvas — 3 aulas corrigidas pelo coordenador. Roteiro precisa conversão para .xlsx.
+- Fase 05/01 (Deploy IA Gen): Email do Ives Tulio corrigido de ivestuliog@gmail.com para ivestulio@gmail.com. Kickoff reenviado Apr 30.
 - Fase 05: Todos kickoffs enviados Feb 6 — prazo de entrega a confirmar.
