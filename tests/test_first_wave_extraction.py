@@ -34,7 +34,7 @@ def test_recommendation_pack_ranks_candidates() -> None:
 
     module = load_module(
         "business_case_recommendation",
-        "fase-02-feature-engineering-versionamento/04-dvc-mlflow/referencia-recomendacao-negocio/business_case_recommendation.py",
+        "fase-02-containers-e-ambientes-reprodutiveis/04-dvc-mlflow/referencia-recomendacao-negocio/business_case_recommendation.py",
     )
 
     scenario = module.generate_business_case_frame()
@@ -51,7 +51,7 @@ def test_recommendation_pack_ranks_candidates() -> None:
 def test_quality_monitor_accepts_better_candidate() -> None:
     module = load_module(
         "quality_monitor",
-        "fase-03-deploy-e-servir-modelos/03-pipeline-treino-deploy-automatico/referencia-productization-lstm/quality_monitor.py",
+        "fase-03-cloud-e-mlops/03-pipeline-treino-deploy-automatico/referencia-productization-lstm/quality_monitor.py",
     )
 
     monitor = module.RollingQualityMonitor(min_samples=3, max_history=10, tolerance=0.0)
@@ -71,7 +71,7 @@ def test_mlflow_pack_creates_metrics_when_dependency_is_available(
 
     module = load_module(
         "text_summarization_tracking",
-        "fase-02-feature-engineering-versionamento/04-dvc-mlflow/referencia-mlflow-sumarizacao/text_summarization_tracking.py",
+        "fase-02-containers-e-ambientes-reprodutiveis/04-dvc-mlflow/referencia-mlflow-sumarizacao/text_summarization_tracking.py",
     )
 
     metrics = module.track_demo_run(tmp_path / "mlruns")
@@ -87,7 +87,7 @@ def test_sequence_api_core_when_fastapi_is_available() -> None:
 
     module = load_module(
         "sequence_productization_api",
-        "fase-03-deploy-e-servir-modelos/03-pipeline-treino-deploy-automatico/referencia-productization-lstm/sequence_productization_api.py",
+        "fase-03-cloud-e-mlops/03-pipeline-treino-deploy-automatico/referencia-productization-lstm/sequence_productization_api.py",
     )
 
     prediction = module.moving_average_predict([10.0, 12.0, 14.0])
@@ -101,7 +101,7 @@ def test_phase01_iris_intro_pack_trains_baseline() -> None:
 
     module = load_module(
         "iris_intro_ml",
-        "fase-01-fundamentos-de-ml/02-fundamentos-modelos-ml/aula01-intro-ml/iris_intro_ml.py",
+        "fase-01-produtizacao-de-modelos/02-fundamentos-modelos-ml/aula01-intro-ml/iris_intro_ml.py",
     )
 
     summary = module.train_iris_baseline()
@@ -114,7 +114,7 @@ def test_phase01_iris_intro_pack_trains_baseline() -> None:
 def test_phase05_nlp_reference_pack_runs_with_embedded_dataset() -> None:
     module = load_module(
         "text_preprocessing_and_sentiment",
-        "fase-05-llms-e-agentes/01-deploy-modelos-ia-generativa/referencia-nlp-preprocessamento-sentimento/text_preprocessing_and_sentiment.py",
+        "fase-05-deploy-avancado-de-ia-generativa/01-deploy-modelos-ia-generativa/referencia-nlp-preprocessamento-sentimento/text_preprocessing_and_sentiment.py",
     )
 
     metrics = module.run_reference_demo(use_public_dataset=False)
@@ -133,7 +133,7 @@ def test_phase01_supervised_regression_reference_pack_runs() -> None:
 
     module = load_module(
         "supervised_regression_tuning",
-        "fase-01-fundamentos-de-ml/02-fundamentos-modelos-ml/referencia-supervisionado-regressao-tuning/supervised_regression_tuning.py",
+        "fase-01-produtizacao-de-modelos/02-fundamentos-modelos-ml/referencia-supervisionado-regressao-tuning/supervised_regression_tuning.py",
     )
 
     summary = module.run_reference_demo()
@@ -154,7 +154,7 @@ def test_phase01_unsupervised_reference_pack_runs() -> None:
 
     module = load_module(
         "unsupervised_clustering_pca",
-        "fase-01-fundamentos-de-ml/02-fundamentos-modelos-ml/referencia-nao-supervisionado-clustering-pca/unsupervised_clustering_pca.py",
+        "fase-01-produtizacao-de-modelos/02-fundamentos-modelos-ml/referencia-nao-supervisionado-clustering-pca/unsupervised_clustering_pca.py",
     )
 
     summary = module.run_reference_demo()
@@ -171,7 +171,7 @@ def test_phase03_cloud_pack_compares_invocation_modes() -> None:
 
     module = load_module(
         "cloud_inference_patterns",
-        "fase-03-deploy-e-servir-modelos/01-deploy-em-nuvem/aula01-conceitos-cloud/cloud_inference_patterns.py",
+        "fase-03-cloud-e-mlops/01-deploy-em-nuvem/aula01-conceitos-cloud/cloud_inference_patterns.py",
     )
 
     summaries = module.compare_invocation_modes()
@@ -207,7 +207,7 @@ def test_phase04_causal_pack_recovers_true_effect_with_adjustment() -> None:
 def test_phase05_scaling_pack_shows_batching_advantage() -> None:
     module = load_module(
         "async_inference",
-        "fase-05-llms-e-agentes/03-aplicacoes-avancadas-escalabilidade/aula03-escalabilidade/async_inference.py",
+        "fase-05-deploy-avancado-de-ia-generativa/03-aplicacoes-avancadas-escalabilidade/aula03-escalabilidade/async_inference.py",
     )
 
     summaries = module.asyncio.run(module.compare_scaling_strategies(request_count=18))
@@ -375,17 +375,17 @@ def test_phase04_quality_gate_pack_returns_pass_warn_fail() -> None:
 def test_phase03_ci_fundamentals_pack_extracts_contract() -> None:
     module = load_module(
         "ci_fundamentals_pack",
-        "fase-03-deploy-e-servir-modelos/02-integracao-cicd/aula01-fundamentos-ci/ci_fundamentals.py",
+        "fase-03-cloud-e-mlops/02-integracao-cicd/aula01-fundamentos-ci/ci_fundamentals.py",
     )
 
     summary = module.build_ci_lesson_summary()
     notebook_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/02-integracao-cicd/aula01-fundamentos-ci/01_fundamentos_ci_local.ipynb"
+        / "fase-03-cloud-e-mlops/02-integracao-cicd/aula01-fundamentos-ci/01_fundamentos_ci_local.ipynb"
     )
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/02-integracao-cicd/aula01-fundamentos-ci/README.md"
+        / "fase-03-cloud-e-mlops/02-integracao-cicd/aula01-fundamentos-ci/README.md"
     )
     notebook = json.loads(notebook_path.read_text(encoding="utf-8"))
 
@@ -407,17 +407,17 @@ def test_phase03_prometheus_pack_exposes_testable_scoring_core() -> None:
 
     module = load_module(
         "prometheus_pack",
-        "fase-03-deploy-e-servir-modelos/04-monitoracao-performance/aula02-prometheus-grafana/api_instrumented.py",
+        "fase-03-cloud-e-mlops/04-monitoracao-performance/aula02-prometheus-grafana/api_instrumented.py",
     )
 
     result = module.score_features([5.1, 3.5, 1.4, 0.2])
     notebook_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/04-monitoracao-performance/aula02-prometheus-grafana/02_prometheus_grafana_local.ipynb"
+        / "fase-03-cloud-e-mlops/04-monitoracao-performance/aula02-prometheus-grafana/02_prometheus_grafana_local.ipynb"
     )
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/04-monitoracao-performance/aula02-prometheus-grafana/README.md"
+        / "fase-03-cloud-e-mlops/04-monitoracao-performance/aula02-prometheus-grafana/README.md"
     )
     notebook = json.loads(notebook_path.read_text(encoding="utf-8"))
 
@@ -432,17 +432,17 @@ def test_phase03_prometheus_pack_exposes_testable_scoring_core() -> None:
 def test_phase01_duplication_pack_finds_shared_pipeline_steps() -> None:
     module = load_module(
         "duplication_problem_pack",
-        "fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks/aula01-problema-duplicacao/duplication_problem.py",
+        "fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks/aula01-problema-duplicacao/duplication_problem.py",
     )
 
     hotspots = module.build_hotspot_report()
     notebook_path = (
         REPO_ROOT
-        / "fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks/aula01-problema-duplicacao/01_problema_duplicacao_local.ipynb"
+        / "fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks/aula01-problema-duplicacao/01_problema_duplicacao_local.ipynb"
     )
     readme_path = (
         REPO_ROOT
-        / "fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks/aula01-problema-duplicacao/README.md"
+        / "fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks/aula01-problema-duplicacao/README.md"
     )
     notebook = json.loads(notebook_path.read_text(encoding="utf-8"))
     shared_sequences = {sequence: count for sequence, count in hotspots}
@@ -460,16 +460,16 @@ def test_phase01_duplication_pack_finds_shared_pipeline_steps() -> None:
 def test_phase02_versioning_pack_highlights_missing_audit_trail() -> None:
     module = load_module(
         "versioning_problem_pack",
-        "fase-02-feature-engineering-versionamento/04-dvc-mlflow/aula01-problema-versionamento/versioning_problem.py",
+        "fase-02-containers-e-ambientes-reprodutiveis/04-dvc-mlflow/aula01-problema-versionamento/versioning_problem.py",
     )
 
     notebook_path = (
         REPO_ROOT
-        / "fase-02-feature-engineering-versionamento/04-dvc-mlflow/aula01-problema-versionamento/01_problema_versionamento_local.ipynb"
+        / "fase-02-containers-e-ambientes-reprodutiveis/04-dvc-mlflow/aula01-problema-versionamento/01_problema_versionamento_local.ipynb"
     )
     readme_path = (
         REPO_ROOT
-        / "fase-02-feature-engineering-versionamento/04-dvc-mlflow/aula01-problema-versionamento/README.md"
+        / "fase-02-containers-e-ambientes-reprodutiveis/04-dvc-mlflow/aula01-problema-versionamento/README.md"
     )
     notebook = json.loads(notebook_path.read_text(encoding="utf-8"))
 
@@ -484,17 +484,17 @@ def test_phase02_versioning_pack_highlights_missing_audit_trail() -> None:
 def test_phase03_ci_quality_pack_returns_pass_gate() -> None:
     module = load_module(
         "ci_quality_pack",
-        "fase-03-deploy-e-servir-modelos/02-integracao-cicd/aula03-testes-qualidade-ci/ci_quality_tests.py",
+        "fase-03-cloud-e-mlops/02-integracao-cicd/aula03-testes-qualidade-ci/ci_quality_tests.py",
     )
 
     checks = module.run_checks()
     notebook_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/02-integracao-cicd/aula03-testes-qualidade-ci/03_testes_qualidade_ci_local.ipynb"
+        / "fase-03-cloud-e-mlops/02-integracao-cicd/aula03-testes-qualidade-ci/03_testes_qualidade_ci_local.ipynb"
     )
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/02-integracao-cicd/aula03-testes-qualidade-ci/README.md"
+        / "fase-03-cloud-e-mlops/02-integracao-cicd/aula03-testes-qualidade-ci/README.md"
     )
     notebook = json.loads(notebook_path.read_text(encoding="utf-8"))
 
@@ -512,13 +512,13 @@ def test_phase03_ci_quality_pack_returns_pass_gate() -> None:
 def test_phase03_gcp_azure_pack_compares_provider_contracts() -> None:
     module = load_module(
         "phase03_gcp_azure_pack",
-        "fase-03-deploy-e-servir-modelos/01-deploy-em-nuvem/aula03-gcp-azure/cloud_provider_adapter.py",
+        "fase-03-cloud-e-mlops/01-deploy-em-nuvem/aula03-gcp-azure/cloud_provider_adapter.py",
     )
 
     plans = module.compare_provider_plans()
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/01-deploy-em-nuvem/aula03-gcp-azure/README.md"
+        / "fase-03-cloud-e-mlops/01-deploy-em-nuvem/aula03-gcp-azure/README.md"
     )
     by_provider = {plan.provider: plan for plan in plans}
 
@@ -531,14 +531,14 @@ def test_phase03_gcp_azure_pack_compares_provider_contracts() -> None:
 def test_phase03_cd_deploy_pack_models_promotion_and_rollback() -> None:
     module = load_module(
         "phase03_cd_deploy_pack",
-        "fase-03-deploy-e-servir-modelos/02-integracao-cicd/aula04-cd-deploy/release_state_machine.py",
+        "fase-03-cloud-e-mlops/02-integracao-cicd/aula04-cd-deploy/release_state_machine.py",
     )
 
     promoted = module.simulate_release(module.ReleaseMode.CANARY, 0.92, 0.01)
     rolled_back = module.simulate_release(module.ReleaseMode.CANARY, 0.92, 0.08)
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/02-integracao-cicd/aula04-cd-deploy/README.md"
+        / "fase-03-cloud-e-mlops/02-integracao-cicd/aula04-cd-deploy/README.md"
     )
 
     assert readme_path.exists()
@@ -549,13 +549,13 @@ def test_phase03_cd_deploy_pack_models_promotion_and_rollback() -> None:
 def test_phase03_pipeline_complete_pack_returns_release_artifact() -> None:
     module = load_module(
         "phase03_pipeline_complete_pack",
-        "fase-03-deploy-e-servir-modelos/02-integracao-cicd/aula05-pipeline-completo/local_cicd_pipeline.py",
+        "fase-03-cloud-e-mlops/02-integracao-cicd/aula05-pipeline-completo/local_cicd_pipeline.py",
     )
 
     run = module.run_local_pipeline()
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/02-integracao-cicd/aula05-pipeline-completo/README.md"
+        / "fase-03-cloud-e-mlops/02-integracao-cicd/aula05-pipeline-completo/README.md"
     )
 
     assert readme_path.exists()
@@ -572,13 +572,13 @@ def test_phase03_pipeline_complete_pack_returns_release_artifact() -> None:
 def test_phase03_pipeline_concepts_pack_returns_topological_order() -> None:
     module = load_module(
         "phase03_pipeline_concepts_pack",
-        "fase-03-deploy-e-servir-modelos/03-pipeline-treino-deploy-automatico/aula01-conceitos-pipelines/pipeline_metadata.py",
+        "fase-03-cloud-e-mlops/03-pipeline-treino-deploy-automatico/aula01-conceitos-pipelines/pipeline_metadata.py",
     )
 
     blueprint = module.build_reference_pipeline()
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/03-pipeline-treino-deploy-automatico/aula01-conceitos-pipelines/README.md"
+        / "fase-03-cloud-e-mlops/03-pipeline-treino-deploy-automatico/aula01-conceitos-pipelines/README.md"
     )
 
     assert readme_path.exists()
@@ -594,13 +594,13 @@ def test_phase03_pipeline_concepts_pack_returns_topological_order() -> None:
 def test_phase03_feature_store_pack_materializes_point_in_time_rows() -> None:
     module = load_module(
         "phase03_feature_store_pack",
-        "fase-03-deploy-e-servir-modelos/03-pipeline-treino-deploy-automatico/aula03-feature-store/feature_store_simulation.py",
+        "fase-03-cloud-e-mlops/03-pipeline-treino-deploy-automatico/aula03-feature-store/feature_store_simulation.py",
     )
 
     rows = module.build_point_in_time_dataset()
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/03-pipeline-treino-deploy-automatico/aula03-feature-store/README.md"
+        / "fase-03-cloud-e-mlops/03-pipeline-treino-deploy-automatico/aula03-feature-store/README.md"
     )
 
     assert readme_path.exists()
@@ -612,13 +612,13 @@ def test_phase03_feature_store_pack_materializes_point_in_time_rows() -> None:
 def test_phase03_e2e_pipeline_pack_keeps_stage_boundaries() -> None:
     module = load_module(
         "phase03_e2e_pipeline_pack",
-        "fase-03-deploy-e-servir-modelos/03-pipeline-treino-deploy-automatico/aula04-pipeline-e2e/e2e_pipeline.py",
+        "fase-03-cloud-e-mlops/03-pipeline-treino-deploy-automatico/aula04-pipeline-e2e/e2e_pipeline.py",
     )
 
     report = module.run_demo_pipeline()
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/03-pipeline-treino-deploy-automatico/aula04-pipeline-e2e/README.md"
+        / "fase-03-cloud-e-mlops/03-pipeline-treino-deploy-automatico/aula04-pipeline-e2e/README.md"
     )
 
     assert readme_path.exists()
@@ -630,13 +630,13 @@ def test_phase03_e2e_pipeline_pack_keeps_stage_boundaries() -> None:
 def test_phase03_production_metrics_pack_collects_window_summary() -> None:
     module = load_module(
         "phase03_production_metrics_pack",
-        "fase-03-deploy-e-servir-modelos/04-monitoracao-performance/aula01-metricas-producao/production_metrics.py",
+        "fase-03-cloud-e-mlops/04-monitoracao-performance/aula01-metricas-producao/production_metrics.py",
     )
 
     window = module.simulate_metrics_window()
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/04-monitoracao-performance/aula01-metricas-producao/README.md"
+        / "fase-03-cloud-e-mlops/04-monitoracao-performance/aula01-metricas-producao/README.md"
     )
 
     assert readme_path.exists()
@@ -648,7 +648,7 @@ def test_phase03_production_metrics_pack_collects_window_summary() -> None:
 def test_phase03_alerts_pack_evaluates_snapshot_rules() -> None:
     module = load_module(
         "phase03_alerts_pack",
-        "fase-03-deploy-e-servir-modelos/04-monitoracao-performance/aula03-alertas/alert_rules.py",
+        "fase-03-cloud-e-mlops/04-monitoracao-performance/aula03-alertas/alert_rules.py",
     )
 
     alerts = module.evaluate_snapshot(
@@ -656,7 +656,7 @@ def test_phase03_alerts_pack_evaluates_snapshot_rules() -> None:
     )
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/04-monitoracao-performance/aula03-alertas/README.md"
+        / "fase-03-cloud-e-mlops/04-monitoracao-performance/aula03-alertas/README.md"
     )
 
     assert readme_path.exists()
@@ -670,13 +670,13 @@ def test_phase03_alerts_pack_evaluates_snapshot_rules() -> None:
 def test_phase03_monitoring_project_pack_composes_cards_and_alerts() -> None:
     module = load_module(
         "phase03_monitoring_project_pack",
-        "fase-03-deploy-e-servir-modelos/04-monitoracao-performance/aula04-projeto-monitoramento/monitoring_project.py",
+        "fase-03-cloud-e-mlops/04-monitoracao-performance/aula04-projeto-monitoramento/monitoring_project.py",
     )
 
     report = module.run_monitoring_project()
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/04-monitoracao-performance/aula04-projeto-monitoramento/README.md"
+        / "fase-03-cloud-e-mlops/04-monitoracao-performance/aula04-projeto-monitoramento/README.md"
     )
 
     assert readme_path.exists()
@@ -688,13 +688,13 @@ def test_phase03_monitoring_project_pack_composes_cards_and_alerts() -> None:
 def test_phase03_observability_pack_captures_logs_metrics_and_traces() -> None:
     module = load_module(
         "phase03_observability_pack",
-        "fase-03-deploy-e-servir-modelos/05-servicos-de-monitoracao/aula01-observabilidade-ml/ml_observability.py",
+        "fase-03-cloud-e-mlops/05-servicos-de-monitoracao/aula01-observabilidade-ml/ml_observability.py",
     )
 
     summary = module.run_observability_demo()
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/05-servicos-de-monitoracao/aula01-observabilidade-ml/README.md"
+        / "fase-03-cloud-e-mlops/05-servicos-de-monitoracao/aula01-observabilidade-ml/README.md"
     )
 
     assert readme_path.exists()
@@ -706,13 +706,13 @@ def test_phase03_observability_pack_captures_logs_metrics_and_traces() -> None:
 def test_phase03_cloud_monitoring_pack_compares_provider_strategies() -> None:
     module = load_module(
         "phase03_cloud_monitoring_pack",
-        "fase-03-deploy-e-servir-modelos/05-servicos-de-monitoracao/aula03-cloud-monitoring/cloud_monitoring_comparison.py",
+        "fase-03-cloud-e-mlops/05-servicos-de-monitoracao/aula03-cloud-monitoring/cloud_monitoring_comparison.py",
     )
 
     summaries = module.compare_cloud_monitoring()
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/05-servicos-de-monitoracao/aula03-cloud-monitoring/README.md"
+        / "fase-03-cloud-e-mlops/05-servicos-de-monitoracao/aula03-cloud-monitoring/README.md"
     )
     by_provider = {summary.provider: summary for summary in summaries}
 
@@ -725,13 +725,13 @@ def test_phase03_cloud_monitoring_pack_compares_provider_strategies() -> None:
 def test_phase03_triton_torchserve_pack_compares_serving_adapters() -> None:
     module = load_module(
         "phase03_triton_torchserve_pack",
-        "fase-03-deploy-e-servir-modelos/06-latencia-performance/aula02-triton-torchserve/serving_adapters.py",
+        "fase-03-cloud-e-mlops/06-latencia-performance/aula02-triton-torchserve/serving_adapters.py",
     )
 
     reports = module.compare_serving_backends()
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/06-latencia-performance/aula02-triton-torchserve/README.md"
+        / "fase-03-cloud-e-mlops/06-latencia-performance/aula02-triton-torchserve/README.md"
     )
     by_backend = {report.backend: report for report in reports}
 
@@ -744,13 +744,13 @@ def test_phase03_triton_torchserve_pack_compares_serving_adapters() -> None:
 def test_phase03_preprocessing_pack_checks_semantic_equivalence() -> None:
     module = load_module(
         "phase03_preprocessing_pack",
-        "fase-03-deploy-e-servir-modelos/06-latencia-performance/aula03-preprocessing-otimizado/optimized_preprocessing.py",
+        "fase-03-cloud-e-mlops/06-latencia-performance/aula03-preprocessing-otimizado/optimized_preprocessing.py",
     )
 
     comparison = module.compare_preprocessors()
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/06-latencia-performance/aula03-preprocessing-otimizado/README.md"
+        / "fase-03-cloud-e-mlops/06-latencia-performance/aula03-preprocessing-otimizado/README.md"
     )
 
     assert readme_path.exists()
@@ -762,17 +762,17 @@ def test_phase03_preprocessing_pack_checks_semantic_equivalence() -> None:
 def test_phase03_benchmark_pack_reports_no_regressions() -> None:
     module = load_module(
         "phase03_benchmark_pack",
-        "fase-03-deploy-e-servir-modelos/06-latencia-performance/aula04-benchmark-completo/benchmark_harness.py",
+        "fase-03-cloud-e-mlops/06-latencia-performance/aula04-benchmark-completo/benchmark_harness.py",
     )
 
     report = module.run_benchmark_suite()
     readme_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/06-latencia-performance/aula04-benchmark-completo/README.md"
+        / "fase-03-cloud-e-mlops/06-latencia-performance/aula04-benchmark-completo/README.md"
     )
     baseline_path = (
         REPO_ROOT
-        / "fase-03-deploy-e-servir-modelos/06-latencia-performance/aula04-benchmark-completo/benchmark_baseline.json"
+        / "fase-03-cloud-e-mlops/06-latencia-performance/aula04-benchmark-completo/benchmark_baseline.json"
     )
 
     assert readme_path.exists()
@@ -808,17 +808,17 @@ def test_phase04_model_card_pack_renders_required_sections() -> None:
 def test_phase05_guardrails_pack_classifies_allow_sanitize_block() -> None:
     module = load_module(
         "guardrails_pack",
-        "fase-05-llms-e-agentes/05-seguranca-guardrails-conformidade/aula02-guardrails/guardrails_demo.py",
+        "fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade/aula02-guardrails/guardrails_demo.py",
     )
 
     decisions = module.apply_guardrails()
     notebook_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/05-seguranca-guardrails-conformidade/aula02-guardrails/02_guardrails_local.ipynb"
+        / "fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade/aula02-guardrails/02_guardrails_local.ipynb"
     )
     readme_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/05-seguranca-guardrails-conformidade/aula02-guardrails/README.md"
+        / "fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade/aula02-guardrails/README.md"
     )
     notebook = json.loads(notebook_path.read_text(encoding="utf-8"))
 
@@ -883,17 +883,17 @@ def test_phase04_lgpd_pack_classifies_review_and_allow() -> None:
 def test_phase05_automated_evaluation_pack_flags_hallucination() -> None:
     module = load_module(
         "automated_evaluation_pack",
-        "fase-05-llms-e-agentes/04-avaliacao-observabilidade-llmops/aula02-avaliacao-automatizada/ragas_evaluation.py",
+        "fase-05-deploy-avancado-de-ia-generativa/04-avaliacao-observabilidade-llmops/aula02-avaliacao-automatizada/ragas_evaluation.py",
     )
 
     results = module.run_evaluation_demo()
     notebook_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/04-avaliacao-observabilidade-llmops/aula02-avaliacao-automatizada/02_avaliacao_automatizada_local.ipynb"
+        / "fase-05-deploy-avancado-de-ia-generativa/04-avaliacao-observabilidade-llmops/aula02-avaliacao-automatizada/02_avaliacao_automatizada_local.ipynb"
     )
     readme_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/04-avaliacao-observabilidade-llmops/aula02-avaliacao-automatizada/README.md"
+        / "fase-05-deploy-avancado-de-ia-generativa/04-avaliacao-observabilidade-llmops/aula02-avaliacao-automatizada/README.md"
     )
     notebook = json.loads(notebook_path.read_text(encoding="utf-8-sig"))
     by_name = {result["name"]: result for result in results}
@@ -909,17 +909,17 @@ def test_phase05_automated_evaluation_pack_flags_hallucination() -> None:
 def test_phase05_risk_pack_prioritizes_prompt_injection() -> None:
     module = load_module(
         "risk_pack",
-        "fase-05-llms-e-agentes/05-seguranca-guardrails-conformidade/aula01-riscos-llms/llm_risks.py",
+        "fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade/aula01-riscos-llms/llm_risks.py",
     )
 
     results = module.prioritize_risks()
     notebook_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/05-seguranca-guardrails-conformidade/aula01-riscos-llms/01_riscos_llms_local.ipynb"
+        / "fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade/aula01-riscos-llms/01_riscos_llms_local.ipynb"
     )
     readme_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/05-seguranca-guardrails-conformidade/aula01-riscos-llms/README.md"
+        / "fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade/aula01-riscos-llms/README.md"
     )
     notebook = json.loads(notebook_path.read_text(encoding="utf-8-sig"))
 
@@ -945,7 +945,7 @@ def test_phase04_model_card_debug_walkthrough_exposes_validation() -> None:
 def test_phase05_guardrails_debug_walkthrough_exposes_three_levels() -> None:
     module = load_module(
         "guardrails_debug_pack",
-        "fase-05-llms-e-agentes/05-seguranca-guardrails-conformidade/aula02-guardrails/guardrails_debug_walkthrough.py",
+        "fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade/aula02-guardrails/guardrails_debug_walkthrough.py",
     )
 
     snapshot = module.walkthrough(debug=False)
@@ -1032,17 +1032,17 @@ def test_phase04_alerting_pack_deduplicates_cooldown_events() -> None:
 def test_phase05_llmops_tracing_pack_flags_weak_grounding() -> None:
     module = load_module(
         "llmops_tracing_pack",
-        "fase-05-llms-e-agentes/04-avaliacao-observabilidade-llmops/aula03-tracing-llmops/llm_tracing.py",
+        "fase-05-deploy-avancado-de-ia-generativa/04-avaliacao-observabilidade-llmops/aula03-tracing-llmops/llm_tracing.py",
     )
 
     results = module.run_llmops_trace_demo()
     notebook_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/04-avaliacao-observabilidade-llmops/aula03-tracing-llmops/03_tracing_llmops_local.ipynb"
+        / "fase-05-deploy-avancado-de-ia-generativa/04-avaliacao-observabilidade-llmops/aula03-tracing-llmops/03_tracing_llmops_local.ipynb"
     )
     readme_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/04-avaliacao-observabilidade-llmops/aula03-tracing-llmops/README.md"
+        / "fase-05-deploy-avancado-de-ia-generativa/04-avaliacao-observabilidade-llmops/aula03-tracing-llmops/README.md"
     )
     notebook = json.loads(notebook_path.read_text(encoding="utf-8-sig"))
 
@@ -1058,7 +1058,7 @@ def test_phase01_mlp_pack_compares_strategy_adapters() -> None:
 
     module = load_module(
         "phase01_mlp_adapter_demo",
-        "fase-01-fundamentos-de-ml/02-fundamentos-modelos-ml/aula04-mlp-pytorch-keras/mlp_adapter_demo.py",
+        "fase-01-produtizacao-de-modelos/02-fundamentos-modelos-ml/aula04-mlp-pytorch-keras/mlp_adapter_demo.py",
     )
 
     summaries = module.compare_backends()
@@ -1078,7 +1078,7 @@ def test_phase01_integrator_pack_selects_champion_and_card() -> None:
 
     module = load_module(
         "phase01_integrated_project",
-        "fase-01-fundamentos-de-ml/02-fundamentos-modelos-ml/aula06-projeto-integrador/integrated_model_project.py",
+        "fase-01-produtizacao-de-modelos/02-fundamentos-modelos-ml/aula06-projeto-integrador/integrated_model_project.py",
     )
 
     report = module.run_integrated_project()
@@ -1094,7 +1094,7 @@ def test_phase01_integrator_pack_selects_champion_and_card() -> None:
 def test_phase01_git_workflow_pack_reaches_merge_ready_state() -> None:
     module = load_module(
         "phase01_git_workflow_demo",
-        "fase-01-fundamentos-de-ml/03-engenharia-software-cientistas-dados/aula02-git-workflow/git_workflow_demo.py",
+        "fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados/aula02-git-workflow/git_workflow_demo.py",
     )
 
     state = module.run_git_workflow_demo()
@@ -1108,13 +1108,13 @@ def test_phase01_git_workflow_pack_reaches_merge_ready_state() -> None:
 def test_phase05_quantization_pack_balances_quality_and_footprint() -> None:
     module = load_module(
         "phase05_quantization_pack",
-        "fase-05-llms-e-agentes/01-deploy-modelos-ia-generativa/aula03-otimizacao-quantizacao/quantization.py",
+        "fase-05-deploy-avancado-de-ia-generativa/01-deploy-modelos-ia-generativa/aula03-otimizacao-quantizacao/quantization.py",
     )
 
     plans = module.recommend_optimization_plans("studio_gpu")
     readme_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/01-deploy-modelos-ia-generativa/aula03-otimizacao-quantizacao/README.md"
+        / "fase-05-deploy-avancado-de-ia-generativa/01-deploy-modelos-ia-generativa/aula03-otimizacao-quantizacao/README.md"
     )
 
     assert readme_path.exists()
@@ -1126,13 +1126,13 @@ def test_phase05_quantization_pack_balances_quality_and_footprint() -> None:
 def test_phase05_langgraph_pack_routes_with_same_local_tooling() -> None:
     module = load_module(
         "phase05_langgraph_pack",
-        "fase-05-llms-e-agentes/02-deploy-agentes-llms/aula02-langchain-langgraph/langgraph_workflow.py",
+        "fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms/aula02-langchain-langgraph/langgraph_workflow.py",
     )
 
     report = module.compare_workflows("Qual e a politica de reembolso local?")
     readme_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/02-deploy-agentes-llms/aula02-langchain-langgraph/README.md"
+        / "fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms/aula02-langchain-langgraph/README.md"
     )
 
     assert readme_path.exists()
@@ -1144,17 +1144,17 @@ def test_phase05_langgraph_pack_routes_with_same_local_tooling() -> None:
 def test_phase05_agent_api_pack_runs_local_hexagonal_flow() -> None:
     module = load_module(
         "phase05_agent_api_pack",
-        "fase-05-llms-e-agentes/02-deploy-agentes-llms/aula04-deploy-agente-api/agent_api.py",
+        "fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms/aula04-deploy-agente-api/agent_api.py",
     )
 
     report = module.run_local_demo()
     readme_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/02-deploy-agentes-llms/aula04-deploy-agente-api/README.md"
+        / "fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms/aula04-deploy-agente-api/README.md"
     )
     dockerfile_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/02-deploy-agentes-llms/aula04-deploy-agente-api/Dockerfile"
+        / "fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms/aula04-deploy-agente-api/Dockerfile"
     )
 
     assert readme_path.exists()
@@ -1167,17 +1167,17 @@ def test_phase05_agent_api_pack_runs_local_hexagonal_flow() -> None:
 def test_phase05_complete_project_pack_composes_local_assistant() -> None:
     module = load_module(
         "phase05_complete_project_pack",
-        "fase-05-llms-e-agentes/02-deploy-agentes-llms/aula05-projeto-completo/assistant_project.py",
+        "fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms/aula05-projeto-completo/assistant_project.py",
     )
 
     report = module.run_assistant_demo()
     readme_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/02-deploy-agentes-llms/aula05-projeto-completo/README.md"
+        / "fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms/aula05-projeto-completo/README.md"
     )
     notebook_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/02-deploy-agentes-llms/aula05-projeto-completo/05_projeto_completo_local.ipynb"
+        / "fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms/aula05-projeto-completo/05_projeto_completo_local.ipynb"
     )
 
     assert readme_path.exists()
@@ -1190,13 +1190,13 @@ def test_phase05_complete_project_pack_composes_local_assistant() -> None:
 def test_phase05_multi_agent_pack_coordinates_three_roles() -> None:
     module = load_module(
         "phase05_multi_agent_pack",
-        "fase-05-llms-e-agentes/03-aplicacoes-avancadas-escalabilidade/aula01-multi-agent/multi_agent_orchestrator.py",
+        "fase-05-deploy-avancado-de-ia-generativa/03-aplicacoes-avancadas-escalabilidade/aula01-multi-agent/multi_agent_orchestrator.py",
     )
 
     report = module.run_multi_agent_demo()
     readme_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/03-aplicacoes-avancadas-escalabilidade/aula01-multi-agent/README.md"
+        / "fase-05-deploy-avancado-de-ia-generativa/03-aplicacoes-avancadas-escalabilidade/aula01-multi-agent/README.md"
     )
 
     assert readme_path.exists()
@@ -1211,17 +1211,17 @@ def test_phase05_multi_agent_pack_coordinates_three_roles() -> None:
 def test_phase05_advanced_project_pack_replays_workload_to_zero_backlog() -> None:
     module = load_module(
         "phase05_advanced_project_pack",
-        "fase-05-llms-e-agentes/03-aplicacoes-avancadas-escalabilidade/aula04-projeto-avancado/advanced_project.py",
+        "fase-05-deploy-avancado-de-ia-generativa/03-aplicacoes-avancadas-escalabilidade/aula04-projeto-avancado/advanced_project.py",
     )
 
     report = module.run_advanced_project()
     readme_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/03-aplicacoes-avancadas-escalabilidade/aula04-projeto-avancado/README.md"
+        / "fase-05-deploy-avancado-de-ia-generativa/03-aplicacoes-avancadas-escalabilidade/aula04-projeto-avancado/README.md"
     )
     notebook_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/03-aplicacoes-avancadas-escalabilidade/aula04-projeto-avancado/04_projeto_avancado_local.ipynb"
+        / "fase-05-deploy-avancado-de-ia-generativa/03-aplicacoes-avancadas-escalabilidade/aula04-projeto-avancado/04_projeto_avancado_local.ipynb"
     )
 
     assert readme_path.exists()
@@ -1234,17 +1234,17 @@ def test_phase05_advanced_project_pack_replays_workload_to_zero_backlog() -> Non
 def test_phase05_llmops_project_pack_counts_pass_warn_fail() -> None:
     module = load_module(
         "phase05_llmops_project_pack",
-        "fase-05-llms-e-agentes/04-avaliacao-observabilidade-llmops/aula05-projeto-llmops/llmops_project.py",
+        "fase-05-deploy-avancado-de-ia-generativa/04-avaliacao-observabilidade-llmops/aula05-projeto-llmops/llmops_project.py",
     )
 
     report = module.run_llmops_project()
     readme_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/04-avaliacao-observabilidade-llmops/aula05-projeto-llmops/README.md"
+        / "fase-05-deploy-avancado-de-ia-generativa/04-avaliacao-observabilidade-llmops/aula05-projeto-llmops/README.md"
     )
     notebook_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/04-avaliacao-observabilidade-llmops/aula05-projeto-llmops/05_projeto_llmops_local.ipynb"
+        / "fase-05-deploy-avancado-de-ia-generativa/04-avaliacao-observabilidade-llmops/aula05-projeto-llmops/05_projeto_llmops_local.ipynb"
     )
 
     assert readme_path.exists()
@@ -1256,17 +1256,17 @@ def test_phase05_llmops_project_pack_counts_pass_warn_fail() -> None:
 def test_phase05_security_project_pack_enforces_allow_sanitize_block() -> None:
     module = load_module(
         "phase05_security_project_pack",
-        "fase-05-llms-e-agentes/05-seguranca-guardrails-conformidade/aula05-projeto-seguranca/security_project.py",
+        "fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade/aula05-projeto-seguranca/security_project.py",
     )
 
     report = module.run_security_project()
     readme_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/05-seguranca-guardrails-conformidade/aula05-projeto-seguranca/README.md"
+        / "fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade/aula05-projeto-seguranca/README.md"
     )
     notebook_path = (
         REPO_ROOT
-        / "fase-05-llms-e-agentes/05-seguranca-guardrails-conformidade/aula05-projeto-seguranca/05_projeto_seguranca_local.ipynb"
+        / "fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade/aula05-projeto-seguranca/05_projeto_seguranca_local.ipynb"
     )
 
     decisions = [item["decision"] for item in report["results"]]
@@ -1281,7 +1281,7 @@ def test_phase05_security_project_pack_enforces_allow_sanitize_block() -> None:
 def test_phase01_dependency_pack_builds_manifests_for_three_tools() -> None:
     module = load_module(
         "phase01_dependency_factory_demo",
-        "fase-01-fundamentos-de-ml/03-engenharia-software-cientistas-dados/aula04-gerenciamento-deps/dependency_factory_demo.py",
+        "fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados/aula04-gerenciamento-deps/dependency_factory_demo.py",
     )
 
     manifests = module.build_manifests()
@@ -1296,7 +1296,7 @@ def test_phase01_dependency_pack_builds_manifests_for_three_tools() -> None:
 def test_phase01_schema_pack_validates_and_predicts() -> None:
     module = load_module(
         "phase01_schema_facade_demo",
-        "fase-01-fundamentos-de-ml/04-apis-inferencia-modelos/aula02-microservicos-schemas/schema_facade_demo.py",
+        "fase-01-produtizacao-de-modelos/04-apis-inferencia-modelos/aula02-microservicos-schemas/schema_facade_demo.py",
     )
 
     facade = module.InferenceSchemaFacade()
@@ -1318,7 +1318,7 @@ def test_phase01_schema_pack_validates_and_predicts() -> None:
 def test_phase01_observability_pack_tracks_auth_and_metrics() -> None:
     module = load_module(
         "phase01_service_observability_demo",
-        "fase-01-fundamentos-de-ml/04-apis-inferencia-modelos/aula04-logging-metricas-auth/service_observability_demo.py",
+        "fase-01-produtizacao-de-modelos/04-apis-inferencia-modelos/aula04-logging-metricas-auth/service_observability_demo.py",
     )
 
     runtime = module.ServiceRuntime()
@@ -1344,7 +1344,7 @@ def test_phase01_observability_pack_tracks_auth_and_metrics() -> None:
 def test_phase01_documentation_pack_builds_nav_and_pages() -> None:
     module = load_module(
         "phase01_documentation_pipeline",
-        "fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks/aula03-documentacao/documentation_pipeline.py",
+        "fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks/aula03-documentacao/documentation_pipeline.py",
     )
 
     bundle = module.build_documentation_site()
@@ -1358,7 +1358,7 @@ def test_phase01_documentation_pack_builds_nav_and_pages() -> None:
 def test_phase01_semver_pack_advances_release_state() -> None:
     module = load_module(
         "phase01_release_workflow",
-        "fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks/aula04-semver-pypi/release_workflow.py",
+        "fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks/aula04-semver-pypi/release_workflow.py",
     )
 
     outcome = module.run_release_demo(current_version="1.4.2", change_type="minor")
@@ -1372,7 +1372,7 @@ def test_phase01_semver_pack_advances_release_state() -> None:
 def test_phase01_formatting_pack_normalizes_code_sample() -> None:
     module = load_module(
         "phase01_formatting_workflow",
-        "fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks/aula05-formatacao/formatting_workflow.py",
+        "fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks/aula05-formatacao/formatting_workflow.py",
     )
 
     formatted = module.run_formatting_workflow()
@@ -1389,7 +1389,7 @@ def test_phase01_sdk_pack_runs_with_local_tracker_fallback() -> None:
 
     module = load_module(
         "phase01_sdk_integration_demo",
-        "fase-01-fundamentos-de-ml/05-bibliotecas-internas-sdks/aula06-integracao-sklearn-mlflow/sdk_integration_demo.py",
+        "fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks/aula06-integracao-sklearn-mlflow/sdk_integration_demo.py",
     )
 
     summary = module.run_sdk_pipeline(prefer_mlflow=False)
@@ -1403,13 +1403,13 @@ def test_phase01_sdk_pack_runs_with_local_tracker_fallback() -> None:
 def test_phase02_srp_pack_preserves_behavior_after_refactor() -> None:
     module = load_module(
         "phase02_srp_refactor",
-        "fase-02-feature-engineering-versionamento/01-clean-code-ml/aula02-srp-refatoracao/srp_example.py",
+        "fase-02-containers-e-ambientes-reprodutiveis/01-clean-code-ml/aula02-srp-refatoracao/srp_example.py",
     )
 
     comparison = module.compare_refactors()
     readme_path = (
         REPO_ROOT
-        / "fase-02-feature-engineering-versionamento/01-clean-code-ml/aula02-srp-refatoracao/README.md"
+        / "fase-02-containers-e-ambientes-reprodutiveis/01-clean-code-ml/aula02-srp-refatoracao/README.md"
     )
 
     assert readme_path.exists()
@@ -1422,13 +1422,13 @@ def test_phase02_srp_pack_preserves_behavior_after_refactor() -> None:
 def test_phase02_project_refactor_pack_preserves_portfolio_contract() -> None:
     module = load_module(
         "phase02_project_refactor",
-        "fase-02-feature-engineering-versionamento/01-clean-code-ml/aula04-projeto-refatoracao/refactor_facade.py",
+        "fase-02-containers-e-ambientes-reprodutiveis/01-clean-code-ml/aula04-projeto-refatoracao/refactor_facade.py",
     )
 
     comparison = module.compare_versions()
     readme_path = (
         REPO_ROOT
-        / "fase-02-feature-engineering-versionamento/01-clean-code-ml/aula04-projeto-refatoracao/README.md"
+        / "fase-02-containers-e-ambientes-reprodutiveis/01-clean-code-ml/aula04-projeto-refatoracao/README.md"
     )
 
     assert readme_path.exists()
@@ -1441,11 +1441,11 @@ def test_phase02_project_refactor_pack_preserves_portfolio_contract() -> None:
 def test_phase02_environment_packs_render_blueprints_and_tool_summaries() -> None:
     venv_module = load_module(
         "phase02_venv_factory",
-        "fase-02-feature-engineering-versionamento/02-gerenciamento-dependencias/aula01-isolamento-venv/venv_factory.py",
+        "fase-02-containers-e-ambientes-reprodutiveis/02-gerenciamento-dependencias/aula01-isolamento-venv/venv_factory.py",
     )
     dependency_module = load_module(
         "phase02_dependency_strategy",
-        "fase-02-feature-engineering-versionamento/02-gerenciamento-dependencias/aula03-poetry-vs-uv/dependency_strategy.py",
+        "fase-02-containers-e-ambientes-reprodutiveis/02-gerenciamento-dependencias/aula03-poetry-vs-uv/dependency_strategy.py",
     )
 
     blueprints = venv_module.compare_blueprints()
@@ -1462,24 +1462,24 @@ def test_phase02_environment_packs_render_blueprints_and_tool_summaries() -> Non
     assert summary_by_tool["uv"].sample_project_file == "uv_project/pyproject.toml"
     assert (
         REPO_ROOT
-        / "fase-02-feature-engineering-versionamento/02-gerenciamento-dependencias/aula03-poetry-vs-uv/poetry_project/pyproject.toml"
+        / "fase-02-containers-e-ambientes-reprodutiveis/02-gerenciamento-dependencias/aula03-poetry-vs-uv/poetry_project/pyproject.toml"
     ).exists()
 
 
 def test_phase02_helm_canary_pack_renders_local_bundle() -> None:
     module = load_module(
         "phase02_helm_canary",
-        "fase-02-feature-engineering-versionamento/03-docker-kubernetes/aula05-helm-canary/helm_canary_builder.py",
+        "fase-02-containers-e-ambientes-reprodutiveis/03-docker-kubernetes/aula05-helm-canary/helm_canary_builder.py",
     )
 
     bundle = module.build_demo_bundle()
     readme_path = (
         REPO_ROOT
-        / "fase-02-feature-engineering-versionamento/03-docker-kubernetes/aula05-helm-canary/README.md"
+        / "fase-02-containers-e-ambientes-reprodutiveis/03-docker-kubernetes/aula05-helm-canary/README.md"
     )
     skaffold_path = (
         REPO_ROOT
-        / "fase-02-feature-engineering-versionamento/03-docker-kubernetes/aula05-helm-canary/skaffold.yaml"
+        / "fase-02-containers-e-ambientes-reprodutiveis/03-docker-kubernetes/aula05-helm-canary/skaffold.yaml"
     )
 
     assert readme_path.exists()
@@ -1492,11 +1492,11 @@ def test_phase02_helm_canary_pack_renders_local_bundle() -> None:
 def test_phase02_dvc_remote_and_registry_packs_support_offline_governance() -> None:
     remote_module = load_module(
         "phase02_dvc_remote_setup",
-        "fase-02-feature-engineering-versionamento/04-dvc-mlflow/aula03-dvc-remoto/remote_setup.py",
+        "fase-02-containers-e-ambientes-reprodutiveis/04-dvc-mlflow/aula03-dvc-remoto/remote_setup.py",
     )
     registry_module = load_module(
         "phase02_mlflow_registry",
-        "fase-02-feature-engineering-versionamento/04-dvc-mlflow/aula05-mlflow-registry/mlflow_registry.py",
+        "fase-02-containers-e-ambientes-reprodutiveis/04-dvc-mlflow/aula05-mlflow-registry/mlflow_registry.py",
     )
 
     plans = remote_module.build_demo_plans()
@@ -1515,11 +1515,11 @@ def test_phase02_integrated_pipeline_and_ci_packs_generate_local_contracts(
 ) -> None:
     pipeline_module = load_module(
         "phase02_integrated_pipeline",
-        "fase-02-feature-engineering-versionamento/04-dvc-mlflow/aula06-pipeline-integrado/pipeline_facade.py",
+        "fase-02-containers-e-ambientes-reprodutiveis/04-dvc-mlflow/aula06-pipeline-integrado/pipeline_facade.py",
     )
     ci_module = load_module(
         "phase02_ci_pipeline",
-        "fase-02-feature-engineering-versionamento/04-dvc-mlflow/aula07-cicd-dvc-mlflow/ci_pipeline.py",
+        "fase-02-containers-e-ambientes-reprodutiveis/04-dvc-mlflow/aula07-cicd-dvc-mlflow/ci_pipeline.py",
     )
 
     workspace = tmp_path / "phase02-integrated"
@@ -1527,7 +1527,7 @@ def test_phase02_integrated_pipeline_and_ci_packs_generate_local_contracts(
     ci_plan = ci_module.build_ci_plan()
     workflow_path = (
         REPO_ROOT
-        / "fase-02-feature-engineering-versionamento/04-dvc-mlflow/aula07-cicd-dvc-mlflow/.github/workflows/dvc_mlflow_ci.yml"
+        / "fase-02-containers-e-ambientes-reprodutiveis/04-dvc-mlflow/aula07-cicd-dvc-mlflow/.github/workflows/dvc_mlflow_ci.yml"
     )
 
     assert pipeline_summary["stage_status"] == {
