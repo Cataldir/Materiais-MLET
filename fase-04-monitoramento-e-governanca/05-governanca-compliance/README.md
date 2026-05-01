@@ -1,46 +1,40 @@
-# 05 — Governança e Compliance — LGPD/GDPR
+# 05 — Governança e Compliance
 
-> 4h de vídeo · 4 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-Sistemas de ML operam sobre dados, pessoas e decisões com implicações regulatórias e reputacionais. Esta disciplina aborda a camada de responsabilidade do trabalho técnico: proteção de dados, fairness, documentação de modelo e mecanismos de privacidade que sustentam legitimidade e conformidade.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: 1; 2; 3; 4.
 
-- interpretar implicações práticas de LGPD e GDPR em projetos de ML;
-- auditar fairness com bibliotecas especializadas;
-- produzir model cards e rastros de lineage para documentação responsável;
-- aplicar noções de privacidade, anonimização e proteção adicional de dados.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Comece pelo enquadramento regulatório para entender o problema antes da ferramenta.
-2. Avance para fairness e model cards como mecanismos de governança técnica.
-3. Use a aula de privacidade para discutir limites do uso de dados e mitigação de risco.
-4. Trate esta disciplina como apoio transversal para qualquer projeto com impacto sobre pessoas e dados pessoais.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | 1 | • Princípios fundamentais de privacidade e proteção de dados pessoais • Comparaç... |
+| 02 | 2 | • Fundamentos de governança de dados: qualidade, consistência e rastreabilidade ... |
+| 03 | 3 | • Princípios de Privacy by Design: 7 princípios fundamentais de Ann Cavoukian • ... |
+| 04 | 4 | • Ameaças de segurança em sistemas de ML: OWASP ML Security Top 10 • Model Inver... |
+| 05 | 5 | • Federated Learning: treinamento distribuído sem centralização de dados • Diffe... |
+| 06 | 6 | • Explicabilidade (XAI) como requisito de compliance GDPR/LGPD • Métodos model-a... |
+| 07 | 7 | • Ética em IA: princípios UNESCO, OECD e frameworks globais de IA confiável • Fa... |
+| 08 | 8 | • Continuous Compliance: monitoramento contínuo de conformidade • Model monitori... |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- O caminho principal é `fase-04-monitoramento-e-governanca/05-governanca-compliance/`.
-- Ao mencionar um tema específico, cite a aula correspondente para manter precisão do recorte.
-- Este README organiza a leitura executiva e acadêmica; scripts e exemplos mostram a operacionalização técnica dos conceitos.
-- A governança oficial do programa continua sendo a fonte de verdade para política e precedência documental.
+AWS, Azure, DVC, Evidently, Git, Grafana, Great Expectations, MLflow, Prometheus, PyTorch, Python, TensorFlow, scikit-learn
 
-## Referenciais teóricos da disciplina
+## Referências Principais
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
+- BANSE, A
+- BELLAMY, R
+- CARDOSO, L
+- FOALEM, P
+- KLEPPMANN, M
 
-## Relevância para a prática executiva e acadêmica
+## Como Usar
 
-Executivamente, essa disciplina ajuda a reduzir risco regulatório, reputacional e de produto. No plano acadêmico, ela introduz discussão crítica sobre responsabilidade algorítmica, documentação e limites éticos do uso de dados e modelos em contextos reais.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-lgpd-gdpr-ml/) | LGPD/GDPR em ML: exemplos práticos | `lgpd_compliance.py` |
-| [02](aula02-fairness/) | Fairness: Fairlearn, AIF360 | `fairness_audit.py` |
-| [03](aula03-model-cards/) | Model Cards + data lineage | `model_card_generator.py` |
-| [04](aula04-privacidade/) | Privacidade: differential privacy, anonimização | `anonymization.py` |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.

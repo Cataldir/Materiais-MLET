@@ -1,46 +1,40 @@
-# 04 — Validação de Dados e Bibliotecas de Qualidade
+# 04 — Validação de Dados em ML
 
-> 4h de vídeo · 4 aulas
+> 8 aulas · ~360min de video
 
-## Por que esta disciplina importa
 
-Muitos incidentes de ML não surgem no modelo, mas na entrada errada que o sistema aceita sem contestar. Esta disciplina mostra como validar dados, contratos e qualidade operacional antes que o problema se propague para treino, serving ou monitoramento tardio.
+## Resumo da Disciplina
 
-## O que você deve aprender
+Esta disciplina cobre 8 temas progressivos: desde fundamentos até aplicação em produção. Os primeiros temas abordam: Fundamentos e Importância da Validação de Dados em ML; Dimensões de Qualidade de Dados; Detecção e Tratamento de Duplicatas e Valores Ausentes; Monitoramento de Data Drift e Mudanças de Distribuição.
 
-- usar Great Expectations para suites e checkpoints de qualidade;
-- definir schemas tipados com Pandera;
-- validar payloads e estruturas em runtime com Pydantic e Cerberus;
-- incorporar gates de qualidade em pipelines executáveis.
 
-## Como usar este material
+## Plano de Aulas
 
-1. Comece pelas ferramentas de validação mais declarativas.
-2. Compare validação tabular, tipada e runtime para entender complementaridade.
-3. Use a aula de gates como síntese operacional da disciplina.
-4. Reaplique esses padrões em pipelines, APIs e projetos de Tech Challenge.
+| # | Tema | Tópico Central |
+|---|------|----------------|
+| 01 | Fundamentos e Importância da Validação de Dados em ML | Por que validar dados em sistemas de ML? Impacto da qualidade de dados no desemp... |
+| 02 | Dimensões de Qualidade de Dados | Dimensões de qualidade: Intrinsic, Contextual, Representational, Accessibility. ... |
+| 03 | Detecção e Tratamento de Duplicatas e Valores Ausentes | Tipos de duplicatas: exatas, aproximadas, near-duplicates. Impacto de duplicatas... |
+| 04 | Monitoramento de Data Drift e Mudanças de Distribuição | Tipos de drift: covariate, prior probability, concept drift. Causas de drift. Te... |
+| 05 | Validação de Schema e Contratos de Dados | Schema como contrato de dados. Schema inference e enforcement. Schema evolution.... |
+| 06 | Detecção de Outliers e Anomalias | Outliers, anomalias e novelties. Métodos estatísticos e de ML: Z-score, IQR, Iso... |
+| 07 | Frameworks de Qualidade de Dados | Great Expectations, Deequ, Pandera, TFDV. Expectation suites, constraint verific... |
+| 08 | Validação Contínua com MLOps, MLflow, AWS e Azure | CI/CD para dados. MLflow: data logging, artifact tracking. AWS: SageMaker, Glue.... |
 
-## Como referenciar esta disciplina no repositório
+## Ferramentas e Bibliotecas
 
-- A trilha está em `fase-04-monitoramento-e-governanca/04-validacao-dados-qualidade/`.
-- Ao citar uma biblioteca, referencie a aula correspondente e o artefato principal.
-- O README orienta leitura e uso; scripts, notebooks e pipelines mostram a implementação concreta.
-- Regras institucionais e critérios formais permanecem na governança canônica.
+AWS, Azure, Evidently, Great Expectations, MLflow, Pandera, Pydantic, Python, TensorFlow
 
-## Referenciais teóricos da disciplina
+## Referências Principais
 
-- Consulte o índice local em [referencias/README.md](referencias/README.md) para organizar leituras e documentação de apoio desta disciplina.
-- Classifique as fontes nos grupos `Base`, `Complementar`, `Operacional` e `Contextual`, mantendo o padrão canônico do repositório.
+- Albelali, S., & Ahmed, M. (2025)
+- Caveness, E., et al. (2020)
+- Chen, C., et al. (2021)
+- Fan, J. (2025)
+- Heindl, A. (2025)
 
-## Relevância para a prática executiva e acadêmica
+## Como Usar
 
-Em operações reais, validação de dados reduz custo de incidente e eleva confiança em pipelines. Academicamente, a disciplina ajuda a formalizar qualidade de entrada e consistência de artefatos, aproximando engenharia de ML de práticas mais robustas de especificação e verificação.
-
-## Aulas
-
-| Aula | Tema | Arquivos |
-|------|------|---------|
-| [01](aula01-great-expectations/) | Great Expectations: suites + checkpoints | `ge_validation.py` |
-| [02](aula02-pandera/) | Pandera: DataFrameSchema tipada | `pandera_schemas.py`, notebook |
-| [03](aula03-pydantic-runtime/) | Pydantic + Cerberus para runtime validation | `pydantic_validation.py` |
-| [04](aula04-pipeline-gates/) | Pipeline com gates de qualidade | `README.md`, `quality_gates.py`, notebook |
+1. Siga as aulas na ordem numérica.
+2. Execute os scripts/notebooks de cada aula localmente.
+3. Consulte `referencias/README.md` para leituras complementares.
