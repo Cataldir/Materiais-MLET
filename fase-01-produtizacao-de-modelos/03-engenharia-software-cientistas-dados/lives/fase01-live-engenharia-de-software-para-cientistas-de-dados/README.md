@@ -80,7 +80,7 @@ Aplicação de princípios SOLID, testes automatizados, qualidade de código e g
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados`](../../fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados/README.md)
+- Material completo da disciplina: [`fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados`](../../../../fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados/README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.
 - Google. Machine Learning Crash Course: Framing ML Problems.
 - scikit-learn User Guide: model evaluation and metrics.
