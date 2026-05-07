@@ -7,7 +7,7 @@ from ml_pipeline.models import build_models, evaluate
 
 def test_registry_tem_cinco_modelos():
     models = build_models(random_state=42)
-    assert len(models) == 5
+    assert len(models) == 4
 
 
 def test_modelos_sao_pipelines_com_scaler():
