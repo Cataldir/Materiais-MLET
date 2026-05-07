@@ -27,7 +27,7 @@ AWS, Azure, Docker, Flask, Git, GitHub Actions, Grafana, Helm, Jenkins, Kubeflow
 
 ## Referências Principais
 
-- – Aula expositiva com exemplos visuais: Uso de slides e diagramas para ilustrar 
+- – Aula expositiva com exemplos visuais: Uso de slides e diagramas para ilustrar
 - – Estudo de caso e discussão: O instrutor apresenta um estudo de caso realista –
 - – Exposição dialogada com analogias: Aula expositiva ilustrada com comparações v
 - – Hands-on guiado: Aula focada em prática supervisionada

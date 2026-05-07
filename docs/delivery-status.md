@@ -1,108 +1,72 @@
-# 9MLET — Status de Entregas
+# MLET Public Materials Coverage
 
-> Atualizado: 2026-04-30 (auditoria completa + revalidação de threads)
+> Updated: 2026-05-06. This document tracks reusable public material coverage in `Materiais-MLET`. It is not an internal authoring ledger, a professor follow-up tracker, or a single-cohort delivery report.
 
-## Legenda
+## Editorial Rule
 
-| Símbolo | Significado |
-|---------|-------------|
-| ✅ | Entregue e gravado/aprovado |
-| ⚠️ | Parcialmente entregue ou aguardando formalização |
-| 📋 | Kickoff enviado, sem entrega |
-| ❌ | Não iniciado |
+This repository serves the Machine Learning Engineering program across cohorts. Cohort labels document provenance for live sessions and study groups, but the primary navigation model is phase, discipline, and reusable artifact.
 
----
+Use this document to answer three questions:
 
-## Fase 01 — Produtização de Modelos
+1. which cohorts have been reviewed against the public material index;
+2. where public reusable material exists by phase;
+3. which gaps should stay in operations or governance instead of being copied into this repository.
 
-| # | Disciplina | Conteudista | Aulas | Status |
-|---|-----------|-------------|-------|--------|
-| 01 | Ciclo de Vida de Modelos | Ricardo Cataldi | 8/8 | ✅ GRAVADO |
-| 02 | Fundamentos de Modelos de ML | Jhony Andreatta | 8/8 | ✅ ENTREGUE |
-| 03 | Engenharia de Software | Ricardo Cataldi | 8/8 | ✅ GRAVADO |
-| 04 | APIs para Inferência | Ioannis Eleftheriou | 8/8 | ✅ ENTREGUE |
-| 05 | Bibliotecas Internas e SDKs | Fernando Filiputti | 7/7 | ✅ GRAVADO |
+## Evidence Sources
 
-**Fase 01: 100% completa.**
+| Source | Use |
+| --- | --- |
+| [`live-session-index.md`](live-session-index.md) | Public index for hands-on live sessions and study-group live material bundles. |
+| [`study-group-index.md`](study-group-index.md) | Phase-level study-group structure and Tech Challenge alignment. |
+| Phase and discipline READMEs | Reusable curricular context and executable artifact navigation. |
+| Private `mlet/operacao/visao_de_lives.csv` | Operations-only schedule cross-check. Do not duplicate it here. |
 
----
+## Cohort Readiness Matrix
 
-## Fase 02 — Containers e Ambientes Reprodutíveis
+| Cohort | Review status | Public coverage found | Operations schedule | Readiness decision |
+| --- | --- | --- | --- | --- |
+| [MLET6](cohorts/mlet-06.md) | Reviewed on 2026-05-06 | 35 indexed material entries across phases 01-05 | 42 scheduled sessions, 2025-06-10 to 2026-04-22 | Public coverage ready. Operations-only kickoff and Datathon presentation sessions stay private. |
+| [MLET7](cohorts/mlet-07.md) | Reviewed on 2026-05-06 | 25 indexed material entries across phases 01-04 | 42 scheduled sessions, 2025-09-02 to 2026-07-27 | Documentation ready; phase 04 is partial and phase 05 is not publicly indexed yet. |
+| [MLET8](cohorts/mlet-08.md) | Reviewed on 2026-05-06 | 19 indexed material entries across phases 01-03 | 42 scheduled sessions, 2025-11-04 to 2026-09-29 | Documentation ready; phases 03-05 need publication/index review. |
+| [MLET9](cohorts/mlet-09.md) | Reviewed on 2026-05-06 | 7 indexed material entries in phase 01 | 42 scheduled sessions, 2026-03-10 to 2027-01-29 | Documentation ready; do not use MLET9 as the default repository status view. |
+| [MLET10](cohorts/mlet-10.md) | Reviewed on 2026-05-06 | No public indexed material yet | 42 scheduled sessions, 2026-04-28 to 2027-03-23 | Documentation ready; publication backlog is explicit. |
+| [MLET11](cohorts/mlet-11.md) | Reviewed on 2026-05-06 | No public indexed material yet | 42 scheduled sessions, 2026-06-30 to 2027-05-25 | Documentation ready; publication backlog is explicit. |
+| [MLET12](cohorts/mlet-12.md) | Reviewed on 2026-05-06 | No public indexed material yet | 42 scheduled sessions, 2026-09-01 to 2027-07-27 | Documentation ready; publication backlog is explicit. |
+| [MLET13](cohorts/mlet-13.md) | Reviewed on 2026-05-06 | No public indexed material yet | 42 scheduled sessions, 2026-11-03 to 2027-09-28 | Documentation ready; publication backlog is explicit. |
 
-| # | Disciplina | Conteudista | Aulas | Status |
-|---|-----------|-------------|-------|--------|
-| 01 | Clean Code para Engenharia de ML | Gabriel Ortelan | 8/8 | ✅ ENTREGUE |
-| 02 | Gerenciamento de Dependências | Erick Muller | 4/4 | ✅ GRAVADO |
-| 03 | Docker e Kubernetes | Ricardo Cataldi | 8/8 | ✅ ENTREGUE |
-| 04 | Controle de Dados — DVC + MLflow | Sulamita Dantas | 7/7 | ⚠️ EM GRAVAÇÃO |
+## MLET6 Review
 
-**Fase 02: ~90% (Sulamita em gravação, links pendentes).**
+MLET6 is the first completed cross-cohort review because it has the broadest public event-material coverage currently indexed in this repository.
 
----
+| Phase | Public material entries | Operations schedule entries | Coverage decision |
+| --- | ---: | ---: | --- |
+| 01 | 7 | 8 | Public index has 3 hands-on sessions and 4 study groups. The inaugural session remains operations-only. |
+| 02 | 7 | 8 | Public index has 3 hands-on sessions and 4 study groups. The inaugural session remains operations-only. |
+| 03 | 7 | 8 | Public index has 3 hands-on sessions and 4 study groups. The inaugural session remains operations-only. |
+| 04 | 7 | 8 | Public index has 3 hands-on sessions and 4 study groups. The inaugural session remains operations-only. |
+| 05 | 7 | 10 | Public index has 3 technical live sessions and 4 study groups. Kickoff and Datathon presentation sessions remain operations-only. |
 
-## Fase 03 — Cloud e MLOps
+### MLET6 Material Paths
 
-| # | Disciplina | Conteudista | Aulas | Status |
-|---|-----------|-------------|-------|--------|
-| 01 | Deploy em Nuvem | Carlos E. Aragão | 8/8 | ✅ APROVADO (desafio pendente) |
-| 02 | Integração com CI/CD | Douglas Martins | 8/8 | ✅ APROVADO |
-| 03 | Pipeline de Treino e Deploy | José Neto | 8/8 | ✅ APROVADO |
-| 04 | Monitoração de Performance | Alex Faiotto | 4/4 | ✅ ENTREGUE (Google Drive, Apr 30) |
-| 05 | Serviços de Monitoração | Jhony Andreatta | 3/8 | ⚠️ PENDENTE (5 aulas faltando) |
-| 06 | Latência e Performance | Fernando Filiputti | 8/8 | ✅ APROVADO (desafio em validação) |
+| Phase | Public paths |
+| --- | --- |
+| 01 | [`../fase-01-produtizacao-de-modelos/`](../fase-01-produtizacao-de-modelos/), [`../fase-01-produtizacao-de-modelos/grupos-de-estudo/`](../fase-01-produtizacao-de-modelos/grupos-de-estudo/) |
+| 02 | [`../fase-02-containers-e-ambientes-reprodutiveis/`](../fase-02-containers-e-ambientes-reprodutiveis/), [`../fase-02-containers-e-ambientes-reprodutiveis/grupos-de-estudo/`](../fase-02-containers-e-ambientes-reprodutiveis/grupos-de-estudo/) |
+| 03 | [`../fase-03-cloud-e-mlops/`](../fase-03-cloud-e-mlops/), [`../fase-03-cloud-e-mlops/grupos-de-estudo/`](../fase-03-cloud-e-mlops/grupos-de-estudo/) |
+| 04 | [`../fase-04-monitoramento-e-governanca/`](../fase-04-monitoramento-e-governanca/), [`../fase-04-monitoramento-e-governanca/grupos-de-estudo/`](../fase-04-monitoramento-e-governanca/grupos-de-estudo/) |
+| 05 | [`../fase-05-deploy-avancado-de-ia-generativa/`](../fase-05-deploy-avancado-de-ia-generativa/), [`../fase-05-deploy-avancado-de-ia-generativa/grupos-de-estudo/`](../fase-05-deploy-avancado-de-ia-generativa/grupos-de-estudo/) |
 
-**Fase 03: ~70% aprovada. 01 desafio pendente, 05 (Jhony) 5 aulas faltando, 06 desafio em validação pelo conteudista.**
+## Normalization Decisions
 
----
+- Keep cohort-specific labels only where they identify when a live session or study group happened.
+- Prefer reusable phase and discipline links over cohort-only status tables.
+- Do not copy internal email, kickoff, assignment, or professor-management notes into public docs.
+- Track authoring delays, escalation, and professor follow-up in the private operations repository.
+- Promote new material only when it has a stable public path and enough local context for students and professors to reuse it.
 
-## Fase 04 — Monitoramento e Governança
+## Next Reviews
 
-| # | Disciplina | Conteudista | Aulas | Status |
-|---|-----------|-------------|-------|--------|
-| 01 | Data Drift | — | 0/8 | ❌ NÃO INICIADO |
-| 02 | Ferramentas de Monitoramento | — | 0/8 | ❌ NÃO INICIADO |
-| 03 | Monitoramento de Pipelines | — | 0/8 | ❌ NÃO INICIADO |
-| 04 | Validação de Dados | Luiz Fernando Braz | 8/8 | ✅ APROVADO COM RESSALVAS |
-| 05 | Governança e Compliance | — | 0/8 | ❌ NÃO INICIADO |
-| 06 | Inferência Causal | — | 0/8 | ❌ NÃO INICIADO |
-
-**Fase 04: 1/6 disciplinas entregue. 5 sem atribuição.**
-
----
-
-## Fase 05 — Deploy Avançado de IA Generativa
-
-| # | Disciplina | Conteudista | Aulas | Status |
-|---|-----------|-------------|-------|--------|
-| 01 | Deploy de Modelos de IA Gen | Ives Tulio | 0/8 | 📋 KICKOFF REENVIADO (email corrigido Apr 30) |
-| 02 | Deploy de Agentes com LLMs | Luiz Braz | 0/8 | 📋 KICKOFF ENVIADO |
-| 03 | Aplicações Avançadas | (não identificado) | 0/8 | 📋 KICKOFF ENVIADO |
-| 04 | Avaliação e Observabilidade | José Neto | 0/8 | 📋 KICKOFF ENVIADO |
-| 05 | Segurança e Guardrails | Diogo Miyake | 0/8 | 📋 KICKOFF ENVIADO |
-
-**Fase 05: 0% entregue. Todos kickoffs em Feb 6, 2026.**
-
----
-
-## Resumo Geral
-
-| Fase | Entregues | Total | % |
-|------|-----------|-------|---|
-| 01 | 5/5 | 5 | 100% |
-| 02 | 3/4 | 4 | 75% |
-| 03 | 5/6 | 6 | 83% |
-| 04 | 1/6 | 6 | 17% |
-| 05 | 0/5 | 5 | 0% |
-| **Total** | **14/26** | **26** | **54%** |
-
-## Notas
-
-- Fase 02/02 (Gerenciamento Dependências): Erick Muller substituiu Thiago Cardoso que desistiu em Jan/2026.
-- Fase 02/04 (DVC+MLflow): Sulamita entregou 7 aulas, gravação remota (Henrique Gerade) em andamento.
-- Fase 03/01 (Deploy em Nuvem): Aulas aprovadas, desafio ainda não entregue — cobrado ao Carlos Apr 30.
-- Fase 03/04 (Monitoração Performance): Alex Faiotto entregou via Google Drive Apr 30, aguarda validação formal.
-- Fase 03/05 (Serviços Monitoração): Jhony entregou 3/8 aulas — PÓS ON cobrou material completo Apr 29.
-- Fase 03/06 (Latência): Desafio enviado ao Fernando para validação Apr 30.
-- Fase 04/04 (Validação de Dados): Aprovado com ressalvas — 3 aulas corrigidas pelo coordenador. Roteiro precisa conversão para .xlsx.
-- Fase 05/01 (Deploy IA Gen): Email do Ives Tulio corrigido de ivestuliog@gmail.com para ivestulio@gmail.com. Kickoff reenviado Apr 30.
-- Fase 05: Todos kickoffs enviados Feb 6 — prazo de entrega a confirmar.
+1. Publish or index missing MLET7 phase 04 and phase 05 bundles when they become reusable public material.
+2. Publish or index missing MLET8 phase 03 completion, phase 04, and phase 05 bundles when available.
+3. Publish or index MLET9 phase 02 onward without turning repository documentation into a 9MLET-only status report.
+4. Use MLET10-MLET13 cohort pages as the publication checklist once reusable material is created or approved.

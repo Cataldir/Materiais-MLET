@@ -24,7 +24,7 @@ Nesta etapa, a qualidade da entrega depende de evidência operacional. O Tech Ch
 2. Expanda para ferramentas e serviços de monitoramento para observar aplicações reais.
 3. Use Validação de Dados e Governança para introduzir controles formais.
 4. Feche com Inferência Causal para avançar de monitoramento descritivo para decisão orientada por efeito.
-5. Para a camada oficial de regras, consulte o [governanca/README.md](../../../governanca/README.md) e o [Resumo dos Tech Challenges](../../../governanca/resumo-tech-challenges.md).
+5. Consulte os documentos em [docs](../docs/) para navegação, cobertura por turma e histórico editorial deste repositório.
 
 ## Disciplinas
 
@@ -43,10 +43,17 @@ Nesta etapa, a qualidade da entrega depende de evidência operacional. O Tech Ch
 - Use notebooks para entendimento e scripts para consolidação de fluxos operacionais.
 - Trate esta fase como ponte entre execução técnica e responsabilização institucional.
 
+## Material de apoio da fase
+
+- [Grupos de estudo](grupos-de-estudo/README.md)
+- [Live: Monitoramento de Pipelines e Infraestrutura](03-monitoramento-pipelines-infra/lives/fase04-live-monitoramento-de-pipelines-e-infraestrutura/README.md)
+- [Live: Validação de Dados e Bibliotecas de Qualidade](04-validacao-dados-qualidade/lives/fase04-live-validacao-de-dados-e-bibliotecas-de-qualidade/README.md)
+- [Live: Governança, Compliance e Inferência Causal](05-governanca-compliance/lives/fase04-live-governanca-compliance-lgpdgdpr-e-inferencia-causal/README.md)
+
 ## Setup
 
+Quando precisar executar código desta fase, instale as dependências da fase a partir da raiz do repositório.
+
 ```bash
-make install-fase04
-# ou
-uv pip install -e ".[fase04,dev]"
+python -m pip install -r constraints/fase04.txt
 ```

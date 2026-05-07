@@ -1,6 +1,6 @@
 # Desafio — Pipeline de Treino e Deploy Automático
 
-> **Tipo:** Individual · Não obrigatório · Sem nota  
+> **Tipo:** Individual · Não obrigatório · Sem nota
 > **Limite:** 2 páginas (≈ 1 000 palavras)
 
 ---

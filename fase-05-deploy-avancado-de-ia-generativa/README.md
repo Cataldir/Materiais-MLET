@@ -24,7 +24,7 @@ O desafio final exige maturidade acumulada das fases anteriores: empacotar, serv
 2. Avance para Agentes com LLMs para orquestração, ferramentas e integração.
 3. Use Aplicações Avançadas e Escalabilidade para tratar estado, concorrência e arquitetura.
 4. Feche com Avaliação/Observabilidade e Segurança/Conformidade para completar o ciclo de LLMOps.
-5. Para regras institucionais e critérios formais, use o [Resumo dos Tech Challenges](../../../governanca/resumo-tech-challenges.md) e a governança canônica do repositório principal.
+5. Consulte os documentos em [docs](../docs/) para navegação, cobertura por turma e histórico editorial deste repositório.
 
 ## Disciplinas
 
@@ -44,12 +44,19 @@ O desafio final exige maturidade acumulada das fases anteriores: empacotar, serv
 - [04](04-avaliacao-observabilidade-llmops/README.md): métricas, avaliação automatizada, tracing e custo/latência.
 - [05](05-seguranca-guardrails-conformidade/README.md): riscos, guardrails, prompt injection e compliance com PII.
 
+## Material de apoio da fase
+
+- [Grupos de estudo](grupos-de-estudo/README.md)
+- [Live: Deploy de Agentes com LLMs](02-deploy-agentes-llms/lives/fase05-live-deploy-de-agentes-com-llms/README.md)
+- [Live: Aplicações Avançadas, Escalabilidade e LLMOps](03-aplicacoes-avancadas-escalabilidade/lives/fase05-live-aplicacoes-avancadas-escalabilidade-e-llmops/README.md)
+- [Live: Segurança, Guardrails e Conformidade para LLMs](05-seguranca-guardrails-conformidade/lives/fase05-live-seguranca-guardrails-e-conformidade-para-llms/README.md)
+
 ## Setup
 
+Quando precisar executar código desta fase, instale as dependências da fase a partir da raiz do repositório.
+
 ```bash
-make install-fase05
-# ou
-uv pip install -e ".[fase05,dev]"
+python -m pip install -r constraints/fase05.txt
 ```
 
 ## Requisitos de hardware

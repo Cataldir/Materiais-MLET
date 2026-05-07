@@ -24,7 +24,7 @@ O Tech Challenge desta etapa exige que a solução deixe de ser somente correta 
 2. Passe por CI/CD e Pipeline Automático para amarrar automação e release.
 3. Use Monitoração de Performance e Serviços de Monitoração para observar o sistema em execução.
 4. Feche com Latência e Performance para trabalhar restrições reais de produção.
-5. As regras de material executável continuam no [Guia 007](../../../governanca/04-guias/07-guia-de-materiais-tecnico-pedagogicos-executaveis.md), enquanto critérios de avaliação e contexto de desafio estão no [Resumo dos Tech Challenges](../../../governanca/resumo-tech-challenges.md).
+5. Consulte os documentos em [docs](../docs/) para navegação, cobertura por turma e histórico editorial deste repositório.
 
 ## Disciplinas
 
@@ -43,10 +43,17 @@ O Tech Challenge desta etapa exige que a solução deixe de ser somente correta 
 - Prefira executar primeiro exemplos mínimos e depois os fluxos integradores.
 - Recorra aos pacotes de referência quando precisar de benchmark adicional ou inspiração arquitetural.
 
+## Material de apoio da fase
+
+- [Grupos de estudo](grupos-de-estudo/README.md)
+- [Live: Pipeline de Treino e Deploy Automático](03-pipeline-treino-deploy-automatico/lives/fase03-live-pipeline-de-treino-e-deploy-automatico/README.md)
+- [Live: Monitoração de Performance e Serviços de Monitoração](04-monitoracao-performance/lives/fase03-live-monitoracao-de-performance-servicos-de-monitoracao/README.md)
+- [Live: Latência e Performance em Dados Não Estruturados](06-latencia-performance/lives/fase03-live-latencia-e-performance-em-dados-nao-estruturados/README.md)
+
 ## Setup
 
+Quando precisar executar código desta fase, instale as dependências da fase a partir da raiz do repositório.
+
 ```bash
-make install-fase03
-# ou
-uv pip install -e ".[fase03,dev]"
+python -m pip install -r constraints/fase03.txt
 ```

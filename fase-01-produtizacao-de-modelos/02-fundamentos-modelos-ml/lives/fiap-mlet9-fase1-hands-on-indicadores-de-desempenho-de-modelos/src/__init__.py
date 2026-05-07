@@ -1,0 +1,1 @@
+"""Pacote principal da aplicação."""

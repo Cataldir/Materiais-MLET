@@ -24,7 +24,7 @@ A Fase 01 prepara o aluno para transformar um problema mal definido em uma solu�
 2. Avance para Fundamentos de Modelos de ML para consolidar repertório técnico de modelagem.
 3. Use Engenharia de Software, APIs e SDKs como ponte entre notebook exploratório e material reutilizável.
 4. Desça para as aulas quando precisar executar scripts, notebooks e exemplos específicos.
-5. Para regras institucionais de material e referência, consulte o [Guia 007](../../../governanca/04-guias/07-guia-de-materiais-tecnico-pedagogicos-executaveis.md) e o [Guia 008](../../../governanca/04-guias/08-guia-de-referenciais-teoricos-por-disciplina.md).
+5. Consulte os documentos em [docs](../docs/) para navegação, cobertura por turma e histórico editorial deste repositório.
 
 ## Disciplinas
 
@@ -44,12 +44,20 @@ A Fase 01 prepara o aluno para transformar um problema mal definido em uma solu�
 - [04](04-apis-inferencia-modelos/README.md): APIs introdutórias e fluxo completo de serving com testes.
 - [05](05-bibliotecas-internas-sdks/README.md): empacotamento de utilitários, documentação, versionamento e integração com fluxos de ML.
 
+## Material de apoio da fase
+
+- [Grupos de estudo](grupos-de-estudo/README.md)
+- [Live: Indicadores de Desempenho de Modelos](02-fundamentos-modelos-ml/lives/fiap-mlet9-fase1-hands-on-indicadores-de-desempenho-de-modelos/README.md)
+- [Live: Engenharia de Software para Cientistas de Dados](03-engenharia-software-cientistas-dados/lives/fase01-live-engenharia-de-software-para-cientistas-de-dados/README.md)
+- [Live: APIs para Inferência de Modelos](04-apis-inferencia-modelos/lives/fase01-live-apis-para-inferencia-de-modelos-flask-e-fastapi/README.md)
+- [Live: Bibliotecas Internas e SDKs](05-bibliotecas-internas-sdks/lives/fase01-live-bibliotecas-internas-e-sdks/README.md)
+
 ## Setup
 
+Quando precisar executar código desta fase, instale as dependências da fase a partir da raiz do repositório.
+
 ```bash
-make install-fase01
-# ou
-uv pip install -e ".[fase01,dev]"
+python -m pip install -r constraints/fase01.txt
 ```
 
 ## Datasets desta fase

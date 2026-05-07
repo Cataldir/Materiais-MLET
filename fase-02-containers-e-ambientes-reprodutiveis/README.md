@@ -24,7 +24,7 @@ O Tech Challenge deixa de ser apenas uma solução correta e passa a exigir uma 
 2. Em seguida, consolide ambientes com Gerenciamento de Dependências.
 3. Use Docker e Kubernetes para materializar portabilidade e empacotamento.
 4. Feche com DVC e MLflow para rastrear a linha de produção de dados, modelos e métricas.
-5. Quando houver dúvida sobre padrão de material ou referencial, consulte o [Guia 007](../../../governanca/04-guias/07-guia-de-materiais-tecnico-pedagogicos-executaveis.md) e o [Guia 008](../../../governanca/04-guias/08-guia-de-referenciais-teoricos-por-disciplina.md).
+5. Consulte os documentos em [docs](../docs/) para navegação, cobertura por turma e histórico editorial deste repositório.
 
 ## Disciplinas
 
@@ -41,10 +41,17 @@ O Tech Challenge deixa de ser apenas uma solução correta e passa a exigir uma 
 - Execute os artefatos localmente para entender o fluxo mínimo reproduzível.
 - Trate os pacotes de referência como complementos para aprofundamento, não como substitutos do percurso principal.
 
+## Material de apoio da fase
+
+- [Grupos de estudo](grupos-de-estudo/README.md)
+- [Live: Gerenciamento de Dependências em ML](02-gerenciamento-dependencias/lives/fase02-live-gerenciamento-de-dependencias-em-ml/README.md)
+- [Live: Docker e Kubernetes](03-docker-kubernetes/lives/fase02-live-docker-e-kubernetes/README.md)
+- [Live: Controle de Dados e Modelos — DVC e MLflow](04-dvc-mlflow/lives/fase02-live-controle-de-dados-e-modelos-dvc-e-mlflow/README.md)
+
 ## Setup
 
+Quando precisar executar código desta fase, instale as dependências da fase a partir da raiz do repositório.
+
 ```bash
-make install-fase02
-# ou
-uv pip install -e ".[fase02,dev]"
+python -m pip install -r constraints/fase02.txt
 ```

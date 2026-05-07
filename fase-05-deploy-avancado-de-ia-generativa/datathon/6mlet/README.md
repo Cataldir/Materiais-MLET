@@ -3,7 +3,7 @@
 > **Fase**: 05 — Deploy Avançado de IA Generativa
 > **Formato**: Datathon com Empresa Convidada
 > **Tipo**: Projeto Integrador (Fases 01–05)
-> **Referência canônica**: [`fases/fase-05-deploy-avancado-de-ia-generativa/governanca-da-fase/tech-challenge.md`](../../fases/fase-05-deploy-avancado-de-ia-generativa/governanca-da-fase/tech-challenge.md)
+> **Referência da fase**: [Fase 05 — Deploy Avançado de IA Generativa](../../README.md)
 
 ---
 
