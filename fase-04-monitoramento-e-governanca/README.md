@@ -24,7 +24,7 @@ Nesta etapa, a qualidade da entrega depende de evidência operacional. O Tech Ch
 2. Expanda para ferramentas e serviços de monitoramento para observar aplicações reais.
 3. Use Validação de Dados e Governança para introduzir controles formais.
 4. Feche com Inferência Causal para avançar de monitoramento descritivo para decisão orientada por efeito.
-5. Consulte os documentos em [docs](../docs/) para navegação, cobertura por turma e histórico editorial deste repositório.
+5. Consulte o [guia de navegação](../docs/navigation.md), o [índice de documentação](../docs/README.md) e o [changelog](../CHANGELOG.md) quando precisar entender a estrutura geral do repositório.
 
 ## Disciplinas
 

@@ -24,7 +24,7 @@ A Fase 01 prepara o aluno para transformar um problema mal definido em uma solu�
 2. Avance para Fundamentos de Modelos de ML para consolidar repertório técnico de modelagem.
 3. Use Engenharia de Software, APIs e SDKs como ponte entre notebook exploratório e material reutilizável.
 4. Desça para as aulas quando precisar executar scripts, notebooks e exemplos específicos.
-5. Consulte os documentos em [docs](../docs/) para navegação, cobertura por turma e histórico editorial deste repositório.
+5. Consulte o [guia de navegação](../docs/navigation.md), o [índice de documentação](../docs/README.md) e o [changelog](../CHANGELOG.md) quando precisar entender a estrutura geral do repositório.
 
 ## Disciplinas
 

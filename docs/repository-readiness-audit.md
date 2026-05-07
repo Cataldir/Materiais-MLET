@@ -1,6 +1,6 @@
 # Repository Readiness Audit
 
-> Reviewed: 2026-05-06. Scope: public `Materiais-MLET` repository readiness as reusable teaching material, not private course operations.
+> Reviewed: 2026-05-07. Scope: public `Materiais-MLET` repository readiness as reusable teaching material, not private course operations.
 
 ## Executive Finding
 
@@ -82,11 +82,12 @@ Notebook structural validation was corrected for two Python parsing blockers cau
 
 | Cleanup area | Result |
 | --- | --- |
-| `.github/` | Removed from the current working tree. History purge still requires an explicit history-rewrite operation. |
+| `.github/` | Removed from the root current tree and purged from reachable history; lesson-local `.github` examples remain only where they are teaching material. |
 | `tests/` and `tools/` | Removed from the current working tree. |
 | Root validation shortcuts | `Makefile`, `.pre-commit-config.yaml`, `.markdownlint-cli2.jsonc`, and `constraints/dev.txt` removed from the current working tree. |
-| Root navigation docs | Root README reduced to a short phase-first entry point; navigation, contribution notes, and changelog now live under `docs/`. |
+| Root navigation docs | Root README is phase-first and now links directly to the navigation guide, documentation index, root `CONTRIBUTING.md`, and root `CHANGELOG.md`. |
 | Top-level `lives/` and `grupos-de-estudo/` | Removed from the current working tree after moving contents into phase-local paths. |
+| Documentation index | Added `docs/README.md` to make public reference documents discoverable without relying on a folder listing. |
 
 ## Characteristics Still To Review
 
@@ -156,7 +157,7 @@ The quick scan did not show a public support-ticket ledger, but this should rema
 
 Acceptance criteria:
 
-1. public docs describe material, not professor follow-up;
+1. public docs describe material readiness, not operational follow-up;
 2. private operations stay in `mlet`;
 3. cohort pages report public material readiness, not internal escalation status.
 

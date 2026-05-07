@@ -24,7 +24,7 @@ O Tech Challenge deixa de ser apenas uma solução correta e passa a exigir uma 
 2. Em seguida, consolide ambientes com Gerenciamento de Dependências.
 3. Use Docker e Kubernetes para materializar portabilidade e empacotamento.
 4. Feche com DVC e MLflow para rastrear a linha de produção de dados, modelos e métricas.
-5. Consulte os documentos em [docs](../docs/) para navegação, cobertura por turma e histórico editorial deste repositório.
+5. Consulte o [guia de navegação](../docs/navigation.md), o [índice de documentação](../docs/README.md) e o [changelog](../CHANGELOG.md) quando precisar entender a estrutura geral do repositório.
 
 ## Disciplinas
 

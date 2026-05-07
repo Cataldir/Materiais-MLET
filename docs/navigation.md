@@ -1,47 +1,48 @@
-# Navigation
+# Guia de Navegação
 
-This repository is a student reference surface for the Machine Learning Engineering program. It should be read from the curriculum structure inward: phase, discipline, lesson, then supporting material.
+Este repositório é uma referência pública para estudantes de Machine Learning Engineering. Leia a estrutura de fora para dentro: fase, disciplina, aula e material de apoio.
 
-## Curriculum Arc
+## Arco curricular
 
-| Phase | Name | Role in the program | Expected outcome |
+| Fase | Nome | Papel no programa | Resultado esperado |
 | ---- | ---- | ----------------- | ------------------ |
-| [01](../fase-01-produtizacao-de-modelos/README.md) | Produtização de Modelos | Build the technical, product, and engineering base | Understand the model lifecycle and produce structured first solutions |
-| [02](../fase-02-containers-e-ambientes-reprodutiveis/README.md) | Containers e Ambientes Reprodutíveis | Make experiments reproducible and maintainable | Package, version, and operationalize data/model assets |
-| [03](../fase-03-cloud-e-mlops/README.md) | Cloud e MLOps | Move ML into realistic execution environments | Automate training, deployment, serving, and early observability |
-| [04](../fase-04-monitoramento-e-governanca/README.md) | Monitoramento e Governança | Control risk, quality, and reliability | Monitor drift, validate data, and formalize operational compliance |
-| [05](../fase-05-deploy-avancado-de-ia-generativa/README.md) | Deploy Avançado de IA Generativa | Apply ML engineering to generative systems | Serve, evaluate, scale, and protect LLM and agent applications |
+| [01](../fase-01-produtizacao-de-modelos/README.md) | Produtização de Modelos | Construir a base técnica, de produto e de engenharia | Entender o ciclo de vida do modelo e produzir primeiras soluções estruturadas |
+| [02](../fase-02-containers-e-ambientes-reprodutiveis/README.md) | Containers e Ambientes Reprodutíveis | Tornar experimentos reproduzíveis e manuteníveis | Empacotar, versionar e operacionalizar dados e modelos |
+| [03](../fase-03-cloud-e-mlops/README.md) | Cloud e MLOps | Levar ML para ambientes realistas de execução | Automatizar treino, deploy, serving e observabilidade inicial |
+| [04](../fase-04-monitoramento-e-governanca/README.md) | Monitoramento e Governança | Controlar risco, qualidade e confiabilidade | Monitorar drift, validar dados e formalizar compliance operacional |
+| [05](../fase-05-deploy-avancado-de-ia-generativa/README.md) | Deploy Avançado de IA Generativa | Aplicar engenharia de ML a sistemas generativos | Servir, avaliar, escalar e proteger aplicações com LLMs e agentes |
 
-## How To Navigate
+## Como navegar
 
-1. Start at the phase README to understand the objective of that stage.
-2. Open the discipline README to understand the professional relevance, learning outcomes, and lesson path.
-3. Enter lesson folders only after reading the nearby README.
-4. Treat live sessions and study groups as phase-local supporting material, not as separate top-level packages.
+1. Comece pelo README da fase para entender o objetivo daquele estágio.
+2. Abra o README da disciplina para entender relevância profissional, resultados esperados e caminho de aulas.
+3. Entre nas pastas de aula depois de ler o README mais próximo.
+4. Use lives e grupos de estudo como material de apoio local da fase, não como pacotes separados na raiz.
+5. Consulte [CONTRIBUTING.md](../CONTRIBUTING.md) antes de adicionar material novo.
 
-## Phase View
+## Visão por fase
 
-| Phase | Disciplines | Current emphasis |
-| ---- | ----------- | ----------------------- |
-| [01](../fase-01-produtizacao-de-modelos/README.md) | 5 | Modeling foundations, software engineering, APIs, and internal SDKs |
-| [02](../fase-02-containers-e-ambientes-reprodutiveis/README.md) | 4 | Clean code, environments, containers, DVC, and MLflow |
-| [03](../fase-03-cloud-e-mlops/README.md) | 6 | Cloud deployment, CI/CD, automated pipelines, monitoring, and performance |
-| [04](../fase-04-monitoramento-e-governanca/README.md) | 6 | Drift, data quality, observability, compliance, and causal inference |
-| [05](../fase-05-deploy-avancado-de-ia-generativa/README.md) | 5 | LLM serving, agents, scalability, evaluation, and security |
+| Fase | Disciplinas | Ênfase atual |
+| ---- | ----------- | ------------ |
+| [01](../fase-01-produtizacao-de-modelos/README.md) | 5 | Fundamentos de modelagem, engenharia de software, APIs e SDKs internos |
+| [02](../fase-02-containers-e-ambientes-reprodutiveis/README.md) | 4 | Clean code, ambientes, containers, DVC e MLflow |
+| [03](../fase-03-cloud-e-mlops/README.md) | 6 | Cloud deployment, CI/CD, pipelines automatizados, monitoramento e performance |
+| [04](../fase-04-monitoramento-e-governanca/README.md) | 6 | Drift, qualidade de dados, observabilidade, compliance e inferência causal |
+| [05](../fase-05-deploy-avancado-de-ia-generativa/README.md) | 5 | Serving de LLMs, agentes, escalabilidade, avaliação e segurança |
 
-## Supporting Material
+## Material de apoio
 
-Live sessions and study groups live near the phase or discipline they support:
+Lives e grupos de estudo ficam perto da fase ou disciplina que apoiam:
 
 - phase study groups: `fase-*/grupos-de-estudo/`;
 - discipline live sessions: `fase-*/*/lives/`;
 - study-group live sessions: `fase-*/grupos-de-estudo/*/lives/`.
 
-The cross-cohort indexes are in [live-session-index.md](live-session-index.md) and [study-group-index.md](study-group-index.md).
+Os índices transversais estão em [live-session-index.md](live-session-index.md) e [study-group-index.md](study-group-index.md).
 
-## Dependency Notes
+## Dependências
 
-Phase-specific dependency constraints are kept in `constraints/fase01.txt` through `constraints/fase05.txt`. They document the package baseline for running lesson code when needed; they are not validation shortcuts or answer keys.
+As dependências por fase ficam em `constraints/fase01.txt` até `constraints/fase05.txt`. Elas documentam a base de pacotes para executar exemplos quando necessário; não são atalhos de validação nem gabaritos.
 
 ## Convenções de material executável
 
@@ -61,6 +62,6 @@ Phase-specific dependency constraints are kept in `constraints/fase01.txt` throu
 | Telecom Churn | classificação, drift e monitoramento | [Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) |
 | IMDB Reviews | NLP e avaliação | `datasets` (Hugging Face) |
 
-## Licença
+## Licenciamento
 
-MIT
+Alguns materiais podem trazer licença local própria, como o complemento de validação de dados. Antes de reutilizar conteúdo fora do contexto didático, confira o arquivo `LICENSE` mais próximo do material e a orientação institucional vigente.

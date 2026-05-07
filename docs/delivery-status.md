@@ -1,54 +1,42 @@
-# MLET Public Materials Coverage
+# Cobertura Pública de Materiais MLET
 
-> Updated: 2026-05-06. This document tracks reusable public material coverage in `Materiais-MLET`. It is not an internal authoring ledger, a professor follow-up tracker, or a single-cohort delivery report.
+> Atualizado em 2026-05-07. Este documento acompanha apenas a cobertura pública reutilizável em `Materiais-MLET`. Ele não é um diário operacional, um relatório de acompanhamento de professores nem uma agenda privada.
 
-## Editorial Rule
+## Regra editorial
 
-This repository serves the Machine Learning Engineering program across cohorts. Cohort labels document provenance for live sessions and study groups, but the primary navigation model is phase, discipline, and reusable artifact.
+Este repositório serve ao programa de Machine Learning Engineering em múltiplas turmas. Rótulos de turma ajudam a indicar a origem de lives e grupos de estudo, mas a navegação principal continua sendo fase, disciplina e artefato reutilizável.
 
-Use this document to answer three questions:
+Use este documento para responder três perguntas:
 
-1. which cohorts have been reviewed against the public material index;
-2. where public reusable material exists by phase;
-3. which gaps should stay in operations or governance instead of being copied into this repository.
+1. quais turmas já têm páginas públicas de cobertura;
+2. onde existe material reutilizável publicado por fase;
+3. quais lacunas ainda precisam de curadoria antes de aparecerem como material público.
 
-## Evidence Sources
+## Fontes públicas
 
-| Source | Use |
+| Fonte | Uso |
 | --- | --- |
-| [`live-session-index.md`](live-session-index.md) | Public index for hands-on live sessions and study-group live material bundles. |
-| [`study-group-index.md`](study-group-index.md) | Phase-level study-group structure and Tech Challenge alignment. |
-| Phase and discipline READMEs | Reusable curricular context and executable artifact navigation. |
-| Private `mlet/operacao/visao_de_lives.csv` | Operations-only schedule cross-check. Do not duplicate it here. |
+| [`live-session-index.md`](live-session-index.md) | Índice público de lives técnicas e bundles de grupos de estudo. |
+| [`study-group-index.md`](study-group-index.md) | Estrutura pública de grupos de estudo por fase e alinhamento com Tech Challenge. |
+| READMEs de fases e disciplinas | Contexto curricular e navegação para artefatos executáveis. |
+| [`cohorts/`](cohorts/) | Páginas de cobertura pública por turma. |
 
-## Cohort Readiness Matrix
+## Matriz de cobertura pública
 
-| Cohort | Review status | Public coverage found | Operations schedule | Readiness decision |
-| --- | --- | --- | --- | --- |
-| [MLET6](cohorts/mlet-06.md) | Reviewed on 2026-05-06 | 35 indexed material entries across phases 01-05 | 42 scheduled sessions, 2025-06-10 to 2026-04-22 | Public coverage ready. Operations-only kickoff and Datathon presentation sessions stay private. |
-| [MLET7](cohorts/mlet-07.md) | Reviewed on 2026-05-06 | 25 indexed material entries across phases 01-04 | 42 scheduled sessions, 2025-09-02 to 2026-07-27 | Documentation ready; phase 04 is partial and phase 05 is not publicly indexed yet. |
-| [MLET8](cohorts/mlet-08.md) | Reviewed on 2026-05-06 | 19 indexed material entries across phases 01-03 | 42 scheduled sessions, 2025-11-04 to 2026-09-29 | Documentation ready; phases 03-05 need publication/index review. |
-| [MLET9](cohorts/mlet-09.md) | Reviewed on 2026-05-06 | 7 indexed material entries in phase 01 | 42 scheduled sessions, 2026-03-10 to 2027-01-29 | Documentation ready; do not use MLET9 as the default repository status view. |
-| [MLET10](cohorts/mlet-10.md) | Reviewed on 2026-05-06 | No public indexed material yet | 42 scheduled sessions, 2026-04-28 to 2027-03-23 | Documentation ready; publication backlog is explicit. |
-| [MLET11](cohorts/mlet-11.md) | Reviewed on 2026-05-06 | No public indexed material yet | 42 scheduled sessions, 2026-06-30 to 2027-05-25 | Documentation ready; publication backlog is explicit. |
-| [MLET12](cohorts/mlet-12.md) | Reviewed on 2026-05-06 | No public indexed material yet | 42 scheduled sessions, 2026-09-01 to 2027-07-27 | Documentation ready; publication backlog is explicit. |
-| [MLET13](cohorts/mlet-13.md) | Reviewed on 2026-05-06 | No public indexed material yet | 42 scheduled sessions, 2026-11-03 to 2027-09-28 | Documentation ready; publication backlog is explicit. |
+| Turma | Revisão pública | Cobertura encontrada | Decisão pública |
+| --- | --- | --- | --- |
+| [MLET6](cohorts/mlet-06.md) | Revisada em 2026-05-07 | 35 materiais indexados nas fases 01-05 | Cobertura pública pronta. |
+| [MLET7](cohorts/mlet-07.md) | Revisada em 2026-05-07 | 25 materiais indexados nas fases 01-04 | Parcial; fase 04 final e fase 05 ainda precisam de material público. |
+| [MLET8](cohorts/mlet-08.md) | Revisada em 2026-05-07 | 19 materiais indexados nas fases 01-03 | Parcial; fases 03-05 precisam de revisão de publicação. |
+| [MLET9](cohorts/mlet-09.md) | Revisada em 2026-05-07 | 7 materiais indexados na fase 01 | Parcial; fase 02 em diante ainda não está indexada publicamente. |
+| [MLET10](cohorts/mlet-10.md) | Revisada em 2026-05-07 | Nenhum material público indexado ainda | Página serve como checklist de publicação futura. |
+| [MLET11](cohorts/mlet-11.md) | Revisada em 2026-05-07 | Nenhum material público indexado ainda | Página serve como checklist de publicação futura. |
+| [MLET12](cohorts/mlet-12.md) | Revisada em 2026-05-07 | Nenhum material público indexado ainda | Página serve como checklist de publicação futura. |
+| [MLET13](cohorts/mlet-13.md) | Revisada em 2026-05-07 | Nenhum material público indexado ainda | Página serve como checklist de publicação futura. |
 
-## MLET6 Review
+## Caminhos públicos de referência
 
-MLET6 is the first completed cross-cohort review because it has the broadest public event-material coverage currently indexed in this repository.
-
-| Phase | Public material entries | Operations schedule entries | Coverage decision |
-| --- | ---: | ---: | --- |
-| 01 | 7 | 8 | Public index has 3 hands-on sessions and 4 study groups. The inaugural session remains operations-only. |
-| 02 | 7 | 8 | Public index has 3 hands-on sessions and 4 study groups. The inaugural session remains operations-only. |
-| 03 | 7 | 8 | Public index has 3 hands-on sessions and 4 study groups. The inaugural session remains operations-only. |
-| 04 | 7 | 8 | Public index has 3 hands-on sessions and 4 study groups. The inaugural session remains operations-only. |
-| 05 | 7 | 10 | Public index has 3 technical live sessions and 4 study groups. Kickoff and Datathon presentation sessions remain operations-only. |
-
-### MLET6 Material Paths
-
-| Phase | Public paths |
+| Fase | Caminhos principais |
 | --- | --- |
 | 01 | [`../fase-01-produtizacao-de-modelos/`](../fase-01-produtizacao-de-modelos/), [`../fase-01-produtizacao-de-modelos/grupos-de-estudo/`](../fase-01-produtizacao-de-modelos/grupos-de-estudo/) |
 | 02 | [`../fase-02-containers-e-ambientes-reprodutiveis/`](../fase-02-containers-e-ambientes-reprodutiveis/), [`../fase-02-containers-e-ambientes-reprodutiveis/grupos-de-estudo/`](../fase-02-containers-e-ambientes-reprodutiveis/grupos-de-estudo/) |
@@ -56,17 +44,16 @@ MLET6 is the first completed cross-cohort review because it has the broadest pub
 | 04 | [`../fase-04-monitoramento-e-governanca/`](../fase-04-monitoramento-e-governanca/), [`../fase-04-monitoramento-e-governanca/grupos-de-estudo/`](../fase-04-monitoramento-e-governanca/grupos-de-estudo/) |
 | 05 | [`../fase-05-deploy-avancado-de-ia-generativa/`](../fase-05-deploy-avancado-de-ia-generativa/), [`../fase-05-deploy-avancado-de-ia-generativa/grupos-de-estudo/`](../fase-05-deploy-avancado-de-ia-generativa/grupos-de-estudo/) |
 
-## Normalization Decisions
+## Decisões de normalização
 
-- Keep cohort-specific labels only where they identify when a live session or study group happened.
-- Prefer reusable phase and discipline links over cohort-only status tables.
-- Do not copy internal email, kickoff, assignment, or professor-management notes into public docs.
-- Track authoring delays, escalation, and professor follow-up in the private operations repository.
-- Promote new material only when it has a stable public path and enough local context for students and professors to reuse it.
+- Use rótulos de turma apenas quando eles identificarem a origem de uma live ou grupo de estudo.
+- Prefira links reutilizáveis de fase e disciplina a tabelas centradas em uma única turma.
+- Publique material novo somente quando ele tiver caminho estável e contexto local suficiente para estudantes reutilizarem.
+- Descreva lacunas como ausência de material público, não como acompanhamento operacional.
 
-## Next Reviews
+## Próximas revisões
 
-1. Publish or index missing MLET7 phase 04 and phase 05 bundles when they become reusable public material.
-2. Publish or index missing MLET8 phase 03 completion, phase 04, and phase 05 bundles when available.
-3. Publish or index MLET9 phase 02 onward without turning repository documentation into a 9MLET-only status report.
-4. Use MLET10-MLET13 cohort pages as the publication checklist once reusable material is created or approved.
+1. Publicar ou indexar bundles públicos faltantes da MLET7 nas fases 04 e 05 quando estiverem curados.
+2. Publicar ou indexar conclusão da fase 03 da MLET8 e depois fases 04 e 05 quando houver material reutilizável.
+3. Publicar ou indexar MLET9 a partir da fase 02 sem transformar a documentação do repositório em um status de uma única turma.
+4. Usar MLET10-MLET13 como checklists públicos de publicação quando materiais reutilizáveis existirem.

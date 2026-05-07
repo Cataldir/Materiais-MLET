@@ -1,6 +1,6 @@
-# MLET8 Coverage Review
+# MLET8 Public Coverage
 
-> Reviewed: 2026-05-06. Scope: public reusable material in `Materiais-MLET`, cross-checked against the private operations schedule.
+> Reviewed: 2026-05-07. Scope: public reusable material visible in `Materiais-MLET`.
 
 ## Readiness Summary
 
@@ -8,19 +8,17 @@
 | --- | --- |
 | Public coverage status | Partial public index through phase 03. |
 | Public indexed entries | 19 |
-| Operations schedule entries | 42 |
-| Schedule span | 2025-11-04 to 2026-09-29 |
 | Decision | Documentation is ready. Phase 03 completion, phase 04, and phase 05 remain publication/index gaps. |
 
 ## Phase Coverage
 
-| Phase | Public entries | Operations entries | Status |
-| --- | ---: | ---: | --- |
-| 01 | 7 | 8 | Ready: reusable event material indexed; inaugural session remains operations-only. |
-| 02 | 7 | 8 | Ready: reusable event material indexed; inaugural session remains operations-only. |
-| 03 | 5 | 8 | Partial: public index exists but does not yet cover the complete reusable phase pattern. |
-| 04 | 0 | 8 | Not publicly indexed yet. |
-| 05 | 0 | 10 | Not publicly indexed yet. |
+| Phase | Public entries | Status |
+| --- | ---: | --- |
+| 01 | 7 | Ready: reusable event material indexed. |
+| 02 | 7 | Ready: reusable event material indexed. |
+| 03 | 5 | Partial: public index exists but does not yet cover the complete reusable phase pattern. |
+| 04 | 0 | Not publicly indexed yet. |
+| 05 | 0 | Not publicly indexed yet. |
 
 ## Public Navigation
 

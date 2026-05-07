@@ -1,6 +1,6 @@
-# MLET6 Coverage Review
+# MLET6 Public Coverage
 
-> Reviewed: 2026-05-06. Scope: public reusable material in `Materiais-MLET`, cross-checked against the private operations schedule.
+> Reviewed: 2026-05-07. Scope: public reusable material visible in `Materiais-MLET`.
 
 ## Readiness Summary
 
@@ -8,19 +8,17 @@
 | --- | --- |
 | Public coverage status | Ready across phases 01-05. |
 | Public indexed entries | 35 |
-| Operations schedule entries | 42 |
-| Schedule span | 2025-06-10 to 2026-04-22 |
-| Decision | Use MLET6 as the baseline example for cohort coverage. Keep kickoff and Datathon presentation sessions private. |
+| Decision | Use MLET6 as the baseline example for public cohort coverage. |
 
 ## Phase Coverage
 
-| Phase | Public entries | Operations entries | Status |
-| --- | ---: | ---: | --- |
-| 01 | 7 | 8 | Ready: 3 hands-on sessions and 4 study groups indexed. |
-| 02 | 7 | 8 | Ready: 3 hands-on sessions and 4 study groups indexed. |
-| 03 | 7 | 8 | Ready: 3 hands-on sessions and 4 study groups indexed. |
-| 04 | 7 | 8 | Ready: 3 hands-on sessions and 4 study groups indexed. |
-| 05 | 7 | 10 | Ready for reusable material: 3 technical live sessions and 4 study groups indexed. |
+| Phase | Public entries | Status |
+| --- | ---: | --- |
+| 01 | 7 | Ready: 3 hands-on sessions and 4 study groups indexed. |
+| 02 | 7 | Ready: 3 hands-on sessions and 4 study groups indexed. |
+| 03 | 7 | Ready: 3 hands-on sessions and 4 study groups indexed. |
+| 04 | 7 | Ready: 3 hands-on sessions and 4 study groups indexed. |
+| 05 | 7 | Ready: 3 technical live sessions and 4 study groups indexed. |
 
 ## Public Navigation
 

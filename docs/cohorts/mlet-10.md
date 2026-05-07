@@ -1,6 +1,6 @@
-# MLET10 Coverage Review
+# MLET10 Public Coverage
 
-> Reviewed: 2026-05-06. Scope: public reusable material in `Materiais-MLET`, cross-checked against the private operations schedule.
+> Reviewed: 2026-05-07. Scope: public reusable material visible in `Materiais-MLET`.
 
 ## Readiness Summary
 
@@ -8,22 +8,19 @@
 | --- | --- |
 | Public coverage status | No public indexed material yet. |
 | Public indexed entries | 0 |
-| Operations schedule entries | 42 |
-| Schedule span | 2026-04-28 to 2027-03-23 |
 | Decision | Documentation is ready as a publication checklist. Public material should be added only after reusable assets exist. |
 
 ## Phase Coverage
 
-| Phase | Public entries | Operations entries | Status |
-| --- | ---: | ---: | --- |
-| 01 | 0 | 8 | Not publicly indexed yet. |
-| 02 | 0 | 8 | Not publicly indexed yet. |
-| 03 | 0 | 8 | Not publicly indexed yet. |
-| 04 | 0 | 8 | Not publicly indexed yet. |
-| 05 | 0 | 10 | Not publicly indexed yet. |
+| Phase | Public entries | Status |
+| --- | ---: | --- |
+| 01 | 0 | Not publicly indexed yet. |
+| 02 | 0 | Not publicly indexed yet. |
+| 03 | 0 | Not publicly indexed yet. |
+| 04 | 0 | Not publicly indexed yet. |
+| 05 | 0 | Not publicly indexed yet. |
 
 ## Publication Checklist
 
 1. Add phase 01 public bundles once reusable material is approved.
-2. Keep the row-level schedule in private operations sources.
-3. Update this page when the first MLET10 public bundle lands under a phase-local `lives/` or `grupos-de-estudo/` path.
+2. Update this page when the first MLET10 public bundle lands under a phase-local `lives/` or `grupos-de-estudo/` path.

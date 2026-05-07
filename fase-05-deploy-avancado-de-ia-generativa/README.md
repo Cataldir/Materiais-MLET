@@ -24,7 +24,7 @@ O desafio final exige maturidade acumulada das fases anteriores: empacotar, serv
 2. Avance para Agentes com LLMs para orquestração, ferramentas e integração.
 3. Use Aplicações Avançadas e Escalabilidade para tratar estado, concorrência e arquitetura.
 4. Feche com Avaliação/Observabilidade e Segurança/Conformidade para completar o ciclo de LLMOps.
-5. Consulte os documentos em [docs](../docs/) para navegação, cobertura por turma e histórico editorial deste repositório.
+5. Consulte o [guia de navegação](../docs/navigation.md), o [índice de documentação](../docs/README.md) e o [changelog](../CHANGELOG.md) quando precisar entender a estrutura geral do repositório.
 
 ## Disciplinas
 

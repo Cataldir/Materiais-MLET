@@ -24,7 +24,7 @@ O Tech Challenge desta etapa exige que a solução deixe de ser somente correta 
 2. Passe por CI/CD e Pipeline Automático para amarrar automação e release.
 3. Use Monitoração de Performance e Serviços de Monitoração para observar o sistema em execução.
 4. Feche com Latência e Performance para trabalhar restrições reais de produção.
-5. Consulte os documentos em [docs](../docs/) para navegação, cobertura por turma e histórico editorial deste repositório.
+5. Consulte o [guia de navegação](../docs/navigation.md), o [índice de documentação](../docs/README.md) e o [changelog](../CHANGELOG.md) quando precisar entender a estrutura geral do repositório.
 
 ## Disciplinas
 
