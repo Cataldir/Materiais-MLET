@@ -52,3 +52,9 @@ Segurança de aplicações generativas com guardrails de input/output, red teami
 
 - Material completo da disciplina: [`fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade`](../../README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.
+
+## Artefatos de acompanhamento
+
+- [Guia da live](guia-da-live.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist engenharia](checklist-engenharia.md)

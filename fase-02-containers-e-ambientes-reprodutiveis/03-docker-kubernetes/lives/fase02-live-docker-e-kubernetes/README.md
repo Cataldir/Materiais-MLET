@@ -54,3 +54,9 @@ Conteinerização de workloads ML com Docker multi-stage e orquestração com Ku
 
 - Material completo da disciplina: [`fase-02-containers-e-ambientes-reprodutiveis/03-docker-kubernetes`](../../README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.
+
+## Artefatos de acompanhamento
+
+- [Guia da live](guia-da-live.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist engenharia](checklist-engenharia.md)

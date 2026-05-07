@@ -100,3 +100,9 @@ Docker multi-stage + DVC + MLflow integrados em pipeline reprodutível.
 - [Docker Multi-stage Builds](https://docs.docker.com/build/building/multi-stage/)
 - [DVC Get Started](https://dvc.org/doc/start)
 - [MLflow Tracking](https://mlflow.org/docs/latest/tracking.html)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

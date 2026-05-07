@@ -42,3 +42,7 @@ Schemas, validação e quality gates contínuos em pipelines
 
 - Material completo da disciplina: [`fase-04-monitoramento-e-governanca/04-validacao-dados-qualidade`](../../../../04-validacao-dados-qualidade/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.
+
+## Artefatos de acompanhamento
+
+- [Follow up da live](follow-up-da-live.md)

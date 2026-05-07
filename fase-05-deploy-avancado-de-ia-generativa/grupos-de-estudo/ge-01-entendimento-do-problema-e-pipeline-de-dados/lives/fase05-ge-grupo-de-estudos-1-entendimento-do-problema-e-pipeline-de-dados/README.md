@@ -42,3 +42,7 @@ Entendimento do datathon e construção de pipeline de dados
 
 - Material completo da disciplina: [`fase-05-deploy-avancado-de-ia-generativa/01-deploy-modelos-ia-generativa`](../../../../01-deploy-modelos-ia-generativa/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.
+
+## Artefatos de acompanhamento
+
+- [Follow up da live](follow-up-da-live.md)

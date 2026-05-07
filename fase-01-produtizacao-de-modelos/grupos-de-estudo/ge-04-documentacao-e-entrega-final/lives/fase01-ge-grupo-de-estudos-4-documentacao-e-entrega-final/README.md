@@ -44,3 +44,7 @@ Documentação, SDKs internos e entrega de artefatos
 
 - Material completo da disciplina: [`fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks`](../../../../05-bibliotecas-internas-sdks/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.
+
+## Artefatos de acompanhamento
+
+- [Follow up da live](follow-up-da-live.md)

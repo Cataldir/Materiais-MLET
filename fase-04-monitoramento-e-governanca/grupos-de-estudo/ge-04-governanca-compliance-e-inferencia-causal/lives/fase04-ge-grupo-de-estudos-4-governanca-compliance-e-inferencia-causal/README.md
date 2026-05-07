@@ -42,3 +42,7 @@ Governança, model cards, LGPD/GDPR e causalidade
 
 - Material completo da disciplina: [`fase-04-monitoramento-e-governanca/05-governanca-compliance`](../../../../05-governanca-compliance/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.
+
+## Artefatos de acompanhamento
+
+- [Follow up da live](follow-up-da-live.md)

@@ -80,3 +80,9 @@ Modelo neural treinado para recomendação, registrado no MLflow Model Registry 
 - [MLflow Model Registry](https://mlflow.org/docs/latest/model-registry.html)
 - [PyTorch Embedding Layer](https://pytorch.org/docs/stable/generated/torch.nn.Embedding.html)
 - Dataset sugerido: [Instacart Market Basket](https://www.kaggle.com/c/instacart-market-basket-analysis) ou [MovieLens](https://grouplens.org/datasets/movielens/)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

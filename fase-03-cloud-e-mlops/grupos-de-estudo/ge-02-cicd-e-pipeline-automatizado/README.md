@@ -92,3 +92,9 @@ Automação completa do ciclo de vida do modelo com GitHub Actions e Airflow.
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [Apache Airflow Docs](https://airflow.apache.org/docs/)
 - [Pandera Data Validation](https://pandera.readthedocs.io/)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

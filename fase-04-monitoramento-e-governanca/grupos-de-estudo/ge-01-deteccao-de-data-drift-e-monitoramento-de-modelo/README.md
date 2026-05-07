@@ -89,3 +89,9 @@ Detecção automatizada de drift feature a feature e monitoramento proativo de d
 - [Evidently AI — Data Drift](https://docs.evidentlyai.com/)
 - [NannyML — Performance Estimation](https://nannyml.readthedocs.io/)
 - [PyTorch Lightning](https://lightning.ai/docs/pytorch/stable/)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

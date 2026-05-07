@@ -44,3 +44,7 @@ Pipelines de CI/CD automatizados para Machine Learning
 
 - Material completo da disciplina: [`fase-03-cloud-e-mlops/02-integracao-cicd`](../../../../02-integracao-cicd/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.
+
+## Artefatos de acompanhamento
+
+- [Follow up da live](follow-up-da-live.md)

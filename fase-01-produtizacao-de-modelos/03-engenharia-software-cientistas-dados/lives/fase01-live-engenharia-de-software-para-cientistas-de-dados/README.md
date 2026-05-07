@@ -55,3 +55,9 @@ Aplicação de princípios SOLID, testes automatizados, qualidade de código e g
 
 - Material completo da disciplina: [`fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados`](../../README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.
+
+## Artefatos de acompanhamento
+
+- [Guia da live](guia-da-live.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist engenharia](checklist-engenharia.md)

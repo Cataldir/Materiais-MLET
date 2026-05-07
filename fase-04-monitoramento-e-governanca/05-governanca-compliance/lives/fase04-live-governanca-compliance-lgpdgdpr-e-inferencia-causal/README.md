@@ -52,3 +52,9 @@ Governança de modelos, compliance regulatório (LGPD/GDPR), model cards e infer
 
 - Material completo da disciplina: [`fase-04-monitoramento-e-governanca/05-governanca-compliance`](../../README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.
+
+## Artefatos de acompanhamento
+
+- [Guia da live](guia-da-live.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist engenharia](checklist-engenharia.md)

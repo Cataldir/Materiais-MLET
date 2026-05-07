@@ -55,3 +55,9 @@ Construção de APIs REST para servir modelos de ML com Flask e FastAPI, incluin
 
 - Material completo da disciplina: [`fase-01-produtizacao-de-modelos/04-apis-inferencia-modelos`](../../README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.
+
+## Artefatos de acompanhamento
+
+- [Guia da live](guia-da-live.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist engenharia](checklist-engenharia.md)

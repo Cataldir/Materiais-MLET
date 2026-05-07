@@ -75,3 +75,9 @@ Decisão de arquitetura de deploy e setup da infraestrutura para servir modelo d
 - [Architecture Decision Records](https://adr.github.io/)
 - [Locust Load Testing](https://locust.io/)
 - [Azure Container Apps Pricing](https://azure.microsoft.com/pricing/details/container-apps/)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

@@ -91,3 +91,9 @@ Modelo neural otimizado para produção com técnicas de redução de latência 
 - [ONNX Runtime](https://onnxruntime.ai/)
 - [PyTorch Quantization](https://pytorch.org/docs/stable/quantization.html)
 - [PyTorch Lightning Docs](https://lightning.ai/docs/pytorch/stable/)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

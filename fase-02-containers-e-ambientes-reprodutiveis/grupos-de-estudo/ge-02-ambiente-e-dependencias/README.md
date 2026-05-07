@@ -77,3 +77,9 @@ Reprodutibilidade garantida com gerenciamento moderno de dependências: Poetry, 
 - Material da disciplina: [`02-gerenciamento-dependencias`](../../02-gerenciamento-dependencias/)
 - [Poetry Documentation](https://python-poetry.org/docs/)
 - [Pydantic Settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

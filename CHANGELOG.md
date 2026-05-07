@@ -2,6 +2,7 @@
 
 ## 2026-05-07
 
+- Gerados artefatos de acompanhamento em nível de engenharia de machine learning para todas as pastas de lives e grupos de estudo, com inventário central em `docs/live-study-artifact-inventory.md`.
 - Promoted `CONTRIBUTING.md` and `CHANGELOG.md` to the repository root to match public GitHub conventions.
 - Added a documentation index in `docs/README.md` so students do not land on an unstructured folder listing.
 - Documented the complementary `fase-04-validacao-de-dados/` folder with a local README and pointers back to the canonical Phase 04 discipline path.

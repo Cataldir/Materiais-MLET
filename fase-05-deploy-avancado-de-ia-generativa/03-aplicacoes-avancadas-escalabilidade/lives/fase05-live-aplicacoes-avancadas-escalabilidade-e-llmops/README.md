@@ -52,3 +52,9 @@ Padrões avançados de multi-agent, escalabilidade e operações de LLMs em prod
 
 - Material completo da disciplina: [`fase-05-deploy-avancado-de-ia-generativa/03-aplicacoes-avancadas-escalabilidade`](../../README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.
+
+## Artefatos de acompanhamento
+
+- [Guia da live](guia-da-live.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist engenharia](checklist-engenharia.md)

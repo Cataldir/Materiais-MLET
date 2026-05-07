@@ -42,3 +42,7 @@ Implementação de agentes e modelos avançados com LLMs
 
 - Material completo da disciplina: [`fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms`](../../../../02-deploy-agentes-llms/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.
+
+## Artefatos de acompanhamento
+
+- [Follow up da live](follow-up-da-live.md)

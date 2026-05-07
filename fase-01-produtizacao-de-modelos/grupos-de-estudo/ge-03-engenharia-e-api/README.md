@@ -81,3 +81,9 @@ Refatoração profissional do código, construção de API de inferência e empa
 - [FastAPI Documentation](https://fastapi.tiangolo.com/)
 - [Pydantic V2 Docs](https://docs.pydantic.dev/latest/)
 - [pytest Getting Started](https://docs.pytest.org/en/stable/getting-started.html)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

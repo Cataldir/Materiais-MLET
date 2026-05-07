@@ -83,3 +83,9 @@ Análise do problema real fornecido pela empresa convidada, exploração de dado
 - Material da disciplina: [`01-deploy-modelos-ia-generativa`](../../01-deploy-modelos-ia-generativa/)
 - Competências de Fase 01: EDA, ML Canvas, baselines, MLflow
 - Competências de Fase 02: Docker, DVC, Poetry, clean code
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

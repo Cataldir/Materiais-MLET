@@ -72,3 +72,9 @@ Projeto limpo com padrões de engenharia de software desde o início: SOLID, nam
 - Material da disciplina: [`01-clean-code-ml`](../../01-clean-code-ml/)
 - [Clean Code de Robert C. Martin — Resumo aplicado a Python](https://github.com/zedr/clean-code-python)
 - [Ruff Linter](https://docs.astral.sh/ruff/)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

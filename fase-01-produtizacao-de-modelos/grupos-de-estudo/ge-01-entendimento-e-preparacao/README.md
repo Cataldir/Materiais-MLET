@@ -66,3 +66,9 @@ Formulação do problema de negócio, exploração de dados e construção de ba
 - Material da disciplina: [`01-ciclo-de-vida-de-modelos`](../../01-ciclo-de-vida-de-modelos/)
 - Dataset sugerido: [Telco Customer Churn — IBM](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
 - [MLflow Quickstart](https://mlflow.org/docs/latest/quickstart.html)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

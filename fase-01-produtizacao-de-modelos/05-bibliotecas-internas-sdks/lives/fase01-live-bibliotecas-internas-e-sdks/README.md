@@ -55,3 +55,9 @@ Empacotamento de código ML em bibliotecas reutilizáveis com documentação, ve
 
 - Material completo da disciplina: [`fase-01-produtizacao-de-modelos/05-bibliotecas-internas-sdks`](../../README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.
+
+## Artefatos de acompanhamento
+
+- [Guia da live](guia-da-live.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist engenharia](checklist-engenharia.md)

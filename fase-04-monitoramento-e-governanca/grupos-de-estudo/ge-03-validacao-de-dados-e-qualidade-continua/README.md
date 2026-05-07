@@ -100,3 +100,9 @@ Validação automatizada de dados com profiling, deduplicação, data contracts 
 - [Pandera Documentation](https://pandera.readthedocs.io/)
 - [Great Expectations Docs](https://docs.greatexpectations.io/)
 - [ydata-profiling](https://docs.profiling.ydata.ai/)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

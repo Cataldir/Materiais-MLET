@@ -92,3 +92,9 @@ Stack de observabilidade com Prometheus + Grafana, logging estruturado e monitor
 - [structlog Documentation](https://www.structlog.org/)
 - [Grafana Alerting](https://grafana.com/docs/grafana/latest/alerting/)
 - [Google SRE — Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

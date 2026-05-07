@@ -42,7 +42,7 @@ Os índices transversais estão em [live-session-index.md](live-session-index.md
 
 ## Dependências
 
-As dependências por fase ficam em `constraints/fase01.txt` até `constraints/fase05.txt`. Elas documentam a base de pacotes para executar exemplos quando necessário; não são atalhos de validação nem gabaritos.
+As dependências por fase ficam em `constraints/fase01.txt` até `constraints/fase05.txt`. Elas documentam a base de pacotes para executar exemplos quando necessário; não são atalhos de validação nem respostas finais.
 
 ## Convenções de material executável
 

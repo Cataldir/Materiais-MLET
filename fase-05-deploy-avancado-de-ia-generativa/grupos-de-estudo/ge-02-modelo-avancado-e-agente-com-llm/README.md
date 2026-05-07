@@ -95,3 +95,9 @@ Serving de LLM otimizado, construção de agente ReAct e pipeline RAG sobre dado
 - [vLLM Documentation](https://docs.vllm.ai/)
 - [LangChain Agents](https://python.langchain.com/docs/modules/agents/)
 - [ChromaDB](https://docs.trychroma.com/)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

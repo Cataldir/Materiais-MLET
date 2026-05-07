@@ -107,3 +107,9 @@ Guardrails de segurança, conformidade LGPD para LLMs, preparação para o Demo 
 - [Microsoft Presidio — PII Detection](https://microsoft.github.io/presidio/)
 - [NeMo Guardrails](https://github.com/NVIDIA/NeMo-Guardrails)
 - Competências de Fase 04: LGPD, fairness, explicabilidade
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

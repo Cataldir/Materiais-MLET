@@ -44,3 +44,7 @@ Gestão de ambientes, dependências e reprodutibilidade
 
 - Material completo da disciplina: [`fase-02-containers-e-ambientes-reprodutiveis/02-gerenciamento-dependencias`](../../../../02-gerenciamento-dependencias/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.
+
+## Artefatos de acompanhamento
+
+- [Follow up da live](follow-up-da-live.md)

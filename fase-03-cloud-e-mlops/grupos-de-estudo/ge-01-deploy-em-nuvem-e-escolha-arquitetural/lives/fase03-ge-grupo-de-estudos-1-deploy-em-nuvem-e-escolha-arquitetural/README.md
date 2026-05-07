@@ -44,3 +44,7 @@ Deploy de modelos em nuvem e decisões arquiteturais
 
 - Material completo da disciplina: [`fase-03-cloud-e-mlops/01-deploy-em-nuvem`](../../../../01-deploy-em-nuvem/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.
+
+## Artefatos de acompanhamento
+
+- [Follow up da live](follow-up-da-live.md)

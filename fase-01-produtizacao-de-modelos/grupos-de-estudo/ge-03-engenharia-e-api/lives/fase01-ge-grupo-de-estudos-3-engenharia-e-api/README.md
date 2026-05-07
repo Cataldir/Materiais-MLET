@@ -45,3 +45,7 @@ Engenharia de software aplicada e construção de APIs
 
 - Material completo da disciplina: [`fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados`](../../../../03-engenharia-software-cientistas-dados/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.
+
+## Artefatos de acompanhamento
+
+- [Follow up da live](follow-up-da-live.md)

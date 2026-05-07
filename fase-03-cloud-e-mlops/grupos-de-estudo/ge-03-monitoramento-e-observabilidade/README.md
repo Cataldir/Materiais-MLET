@@ -97,3 +97,9 @@ Stack de observabilidade completo para modelo em produção: Prometheus + Grafan
 - [Prometheus Python Client](https://github.com/prometheus/client_python)
 - [Grafana Dashboards](https://grafana.com/docs/grafana/latest/dashboards/)
 - [Google SRE Book — SLOs](https://sre.google/sre-book/service-level-objectives/)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

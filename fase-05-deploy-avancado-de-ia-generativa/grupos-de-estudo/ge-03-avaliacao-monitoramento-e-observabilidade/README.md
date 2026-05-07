@@ -99,3 +99,9 @@ Avaliação rigorosa de sistemas generativos com RAGAS, LLM-as-judge, telemetria
 - [RAGAS Documentation](https://docs.ragas.io/)
 - [Langfuse](https://langfuse.com/docs)
 - [TruLens](https://www.trulens.org/)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

@@ -52,3 +52,9 @@ Operacionalização de agentes baseados em LLMs com tools, RAG e deploy em produ
 
 - Material completo da disciplina: [`fase-05-deploy-avancado-de-ia-generativa/02-deploy-agentes-llms`](../../README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.
+
+## Artefatos de acompanhamento
+
+- [Guia da live](guia-da-live.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist engenharia](checklist-engenharia.md)

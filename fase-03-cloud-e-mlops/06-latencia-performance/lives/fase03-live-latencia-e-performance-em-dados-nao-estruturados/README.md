@@ -53,3 +53,9 @@ Otimização de latência em modelos de visão e NLP com quantização, ONNX e s
 
 - Material completo da disciplina: [`fase-03-cloud-e-mlops/06-latencia-performance`](../../README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.
+
+## Artefatos de acompanhamento
+
+- [Guia da live](guia-da-live.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist engenharia](checklist-engenharia.md)

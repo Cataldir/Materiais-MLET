@@ -43,3 +43,7 @@ Métricas operacionais, logs e monitoramento de pipelines
 
 - Material completo da disciplina: [`fase-04-monitoramento-e-governanca/03-monitoramento-pipelines-infra`](../../../../03-monitoramento-pipelines-infra/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.
+
+## Artefatos de acompanhamento
+
+- [Follow up da live](follow-up-da-live.md)

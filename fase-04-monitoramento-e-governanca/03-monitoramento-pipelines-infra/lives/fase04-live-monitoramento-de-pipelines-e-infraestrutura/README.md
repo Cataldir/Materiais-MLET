@@ -53,3 +53,9 @@ Observabilidade de pipelines ML com OpenTelemetry, tracing distribuído e monito
 
 - Material completo da disciplina: [`fase-04-monitoramento-e-governanca/03-monitoramento-pipelines-infra`](../../README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.
+
+## Artefatos de acompanhamento
+
+- [Guia da live](guia-da-live.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist engenharia](checklist-engenharia.md)

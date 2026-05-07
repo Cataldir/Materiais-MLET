@@ -73,3 +73,9 @@ Construção, treinamento e avaliação de MLP com PyTorch para classificação 
 - Material da disciplina: [`02-fundamentos-modelos-ml`](../../02-fundamentos-modelos-ml/)
 - [PyTorch Tutorials — Neural Networks](https://pytorch.org/tutorials/beginner/blitz/neural_networks_tutorial.html)
 - [MLflow Model Registry](https://mlflow.org/docs/latest/model-registry.html)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

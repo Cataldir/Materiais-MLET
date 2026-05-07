@@ -186,3 +186,10 @@ Exemplos de perguntas para teste:
 Cada execução da API gera um arquivo JSON em `data/evaluations/` com a
 pergunta, a resposta, os documentos recuperados, as métricas de
 evaluation e o timestamp da execução.
+
+## Artefatos de acompanhamento
+
+- [Guia da live](guia-da-live.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist engenharia](checklist-engenharia.md)
+- [Guia de execucao](guia-de-execucao.md)

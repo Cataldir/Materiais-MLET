@@ -54,3 +54,9 @@ Garantia de reprodutibilidade de ambientes ML com venv, Poetry, uv e controle de
 
 - Material completo da disciplina: [`fase-02-containers-e-ambientes-reprodutiveis/02-gerenciamento-dependencias`](../../README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.
+
+## Artefatos de acompanhamento
+
+- [Guia da live](guia-da-live.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist engenharia](checklist-engenharia.md)

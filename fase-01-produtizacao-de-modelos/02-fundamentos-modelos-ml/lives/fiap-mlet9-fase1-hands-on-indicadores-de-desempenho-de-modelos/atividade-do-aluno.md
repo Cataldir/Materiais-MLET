@@ -1,0 +1,48 @@
+# Atividade do Aluno — 📺 INDICADORES DE DESEMPENHO DE MODELOS
+
+## Contexto do Problema
+
+Você está evoluindo um projeto de Machine Learning Engineering e precisa incorporar `📺 INDICADORES DE DESEMPENHO DE MODELOS` de forma verificável. A atividade pede que você traduza o conteúdo da live em uma decisão técnica acompanhada de evidência.
+
+## Tarefa
+
+Produza um registro curto com a decisão tomada, a justificativa, a evidência esperada e o risco tratado. O objetivo é mostrar maturidade de engenharia, não apenas reproduzir comandos.
+
+## Passos da Atividade
+
+1. Leia o [README local](README.md) e destaque os conceitos que afetam seu projeto.
+2. Modele a solução em quadro, pseudocódigo ou tabela de decisões.
+3. Identifique uma melhoria aplicável ao Tech Challenge.
+4. Defina como essa melhoria será validada: métrica, teste manual, log, checklist, documentação ou revisão por pares.
+5. Escreva uma conclusão operacional: o que muda no projeto depois desta atividade?
+
+## Evidências Esperadas
+
+- Descrição do problema tratado.
+- Decisão técnica e alternativa rejeitada.
+- Critério de validação ou métrica de acompanhamento.
+- Limitação conhecida e próximo passo.
+
+## Perguntas para Reflexão
+
+- O que torna esta decisão reprodutível para outro integrante do grupo?
+- Que parte da solução falharia primeiro em um cenário real?
+- Como você explicaria esta escolha para alguém que avalia produto, não só código?
+
+## Como Relacionar ao Tech Challenge
+
+A atividade contribui para a etapa em que o grupo precisa transformar um problema aberto em um primeiro artefato de ML claro, medivel e explicavel. Guarde a evidência em material público do projeto, sem incluir dados privados, credenciais ou respostas prontas.
+
+## Critérios de Autoavaliação
+
+- A decisão tem relação direta com o objetivo da Fase 01.
+- A evidência pode ser revisada por outra pessoa.
+- A documentação evita atalhos e deixa claro como reproduzir ou avaliar a solução.
+- O risco tratado está explícito.
+
+## Referências
+
+- [README local](README.md)
+- Google. Machine Learning Crash Course: Framing ML Problems.
+- scikit-learn User Guide: model evaluation and metrics.
+- Sculley et al. Hidden Technical Debt in Machine Learning Systems.

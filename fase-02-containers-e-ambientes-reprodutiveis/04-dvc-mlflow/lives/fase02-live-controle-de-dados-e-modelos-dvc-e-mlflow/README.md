@@ -54,3 +54,9 @@ Versionamento de dados e modelos com DVC e tracking de experimentos com MLflow
 
 - Material completo da disciplina: [`fase-02-containers-e-ambientes-reprodutiveis/04-dvc-mlflow`](../../README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.
+
+## Artefatos de acompanhamento
+
+- [Guia da live](guia-da-live.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist engenharia](checklist-engenharia.md)

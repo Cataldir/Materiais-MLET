@@ -104,3 +104,9 @@ LGPD/GDPR compliance, explicabilidade, fairness audit e inferência causal aplic
 - [DoWhy — Causal Inference](https://www.pywhy.org/dowhy/)
 - [EconML](https://econml.azurewebsites.net/)
 - [LGPD — Lei 13.709/2018](http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm)
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

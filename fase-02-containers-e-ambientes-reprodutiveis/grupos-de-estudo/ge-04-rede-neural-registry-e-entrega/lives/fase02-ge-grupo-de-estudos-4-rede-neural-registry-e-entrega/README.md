@@ -44,3 +44,7 @@ Model registry, redes neurais avançadas e entrega de modelos
 
 - Material completo da disciplina: [`fase-02-containers-e-ambientes-reprodutiveis/04-dvc-mlflow`](../../../../04-dvc-mlflow/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.
+
+## Artefatos de acompanhamento
+
+- [Follow up da live](follow-up-da-live.md)

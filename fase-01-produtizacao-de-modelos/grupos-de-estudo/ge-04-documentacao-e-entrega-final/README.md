@@ -76,3 +76,9 @@ Consolidação do projeto, documentação profissional, Model Card e preparaçã
 - [Model Cards for Model Reporting (Mitchell et al., 2019)](https://arxiv.org/abs/1810.03993)
 - [Método STAR para entrevistas e apresentações](https://www.themuse.com/advice/star-interview-method)
 - Materiais de todas as disciplinas da Fase 01
+
+## Artefatos de acompanhamento
+
+- [Guia de estudo](guia-de-estudo.md)
+- [Atividade do aluno](atividade-do-aluno.md)
+- [Checklist tech challenge](checklist-tech-challenge.md)

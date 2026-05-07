@@ -42,3 +42,7 @@ Guardrails, segurança, governança e demonstração final
 
 - Material completo da disciplina: [`fase-05-deploy-avancado-de-ia-generativa/05-seguranca-guardrails-conformidade`](../../../../05-seguranca-guardrails-conformidade/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.
+
+## Artefatos de acompanhamento
+
+- [Follow up da live](follow-up-da-live.md)

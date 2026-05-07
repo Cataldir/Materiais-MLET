@@ -45,3 +45,7 @@ Fundamentos de redes neurais, arquiteturas e treinamento
 
 - Material completo da disciplina: [`fase-01-produtizacao-de-modelos/02-fundamentos-modelos-ml`](../../../../02-fundamentos-modelos-ml/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.
+
+## Artefatos de acompanhamento
+
+- [Follow up da live](follow-up-da-live.md)

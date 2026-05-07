@@ -42,3 +42,7 @@ Avaliação de qualidade, métricas RAG e observabilidade LLM
 
 - Material completo da disciplina: [`fase-05-deploy-avancado-de-ia-generativa/04-avaliacao-observabilidade-llmops`](../../../../04-avaliacao-observabilidade-llmops/README.md)
 - Consulte as aulas da disciplina para revisão antes do grupo de estudos.
+
+## Artefatos de acompanhamento
+
+- [Follow up da live](follow-up-da-live.md)
