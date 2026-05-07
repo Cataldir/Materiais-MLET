@@ -48,3 +48,4 @@ Clean code, qualidade e estrutura de projetos ML
 ## Artefatos de acompanhamento
 
 - [Follow up da live](follow-up-da-live.md)
+- [Script Python de follow-up](apoio_live.py)

@@ -49,3 +49,4 @@ Engenharia de software aplicada e construção de APIs
 ## Artefatos de acompanhamento
 
 - [Follow up da live](follow-up-da-live.md)
+- [Script Python de follow-up](apoio_live.py)

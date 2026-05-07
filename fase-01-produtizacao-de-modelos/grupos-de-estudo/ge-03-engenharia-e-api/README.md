@@ -87,3 +87,4 @@ Refatoração profissional do código, construção de API de inferência e empa
 - [Guia de estudo](guia-de-estudo.md)
 - [Atividade do aluno](atividade-do-aluno.md)
 - [Checklist tech challenge](checklist-tech-challenge.md)
+- [Script Python de apoio](apoio_estudo.py)

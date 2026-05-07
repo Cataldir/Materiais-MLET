@@ -98,3 +98,4 @@ Automação completa do ciclo de vida do modelo com GitHub Actions e Airflow.
 - [Guia de estudo](guia-de-estudo.md)
 - [Atividade do aluno](atividade-do-aluno.md)
 - [Checklist tech challenge](checklist-tech-challenge.md)
+- [Script Python de apoio](apoio_estudo.py)

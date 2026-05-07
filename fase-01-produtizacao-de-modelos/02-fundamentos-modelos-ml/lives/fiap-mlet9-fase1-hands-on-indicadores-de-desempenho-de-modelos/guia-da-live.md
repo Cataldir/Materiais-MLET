@@ -49,6 +49,9 @@ Use esta live para fortalecer a entrega que precisa transformar um problema aber
 
 ## Referências
 
+- [Script Python da live](exercicio.py)
+
+
 - [README local](README.md)
 - Google. Machine Learning Crash Course: Framing ML Problems.
 - scikit-learn User Guide: model evaluation and metrics.

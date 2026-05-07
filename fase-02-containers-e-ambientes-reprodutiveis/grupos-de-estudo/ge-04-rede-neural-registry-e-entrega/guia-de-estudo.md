@@ -42,6 +42,9 @@ A discussão deve ajudar o grupo a permitir que outra pessoa reconstrua o ambien
 
 ## Referências
 
+- [Script Python de apoio](apoio_estudo.py)
+
+
 - [README local](README.md)
 - Docker Docs: Build and run containers.
 - DVC Documentation: Data and model versioning.

@@ -32,3 +32,6 @@ Conecte a ação escolhida ao objetivo de transformar um problema aberto em um p
 
 Chegue com uma pergunta técnica e uma evidência mínima. O encontro seguinte deve começar pela revisão do que mudou no projeto.
 
+## Referências
+
+- [Script Python de follow-up](apoio_live.py)

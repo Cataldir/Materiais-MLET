@@ -49,3 +49,4 @@ Entendimento do problema de negócio, preparação de dados e ML Canvas
 ## Artefatos de acompanhamento
 
 - [Follow up da live](follow-up-da-live.md)
+- [Script Python de follow-up](apoio_live.py)

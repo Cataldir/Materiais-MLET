@@ -103,3 +103,4 @@ Stack de observabilidade completo para modelo em produção: Prometheus + Grafan
 - [Guia de estudo](guia-de-estudo.md)
 - [Atividade do aluno](atividade-do-aluno.md)
 - [Checklist tech challenge](checklist-tech-challenge.md)
+- [Script Python de apoio](apoio_estudo.py)

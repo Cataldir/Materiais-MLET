@@ -42,6 +42,9 @@ A discussão deve ajudar o grupo a criar evidências de que o sistema continua c
 
 ## Referências
 
+- [Script Python de apoio](apoio_estudo.py)
+
+
 - [README local](README.md)
 - NIST AI Risk Management Framework.
 - Evidently Documentation: data drift and model monitoring.
