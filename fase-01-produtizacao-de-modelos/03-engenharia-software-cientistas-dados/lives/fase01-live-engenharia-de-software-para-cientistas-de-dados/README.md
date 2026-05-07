@@ -55,25 +55,18 @@ Aplicação de princípios SOLID, testes automatizados, qualidade de código e g
 │   └── ml_pipeline/
 │       ├── __init__.py              ← Pacote Python
 │       ├── config.py                ← Configuração com Pydantic Settings
-│       ├── schemas.py               ← Contratos de dados com Pandera
-│       ├── data.py                  ← Carregamento de dados
-│       ├── preprocessing.py         ← Limpeza e filtros
+│       ├── data.py                  ← Schema (pandera), load e clip do target
 │       ├── features.py              ← Engenharia de features
-│       ├── evaluation.py            ← Métricas de avaliação
-│       ├── models.py                ← Registro de modelos (Strategy Pattern)
-│       ├── persistence.py           ← Protocolos de persistência
-│       ├── training.py              ← Treinamento e avaliação
+│       ├── models.py                ← Modelos, métricas e treino
 │       ├── pipeline.py              ← Orquestração do pipeline
 │       └── cli.py                   ← Interface de linha de comando (Typer)
 └── tests/
     ├── conftest.py                  ← Fixtures compartilhadas
-    ├── test_schemas.py              ← Testes de validação de dados
-    ├── test_preprocessing.py        ← Testes de limpeza
-    ├── test_features.py             ← Testes de engenharia de features
-    ├── test_models.py               ← Testes de construção de modelos
-    ├── test_persistence.py          ← Testes de I/O
-    ├── test_pipeline.py             ← Testes de integração
-    └── test_cli.py                  ← Testes de interface CLI
+    ├── test_data.py                 ← Schema + clip
+    ├── test_features.py             ← Engenharia de features
+    ├── test_models.py               ← Registry e métricas
+    ├── test_pipeline.py             ← Integração end-to-end
+    └── test_cli.py                  ← CLI
 ```
 
 ---

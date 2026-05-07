@@ -1,30 +1,20 @@
-files: ^lives/fase01-live-engenharia-de-software-para-cientistas-de-dados/
-exclude: |
-  (?x)^lives/fase01-live-engenharia-de-software-para-cientistas-de-dados/(
-    exercicio\.py
-    | notebooks/.*
-    | venv/.*
-    | artifacts/.*
-  )$
+# Escopo: roda só nos arquivos .py do pacote (src/ e tests/) desta live.
+# Notebooks ficam de fora de propósito (têm "red flags" didáticos).
 repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.6.9
     hooks:
       - id: ruff
         args: ["--fix"]
+        files: ^fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados/lives/fase01-live-engenharia-de-software-para-cientistas-de-dados/(src|tests)/.*\.py$
       - id: ruff-format
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
-    hooks:
-      - id: end-of-file-fixer
-      - id: trailing-whitespace
-      - id: check-yaml
-      - id: check-added-large-files
+        files: ^fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados/lives/fase01-live-engenharia-de-software-para-cientistas-de-dados/(src|tests)/.*\.py$
+
   - repo: local
     hooks:
       - id: pytest
         name: pytest
-        entry: bash -c 'cd lives/fase01-live-engenharia-de-software-para-cientistas-de-dados && pytest -q'
+        entry: bash -c 'cd fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados/lives/fase01-live-engenharia-de-software-para-cientistas-de-dados && pytest -q'
         language: system
         pass_filenames: false
         stages: [pre-push]

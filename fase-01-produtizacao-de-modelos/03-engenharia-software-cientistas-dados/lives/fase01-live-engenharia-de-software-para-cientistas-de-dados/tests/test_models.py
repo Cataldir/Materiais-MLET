@@ -1,26 +1,23 @@
+"""Testes do módulo models."""
+
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
 
-from ml_pipeline.models import MODEL_REGISTRY
-
-
-def test_registry_contem_cinco_modelos() -> None:
-    assert len(MODEL_REGISTRY) == 5
+from ml_pipeline.models import build_models, evaluate
 
 
-def test_factories_retornam_pipeline_com_scaler_e_estimator() -> None:
-    for name, factory in MODEL_REGISTRY.items():
-        pipe = factory(random_state=0)
-        assert isinstance(pipe, Pipeline), name
-        assert isinstance(pipe.named_steps["scaler"], StandardScaler), name
-        assert pipe.named_steps["estimator"] is not None, name
+def test_registry_tem_cinco_modelos():
+    models = build_models(random_state=42)
+    assert len(models) == 5
 
 
-def test_modelos_sao_reproducíveis_com_mesma_semente() -> None:
-    factory = MODEL_REGISTRY["random_forest"]
-    a = factory(random_state=7)
-    b = factory(random_state=7)
-    assert (
-        a.named_steps["estimator"].random_state
-        == b.named_steps["estimator"].random_state
-    )
+def test_modelos_sao_pipelines_com_scaler():
+    for model in build_models(random_state=42).values():
+        assert isinstance(model, Pipeline)
+        assert "scaler" in model.named_steps
+
+
+def test_evaluate_retorna_metricas_basicas():
+    metrics = evaluate([1.0, 2.0, 3.0], [1.0, 2.0, 3.0])
+    assert metrics["rmse"] == 0.0
+    assert metrics["mae"] == 0.0
+    assert metrics["r2"] == 1.0
