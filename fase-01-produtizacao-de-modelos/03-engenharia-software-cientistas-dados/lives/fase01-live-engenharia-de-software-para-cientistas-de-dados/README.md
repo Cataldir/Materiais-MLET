@@ -34,10 +34,7 @@ Aplicação de princípios SOLID, testes automatizados, qualidade de código e g
 
 | Data | Turma | Professor |
 |------|-------|----------|
-| 16/09/2025 | MLET7 | Erick Muller; Pedro Almeida |
-| 24/03/2026 | MLET9 | Erick Muller; Pedro Almeida |
-| 24/06/2025 | MLET6 | Erick Muller; Pedro Almeida |
-| 25/11/2025 | MLET8 | Erick Muller; Pedro Almeida |
+| 07/05/2026 | MLET10 | Erick Muller; Pedro Almeida |
 
 ---
 
@@ -45,19 +42,46 @@ Aplicação de princípios SOLID, testes automatizados, qualidade de código e g
 
 ```text
 .
-├── README.md              ← Este arquivo
-└── exercicio.py           ← Script de exercício prático da live
+├── README.md                        ← Este arquivo
+├── exercicio.py                     ← Script de exercício prático da live
+├── TUTORIAL.md                      ← Guia passo a passo de construção do projeto
+├── pyproject.toml                   ← Configuração do projeto e dependências
+├── .pre-commit-config.yaml          ← Hooks de qualidade de código
+├── .gitignore                       ← Arquivos ignorados pelo Git
+├── notebooks/
+│   ├── california-housing-prediction.ipynb  ← Notebook original (antes da refatoração)
+│   └── requirements.txt             ← Dependências mínimas do notebook
+├── src/
+│   └── ml_pipeline/
+│       ├── __init__.py              ← Pacote Python
+│       ├── config.py                ← Configuração com Pydantic Settings
+│       ├── schemas.py               ← Contratos de dados com Pandera
+│       ├── data.py                  ← Carregamento de dados
+│       ├── preprocessing.py         ← Limpeza e filtros
+│       ├── features.py              ← Engenharia de features
+│       ├── evaluation.py            ← Métricas de avaliação
+│       ├── models.py                ← Registro de modelos (Strategy Pattern)
+│       ├── persistence.py           ← Protocolos de persistência
+│       ├── training.py              ← Treinamento e avaliação
+│       ├── pipeline.py              ← Orquestração do pipeline
+│       └── cli.py                   ← Interface de linha de comando (Typer)
+└── tests/
+    ├── conftest.py                  ← Fixtures compartilhadas
+    ├── test_schemas.py              ← Testes de validação de dados
+    ├── test_preprocessing.py        ← Testes de limpeza
+    ├── test_features.py             ← Testes de engenharia de features
+    ├── test_models.py               ← Testes de construção de modelos
+    ├── test_persistence.py          ← Testes de I/O
+    ├── test_pipeline.py             ← Testes de integração
+    └── test_cli.py                  ← Testes de interface CLI
 ```
 
 ---
 
 ## 📚 Referências
 
-- Material completo da disciplina: [`fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados`](../../README.md)
+- Material completo da disciplina: [`fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados`](../../fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados/README.md)
 - Consulte as aulas da disciplina para aprofundamento em tópicos específicos.
-
-## Artefatos de acompanhamento
-
-- [Guia da live](guia-da-live.md)
-- [Atividade do aluno](atividade-do-aluno.md)
-- [Checklist engenharia](checklist-engenharia.md)
+- Google. Machine Learning Crash Course: Framing ML Problems.
+- scikit-learn User Guide: model evaluation and metrics.
+- Sculley et al. Hidden Technical Debt in Machine Learning Systems.
