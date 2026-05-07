@@ -1,7 +1,7 @@
 """Modelos e avaliação (SRP: definir e treinar modelos)."""
 
 import numpy as np
-from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import Lasso, LinearRegression, Ridge
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.pipeline import Pipeline
@@ -23,9 +23,6 @@ def build_models(random_state: int) -> dict:
             RandomForestRegressor(
                 n_estimators=200, random_state=random_state, n_jobs=-1
             )
-        ),
-        "gradient_boosting": _wrap(
-            GradientBoostingRegressor(n_estimators=200, random_state=random_state)
         ),
     }
 
