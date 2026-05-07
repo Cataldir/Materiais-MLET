@@ -11,3 +11,4 @@ artifacts/
 
 .ipynb_checkpoints/
 .env
+venv/
