@@ -46,3 +46,4 @@ Entendimento do datathon e construção de pipeline de dados
 ## Artefatos de acompanhamento
 
 - [Follow up da live](follow-up-da-live.md)
+- [Script Python de follow-up](apoio_live.py)

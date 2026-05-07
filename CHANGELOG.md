@@ -2,6 +2,12 @@
 
 ## 2026-05-07
 
+- Adicionados 56 scripts Python completos e executáveis para apoiar lives técnicas, grupos de estudo e lives de grupos de estudo:
+  - 16 scripts `exercicio.py` para lives técnicas, com cenários de engenharia de ML, gates, riscos, evidências e referências por tema.
+  - 20 scripts `apoio_estudo.py` para grupos de estudo, com matriz de decisão, evidências esperadas e conexão com o Tech Challenge.
+  - 20 scripts `apoio_live.py` para lives de grupos de estudo, com ações de follow-up, critérios de aceite e referências.
+  - Todos usam apenas biblioteca padrão do Python e possuem modo `--check`.
+- Atualizado `docs/live-study-artifact-inventory.md` para refletir a cobertura dos scripts Python.
 - Gerados artefatos de acompanhamento em nível de engenharia de machine learning para todas as pastas de lives e grupos de estudo, com inventário central em `docs/live-study-artifact-inventory.md`.
 - Promoted `CONTRIBUTING.md` and `CHANGELOG.md` to the repository root to match public GitHub conventions.
 - Added a documentation index in `docs/README.md` so students do not land on an unstructured folder listing.

@@ -79,3 +79,4 @@ Construção, treinamento e avaliação de MLP com PyTorch para classificação 
 - [Guia de estudo](guia-de-estudo.md)
 - [Atividade do aluno](atividade-do-aluno.md)
 - [Checklist tech challenge](checklist-tech-challenge.md)
+- [Script Python de apoio](apoio_estudo.py)

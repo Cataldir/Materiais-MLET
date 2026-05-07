@@ -42,6 +42,9 @@ A discussão deve ajudar o grupo a integrar dados, modelo, agente, avaliação e
 
 ## Referências
 
+- [Script Python de apoio](apoio_estudo.py)
+
+
 - [README local](README.md)
 - OpenAI Evals / evaluation guidance for LLM applications.
 - LangChain and LangGraph documentation for agent workflows.

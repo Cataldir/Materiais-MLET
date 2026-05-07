@@ -42,6 +42,9 @@ A atividade deve fortalecer a capacidade do grupo de transformar um problema abe
 
 ## Referências
 
+- [Script Python de apoio](apoio_estudo.py)
+
+
 - [README local](README.md)
 - Google. Machine Learning Crash Course: Framing ML Problems.
 - scikit-learn User Guide: model evaluation and metrics.

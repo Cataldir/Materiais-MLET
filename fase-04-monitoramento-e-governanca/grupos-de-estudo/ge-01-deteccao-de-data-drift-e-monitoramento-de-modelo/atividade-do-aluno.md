@@ -42,6 +42,9 @@ A atividade deve fortalecer a capacidade do grupo de criar evidências de que o 
 
 ## Referências
 
+- [Script Python de apoio](apoio_estudo.py)
+
+
 - [README local](README.md)
 - NIST AI Risk Management Framework.
 - Evidently Documentation: data drift and model monitoring.

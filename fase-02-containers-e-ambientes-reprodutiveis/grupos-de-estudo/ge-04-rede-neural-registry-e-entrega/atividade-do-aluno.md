@@ -42,6 +42,9 @@ A atividade deve fortalecer a capacidade do grupo de permitir que outra pessoa r
 
 ## Referências
 
+- [Script Python de apoio](apoio_estudo.py)
+
+
 - [README local](README.md)
 - Docker Docs: Build and run containers.
 - DVC Documentation: Data and model versioning.

@@ -42,6 +42,9 @@ A atividade deve fortalecer a capacidade do grupo de transformar a solução loc
 
 ## Referências
 
+- [Script Python de apoio](apoio_estudo.py)
+
+
 - [README local](README.md)
 - Google Cloud. MLOps: Continuous delivery and automation pipelines in machine learning.
 - Microsoft Azure Architecture Center: machine learning operations.

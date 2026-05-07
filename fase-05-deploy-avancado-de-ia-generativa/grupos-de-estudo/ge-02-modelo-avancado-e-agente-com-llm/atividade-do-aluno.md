@@ -42,6 +42,9 @@ A atividade deve fortalecer a capacidade do grupo de integrar dados, modelo, age
 
 ## Referências
 
+- [Script Python de apoio](apoio_estudo.py)
+
+
 - [README local](README.md)
 - OpenAI Evals / evaluation guidance for LLM applications.
 - LangChain and LangGraph documentation for agent workflows.

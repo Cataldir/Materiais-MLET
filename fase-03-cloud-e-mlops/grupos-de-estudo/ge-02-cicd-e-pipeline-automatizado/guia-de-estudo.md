@@ -42,6 +42,9 @@ A discussão deve ajudar o grupo a transformar a solução local em fluxo operá
 
 ## Referências
 
+- [Script Python de apoio](apoio_estudo.py)
+
+
 - [README local](README.md)
 - Google Cloud. MLOps: Continuous delivery and automation pipelines in machine learning.
 - Microsoft Azure Architecture Center: machine learning operations.

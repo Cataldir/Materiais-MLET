@@ -193,3 +193,4 @@ evaluation e o timestamp da execução.
 - [Atividade do aluno](atividade-do-aluno.md)
 - [Checklist engenharia](checklist-engenharia.md)
 - [Guia de execucao](guia-de-execucao.md)
+- [Script Python da live](exercicio.py)
