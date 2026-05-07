@@ -34,7 +34,7 @@ O [pyproject.toml](pyproject.toml) é o **único** arquivo de configuração do 
 ### Criar o venv a partir do `pyproject.toml`
 
 ```bash
-cd ~/Materiais-MLET/lives/fase01-live-engenharia-de-software-para-cientistas-de-dados
+cd ~/Materiais-MLET/fase-01-produtizacao-de-modelos/03-engenharia-software-cientistas-dados/lives/fase01-live-engenharia-de-software-para-cientistas-de-dados
 
 # 1. Criar o venv
 python -m venv venv
