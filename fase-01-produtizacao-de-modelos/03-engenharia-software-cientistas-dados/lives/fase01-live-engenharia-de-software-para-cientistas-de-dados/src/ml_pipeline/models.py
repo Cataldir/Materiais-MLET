@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import Lasso, LinearRegression, Ridge
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.neural_network import MLPRegressor
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
@@ -22,6 +23,11 @@ def build_models(random_state: int) -> dict:
         "random_forest": _wrap(
             RandomForestRegressor(
                 n_estimators=200, random_state=random_state, n_jobs=-1
+            )
+        ),
+        "mlp": _wrap(
+            MLPRegressor(
+                hidden_layer_sizes=(100,), max_iter=500, random_state=random_state
             )
         ),
     }
